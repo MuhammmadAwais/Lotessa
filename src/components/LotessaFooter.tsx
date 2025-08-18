@@ -66,7 +66,8 @@ const LotessaFooter = () => {
               </a>
               <a 
                 href="#" 
-                className="text-foreground hover:text-primary transition-colors underline font-medium"
+                className="hover:text-primary transition-colors underline font-medium text-base"
+                style={{ color: '#001f3f' }}
               >
                 Privacy Policy
               </a>
