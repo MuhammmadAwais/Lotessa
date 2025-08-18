@@ -16,7 +16,7 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left Content */}
           <div className="space-y-6 lg:space-y-8">
-            <h3 className="text-3xl lg:text-4xl font-bold text-primary leading-tight">
+            <h3 className="text-3xl lg:text-4xl font-bold text-primary leading-tight text-center">
               We'd Love to Hear from You
             </h3>
             
