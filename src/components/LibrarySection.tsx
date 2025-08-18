@@ -44,7 +44,7 @@ const LibrarySection = () => {
             Discover Expert Content, Anytime
           </h2>
           
-          <p className="text-[28px] text-foreground font-bold font-sans max-w-3xl mx-auto">
+          <p className="text-[28px] text-foreground font-bold font-sans max-w-3xl mx-auto whitespace-nowrap">
             Bite-sized insights, real-world tips, and trustworthy health information
           </p>
         </div>
