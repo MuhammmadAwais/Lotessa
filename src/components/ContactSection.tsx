@@ -3,9 +3,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 const ContactSection = () => {
-  return <section className="pt-6 pb-16 lg:pt-8 lg:pb-20 bg-[#EFEEE7]">
-      <div className="container mx-auto px-6 max-w-7xl">
-        <div className="rounded-2xl px-[22px] py-8 lg:px-[38px] lg:py-6">
+  return <section className="py-3 lg:py-5 bg-[#EFEEE7]">
+      <div className="container mx-auto px-3 max-w-7xl">
+        <div className="rounded-2xl px-[16px] py-6 lg:px-[24px] lg:py-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-[30px] font-normal text-[#001F3F] font-sans mb-8">
