@@ -2,10 +2,10 @@ import { Heart, Download, Users, Instagram, Linkedin, Facebook } from "lucide-re
 
 const LotessaFooter = () => {
   return (
-    <footer className="py-16 mt-16" style={{ background: '#EFEEE7' }}>
+    <footer className="py-8 mt-16" style={{ background: '#EFEEE7' }}>
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Logo - Separate Row */}
-        <div className="flex items-center mb-12">
+        <div className="flex items-center mb-6">
           <img src="/lovable-uploads/69f7fc17-c67d-4671-ade7-a76320c0adb8.png" alt="Lotessa logo" className="h-10" />
         </div>
 
