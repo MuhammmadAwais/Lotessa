@@ -40,11 +40,11 @@ for GLP1 Medication</h1>
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-3">
               <button className="flex items-center justify-center">
-                <img src="/lovable-uploads/e62ee210-e1fc-485b-9080-27c924643742.png" alt="Download the App" className="h-12" />
+                <img src="/lovable-uploads/e62ee210-e1fc-485b-9080-27c924643742.png" alt="Download the App" className="h-12 w-auto" />
               </button>
               
-              <button className="flex items-center justify-center -mt-2" onClick={() => setDialogOpen(true)}>
-                <img src="/lovable-uploads/a97005af-398c-4b31-af1a-d153e144ef44.png" alt="Join the Lotessa Community" className="h-12" />
+              <button className="flex items-center justify-center" onClick={() => setDialogOpen(true)}>
+                <img src="/lovable-uploads/a97005af-398c-4b31-af1a-d153e144ef44.png" alt="Join the Lotessa Community" className="h-12 w-auto" />
               </button>
             </div>
           </div>
