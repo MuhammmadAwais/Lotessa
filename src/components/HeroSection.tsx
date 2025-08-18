@@ -1,5 +1,4 @@
 import { Download, Users } from "lucide-react";
-import phoneMockups from "@/assets/phone-mockups.jpg";
 
 const HeroSection = () => {
   return (
@@ -51,8 +50,8 @@ const HeroSection = () => {
           {/* Right Content - Phone Mockups */}
           <div className="relative lg:pl-8">
             <img
-              src={phoneMockups}
-              alt="Lotessa app interface showing weight tracking, medication dosage, and progress charts on mobile phones"
+              src="/lovable-uploads/cf2d19b5-de2f-4f6e-adea-897fa40e1781.png"
+              alt="Lotessa app interface showing weight tracking charts, medication dosage tracking, and progress visualization on two mobile phones"
               className="w-full h-auto max-w-lg mx-auto lg:mx-0 lg:ml-auto"
             />
           </div>
