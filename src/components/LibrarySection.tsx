@@ -1,5 +1,7 @@
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 const LibrarySection = () => {
+  const navigate = useNavigate();
   const articles = [{
     title: "The Future of GLP-1 Access in the UK",
     subtitle: "A period of change, but not the end of your journey",
@@ -51,7 +53,7 @@ const LibrarySection = () => {
 
         {/* Articles Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {articles.map(article => <div key={article.id} className="article-card group cursor-pointer h-full aspect-[1/1.289] px-6 pt-6 pb-2 flex flex-col">
+          {articles.map(article => <div key={article.id} onClick={() => navigate(`/article/${article.id}`)} className="article-card group cursor-pointer h-full aspect-[1/1.289] px-6 pt-6 pb-2 flex flex-col">
               <div className="flex justify-end mb-4">
                 <div className="w-10 h-10 rounded-full border-2 border-[#001f3f] flex items-center justify-center group-hover:border-primary transition-colors">
                   <ArrowRight className="text-[#001f3f] group-hover:text-primary transition-colors" size={20} />
