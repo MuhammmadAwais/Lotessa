@@ -19,7 +19,7 @@ const CommunitySection = () => {
           {/* Left - Community Illustration */}
           <div className="relative order-2 lg:order-1">
             <div className="max-w-md mx-auto lg:mx-0">
-              <img src="/lovable-uploads/191d085f-2f8b-4a3c-8303-f75d6046a504.png" alt="Community of diverse people connected with dotted lines representing supportive network" className="w-full h-auto" />
+              <img src="/lovable-uploads/27dc1d46-0829-4924-bc8f-fb7909028f7e.png" alt="Community of diverse people connected with dotted lines representing supportive network" className="w-full h-auto" />
             </div>
           </div>
 
