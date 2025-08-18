@@ -13,7 +13,7 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="space-y-8 lg:space-y-10 flex flex-col justify-center h-full">
             <div className="space-y-6">
-              <h1 className="text-5xl lg:text-6xl leading-[1.1] text-left xl:text-4xl font-bold text-[#001f3f]">Your Health Companion
+              <h1 className="text-5xl lg:text-6xl leading-[1.1] text-left font-bold text-[#001f3f] xl:text-5xl">Your Health Companion
 for GLP1 Medication</h1>
               
               <h2 className="text-2xl text-foreground lg:text-2xl font-medium">
