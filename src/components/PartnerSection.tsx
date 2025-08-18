@@ -1,8 +1,7 @@
 const PartnerSection = () => {
-  return (
-    <section className="py-16 lg:py-24 bg-neutral-100">
+  return <section className="py-16 lg:py-24 bg-slate-50">
       <div className="container mx-auto px-6 max-w-6xl">
-        <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-sm">
+        <div className="rounded-2xl p-8 lg:p-12 shadow-sm bg-[#f5f5f3]">
         {/* Section Header */}
         <div className="text-center mb-12 lg:mb-16 space-y-4">
           <h3 className="text-lg font-medium text-muted-foreground">
@@ -39,8 +38,6 @@ const PartnerSection = () => {
         </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default PartnerSection;

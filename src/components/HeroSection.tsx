@@ -1,9 +1,9 @@
 import { Download, Users } from "lucide-react";
 import phoneMockups from "@/assets/phone-mockups.jpg";
 const HeroSection = () => {
-  return <section className="py-16 lg:py-24 bg-neutral-100">
+  return <section className="py-16 lg:py-24 bg-slate-50">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-sm">
+        <div className="rounded-2xl p-8 lg:p-12 shadow-sm bg-[#f5f5f3]">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
           <div className="space-y-8 lg:space-y-10">

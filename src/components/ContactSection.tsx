@@ -2,12 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-
 const ContactSection = () => {
-  return (
-    <section className="py-16 lg:py-24 bg-neutral-100">
+  return <section className="py-16 lg:py-24 bg-slate-50">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-sm">
+        <div className="rounded-2xl p-8 lg:p-12 shadow-sm bg-[#f5f5f3]">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-8">
@@ -35,23 +33,14 @@ const ContactSection = () => {
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                   Name
                 </label>
-                <Input 
-                  id="name" 
-                  placeholder="Add text" 
-                  className="w-full h-12 text-base"
-                />
+                <Input id="name" placeholder="Add text" className="w-full h-12 text-base" />
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                   Email
                 </label>
-                <Input 
-                  id="email" 
-                  type="email" 
-                  placeholder="Add text" 
-                  className="w-full h-12 text-base"
-                />
+                <Input id="email" type="email" placeholder="Add text" className="w-full h-12 text-base" />
               </div>
 
               <div>
@@ -75,18 +64,10 @@ const ContactSection = () => {
                 <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
                   Message
                 </label>
-                <Textarea 
-                  id="message" 
-                  rows={6} 
-                  placeholder="Add text" 
-                  className="w-full resize-none text-base"
-                />
+                <Textarea id="message" rows={6} placeholder="Add text" className="w-full resize-none text-base" />
               </div>
 
-              <Button 
-                type="submit" 
-                className="w-full community-btn text-center justify-center h-12 text-base font-semibold"
-              >
+              <Button type="submit" className="w-full community-btn text-center justify-center h-12 text-base font-semibold">
                 Send Message
               </Button>
             </form>
@@ -94,8 +75,6 @@ const ContactSection = () => {
         </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactSection;

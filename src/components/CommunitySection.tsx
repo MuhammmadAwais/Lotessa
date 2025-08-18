@@ -1,11 +1,9 @@
 import { Users } from "lucide-react";
 import communityAvatars from "@/assets/community-avatars.jpg";
-
 const CommunitySection = () => {
-  return (
-    <section className="py-16 lg:py-24 bg-neutral-100">
+  return <section className="py-16 lg:py-24 bg-slate-50">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-sm">
+        <div className="rounded-2xl p-8 lg:p-12 shadow-sm bg-[#f5f5f3]">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h3 className="text-lg font-medium text-muted-foreground mb-4">
@@ -17,11 +15,7 @@ const CommunitySection = () => {
           {/* Left - Community Illustration */}
           <div className="relative order-2 lg:order-1">
             <div className="max-w-md mx-auto lg:mx-0">
-              <img
-                src={communityAvatars}
-                alt="Community of diverse people connected with dotted lines representing supportive network"
-                className="w-full h-auto"
-              />
+              <img src={communityAvatars} alt="Community of diverse people connected with dotted lines representing supportive network" className="w-full h-auto" />
             </div>
           </div>
 
@@ -48,8 +42,6 @@ const CommunitySection = () => {
         </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CommunitySection;
