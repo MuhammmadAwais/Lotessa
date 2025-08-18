@@ -14,7 +14,7 @@ const LotessaFooter = () => {
           {/* Left Content */}
           <div className="flex flex-col justify-between px-0 my-[10px]">
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-6">
               <button className="flex items-center justify-center">
                 <img src="/lovable-uploads/e62ee210-e1fc-485b-9080-27c924643742.png" alt="Download the App" className="h-12 w-auto" />
               </button>
@@ -25,7 +25,7 @@ const LotessaFooter = () => {
             </div>
 
             {/* Social Media - Aligned with Terms */}
-            <div className="flex gap-4 mt-8 lg:mt-0 mx-[10px]">
+            <div className="flex gap-6 mt-8 lg:mt-0 mx-[10px]">
               <a href="#" className="hover:scale-110 transition-transform" aria-label="Instagram">
                 <img src="/lovable-uploads/dd5fb84e-0a6c-4d43-a075-987ba10c3bc9.png" alt="Instagram" className="w-12 h-12" />
               </a>
