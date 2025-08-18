@@ -8,21 +8,21 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="space-y-8 lg:space-y-10">
             <div className="space-y-6">
-              <h1 className="text-5xl lg:text-6xl text-primary leading-[1.1] font-semibold xl:text-5xl text-left">Your Health Companion
+              <h1 className="text-5xl lg:text-6xl text-primary leading-[1.1] text-left font-semibold xl:text-4xl">Your Health Companion
 for GLP1 Medication</h1>
               
-              <h2 className="text-2xl lg:text-3xl font-semibold text-foreground">
+              <h2 className="text-2xl text-foreground lg:text-2xl font-medium">
                 Track. Learn. Connect. All in one place.
               </h2>
               
               <div className="space-y-6 text-lg lg:text-xl text-muted-foreground leading-relaxed">
-                <p>
+                <p className="text-slate-600 text-base">
                   Lotessa is launching soon. Be the first to access the all-in-one 
                   app for adults using GLP1 medications like Ozempic, Mounjaro 
                   or Wegovy.
                 </p>
                 
-                <p>
+                <p className="text-slate-600 text-base">
                   Lotessa is a digital health platform designed to support those 
                   using GLP-1 medications such as Ozempic, Mounjaro or 
                   Wegovy. It helps you manage your journey through 
@@ -34,7 +34,7 @@ for GLP1 Medication</h1>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
-              <button className="app-store-btn flex items-center justify-center gap-3 px-6 py-4 text-lg font-semibold">
+              <button className="app-store-btn flex items-center justify-center gap-3 py-4 text-lg font-semibold px-[24px]">
                 <div className="w-6 h-6 bg-white rounded-sm flex items-center justify-center">
                   <Download size={16} className="text-blue-500" />
                 </div>
