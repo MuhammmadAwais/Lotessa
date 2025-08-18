@@ -4,7 +4,7 @@ import CommunitySection from "@/components/CommunitySection";
 import LibrarySection from "@/components/LibrarySection";
 import PartnerSection from "@/components/PartnerSection";
 import ContactSection from "@/components/ContactSection";
-import LotessaFooter from "@/components/LotessaFooter";
+
 
 const Index = () => {
   return (
@@ -17,7 +17,7 @@ const Index = () => {
         <PartnerSection />
         <ContactSection />
       </main>
-      <LotessaFooter />
+      
     </div>
   );
 };
