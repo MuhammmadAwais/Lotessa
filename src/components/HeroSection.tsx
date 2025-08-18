@@ -21,7 +21,7 @@ for GLP1 Medication</h1>
               </h2>
               
               <div className="space-y-6 text-lg lg:text-xl text-muted-foreground leading-relaxed">
-                <p className="text-slate-600 text-[18px] font-sans font-normal">
+                <p className="text-slate-600 text-[18px] font-sans font-normal -mt-2">
                   Lotessa is launching soon. Be the first to access the all-in-one 
                   app for adults using GLP1 medications like Ozempic, Mounjaro 
                   or Wegovy.
