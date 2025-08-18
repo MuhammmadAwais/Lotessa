@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Users } from "lucide-react";
 import WaitlistDialog from "./WaitlistDialog";
 const CommunitySection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -42,7 +41,7 @@ const CommunitySection = () => {
                 className="community-btn"
                 onClick={() => setDialogOpen(true)}
               >
-                <Users size={20} />
+                <img src="/lovable-uploads/ffd79690-db7e-406b-9046-9a7ce5703267.png" alt="Person icon" className="w-5 h-5" />
                 Join the Lotessa Community
               </button>
             </div>

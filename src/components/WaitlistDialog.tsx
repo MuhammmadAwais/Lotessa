@@ -20,6 +20,28 @@ const WaitlistDialog = ({ open, onOpenChange }: WaitlistDialogProps) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate form fields
+    if (!formData.name.trim()) {
+      alert("Please enter your name");
+      return;
+    }
+    
+    if (!formData.email.trim()) {
+      alert("Please enter your email");
+      return;
+    }
+    
+    if (!formData.usingMedication) {
+      alert("Please select if you are currently using a GLP-1 medication");
+      return;
+    }
+    
+    if (!formData.journeyStage) {
+      alert("Please select your stage of journey");
+      return;
+    }
+    
     // Handle form submission here
     console.log("Form submitted:", formData);
     onOpenChange(false);

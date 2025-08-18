@@ -123,9 +123,9 @@
 }
 
 @layer components {
-  /* App Store Button Styling - Exact match to reference */
+  /* App Store Button Styling - TestFlight Blue */
   .app-store-btn {
-    background: #007AFF;
+    background: #082F5E;
     color: white;
     border-radius: 12px;
     padding: 14px 24px;
@@ -139,13 +139,13 @@
   }
 
   .app-store-btn:hover {
-    background: #0056CC;
+    background: #061e3f;
     transform: translateY(-1px);
   }
 
-  /* Community Button - Dark theme like reference */
+  /* Community Button - Dark Navy Blue */
   .community-btn {
-    background: hsl(var(--health-blue));
+    background: #082F5E;
     color: white;
     border-radius: 12px;
     padding: 14px 24px;
@@ -159,7 +159,7 @@
   }
 
   .community-btn:hover {
-    background: hsl(213 84% 15%);
+    background: #061e3f;
     transform: translateY(-1px);
   }
 
