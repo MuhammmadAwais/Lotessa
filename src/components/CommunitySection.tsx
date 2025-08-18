@@ -39,11 +39,10 @@ const CommunitySection = () => {
 
             <div className="pt-4">
               <button 
-                className="community-btn"
+                className="inline-block"
                 onClick={() => setDialogOpen(true)}
               >
-                <img src="/lovable-uploads/ffd79690-db7e-406b-9046-9a7ce5703267.png" alt="Person icon" className="w-8 h-8" />
-                Join the Lotessa Community
+                <img src="/lovable-uploads/92fcb71d-e582-4fbf-8e5f-7b92cb752d2a.png" alt="Join the Lotessa Community" className="h-auto" />
               </button>
             </div>
           </div>
