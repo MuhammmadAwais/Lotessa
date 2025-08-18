@@ -1,6 +1,6 @@
 import { Heart, Download, Users, Instagram, Linkedin, Facebook } from "lucide-react";
 const LotessaFooter = () => {
-  return <footer className="py-8 mt-16" style={{
+  return <footer className="py-12 mt-16" style={{
     background: '#EFEEE7'
   }}>
       <div className="container mx-auto px-6 max-w-7xl">
