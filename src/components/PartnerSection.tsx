@@ -17,14 +17,17 @@ const PartnerSection = () => {
           </p>
         </div>
 
-        {/* Content */}
-        <div className="space-y-6 lg:space-y-8 leading-relaxed">
-          <p className="text-[#001F3F] text-[18px] font-sans font-normal">
+        {/* Main Content */}
+        <div className="text-center mb-8 lg:mb-12">
+          <p className="text-[#001F3F] text-[18px] font-sans font-normal max-w-4xl mx-auto">
             Lotessa offers a powerful platform for partnerships, whether you're looking to sponsor content, 
             support a community group, or explore collaboration opportunities. We welcome opportunities to 
             work with organizations that align with our mission of inclusive, sustainable health support.
           </p>
-          
+        </div>
+
+        {/* Additional Content */}
+        <div className="space-y-6 lg:space-y-8 leading-relaxed">
           <p className="text-[#001F3F] text-[18px] font-sans font-normal">
             Lotessa is supported by the University of Bradford, who invested in the business through a fully 
             sponsored entrepreneurship programmed, reflecting their commitment to supporting health tech innovation.
