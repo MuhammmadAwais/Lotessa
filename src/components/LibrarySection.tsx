@@ -51,23 +51,23 @@ const LibrarySection = () => {
 
         {/* Articles Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {articles.map(article => <div key={article.id} className="article-card group cursor-pointer h-full aspect-[1/1.289] p-6">
-              <div className="flex justify-end mb-6">
+          {articles.map(article => <div key={article.id} className="article-card group cursor-pointer h-full aspect-[1/1.289] p-8 flex flex-col">
+              <div className="flex justify-end mb-8">
                 <div className="w-10 h-10 rounded-full border-2 border-muted-foreground flex items-center justify-center group-hover:border-primary transition-colors">
                   <ArrowRight className="text-muted-foreground group-hover:text-primary transition-colors" size={20} />
                 </div>
               </div>
               
-              <div className="space-y-4 h-full flex flex-col">
-                <h3 className="font-bold text-[18px] text-[#001F3F] leading-tight font-sans line-clamp-2">
+              <div className="space-y-6 flex-1 flex flex-col overflow-hidden">
+                <h3 className="font-bold text-[18px] text-[#001F3F] leading-tight font-sans line-clamp-3 overflow-hidden">
                   {article.title}
                 </h3>
                 
-                {article.subtitle && <h4 className="font-bold text-[16px] text-[#001F3F] leading-tight font-sans line-clamp-1">
+                {article.subtitle && <h4 className="font-bold text-[16px] text-[#001F3F] leading-tight font-sans line-clamp-2 overflow-hidden">
                     {article.subtitle}
                   </h4>}
                 
-                <p className="text-[#001F3F] text-[16px] leading-relaxed font-sans font-normal line-clamp-3 flex-1">
+                <p className="text-[#001F3F] text-[16px] leading-relaxed font-sans font-normal line-clamp-4 overflow-hidden flex-1">
                   {article.description}
                 </p>
               </div>
