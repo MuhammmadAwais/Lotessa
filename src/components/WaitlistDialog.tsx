@@ -4,52 +4,47 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-
 interface WaitlistDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
-
-const WaitlistDialog = ({ open, onOpenChange }: WaitlistDialogProps) => {
+const WaitlistDialog = ({
+  open,
+  onOpenChange
+}: WaitlistDialogProps) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     usingMedication: "",
     journeyStage: ""
   });
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validate form fields
     if (!formData.name.trim()) {
       alert("Please enter your name");
       return;
     }
-    
     if (!formData.email.trim()) {
       alert("Please enter your email");
       return;
     }
-    
     if (!formData.usingMedication) {
       alert("Please select if you are currently using a GLP-1 medication");
       return;
     }
-    
     if (!formData.journeyStage) {
       alert("Please select your stage of journey");
       return;
     }
-    
+
     // Handle form submission here
     console.log("Form submitted:", formData);
     onOpenChange(false);
   };
-
-  return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md bg-white p-8">
+  return <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="sm:max-w-md bg-white p-8 px-[50px] py-[50px]">
         <DialogHeader>
           <DialogTitle className="text-2xl font-semibold text-center text-foreground mb-2">
             Be First in Line
@@ -65,41 +60,30 @@ const WaitlistDialog = ({ open, onOpenChange }: WaitlistDialogProps) => {
             <Label htmlFor="name" className="text-sm font-medium text-foreground">
               Name
             </Label>
-            <Input
-              id="name"
-              type="text"
-              placeholder="Add text"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="bg-muted border-0 h-12"
-              required
-            />
+            <Input id="name" type="text" placeholder="Add text" value={formData.name} onChange={e => setFormData({
+            ...formData,
+            name: e.target.value
+          })} className="bg-muted border-0 h-12" required />
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="email" className="text-sm font-medium text-foreground">
               Email
             </Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="Add text"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="bg-muted border-0 h-12"
-              required
-            />
+            <Input id="email" type="email" placeholder="Add text" value={formData.email} onChange={e => setFormData({
+            ...formData,
+            email: e.target.value
+          })} className="bg-muted border-0 h-12" required />
           </div>
 
           <div className="space-y-3">
             <Label className="text-sm font-medium text-foreground">
               Are you currently using a GLP-1 medication?
             </Label>
-            <RadioGroup
-              value={formData.usingMedication}
-              onValueChange={(value) => setFormData({ ...formData, usingMedication: value })}
-              className="flex gap-6"
-            >
+            <RadioGroup value={formData.usingMedication} onValueChange={value => setFormData({
+            ...formData,
+            usingMedication: value
+          })} className="flex gap-6">
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="yes" id="med-yes" />
                 <Label htmlFor="med-yes" className="text-sm text-foreground">Yes</Label>
@@ -119,11 +103,10 @@ const WaitlistDialog = ({ open, onOpenChange }: WaitlistDialogProps) => {
             <Label className="text-sm font-medium text-foreground">
               Stage of Journey
             </Label>
-            <RadioGroup
-              value={formData.journeyStage}
-              onValueChange={(value) => setFormData({ ...formData, journeyStage: value })}
-              className="flex gap-6"
-            >
+            <RadioGroup value={formData.journeyStage} onValueChange={value => setFormData({
+            ...formData,
+            journeyStage: value
+          })} className="flex gap-6">
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="beginner" id="stage-beginner" />
                 <Label htmlFor="stage-beginner" className="text-sm text-foreground">Beginner</Label>
@@ -139,10 +122,7 @@ const WaitlistDialog = ({ open, onOpenChange }: WaitlistDialogProps) => {
             </RadioGroup>
           </div>
 
-          <Button
-            type="submit"
-            className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold mt-8"
-          >
+          <Button type="submit" className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold mt-8">
             Join the Waiting List
           </Button>
 
@@ -153,8 +133,6 @@ const WaitlistDialog = ({ open, onOpenChange }: WaitlistDialogProps) => {
           </p>
         </form>
       </DialogContent>
-    </Dialog>
-  );
+    </Dialog>;
 };
-
 export default WaitlistDialog;
