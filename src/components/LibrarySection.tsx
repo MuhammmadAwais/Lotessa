@@ -33,7 +33,7 @@ const LibrarySection = () => {
   }];
   return <section className="pt-6 pb-24 lg:pt-8 lg:pb-32" style={{background: '#EFEEE7'}}>
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="rounded-2xl p-8 lg:p-12 gradient-bg">
+        <div className="rounded-2xl p-8 lg:p-12" style={{background: '#EFEEE7'}}>
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <h3 className="text-[30px] font-normal text-[#001F3F] font-sans">
