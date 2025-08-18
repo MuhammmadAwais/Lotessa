@@ -36,13 +36,13 @@ for GLP1 Medication</h1>
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <button className="app-store-btn flex items-center justify-center gap-3 py-4 text-lg font-semibold px-[24px]">
                 <div className="w-6 h-6 bg-white rounded-sm flex items-center justify-center">
-                  <Download size={16} className="text-blue-500" />
+                  <Download size={30} className="text-blue-500" />
                 </div>
                 Download the App
               </button>
               
               <button className="community-btn flex items-center justify-center gap-3 px-6 py-4 text-lg font-semibold">
-                <Users size={10} />
+                <Users size={30} />
                 Join the Lotessa Community
               </button>
             </div>
