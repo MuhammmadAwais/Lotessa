@@ -24,7 +24,7 @@ const LotessaHeader = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-accent transition-colors duration-200 font-medium"
+                className="text-foreground hover:scale-105 transition-transform duration-200 font-medium"
               >
                 {item.name}
               </a>
