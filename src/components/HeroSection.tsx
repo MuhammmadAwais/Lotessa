@@ -11,7 +11,7 @@ const HeroSection = () => {
         <div className="rounded-2xl px-[22px] py-8 lg:px-[38px] lg:py-12 shadow-sm gradient-bg font-sans font-normal text-[18px]">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start lg:min-h-[600px]">
           {/* Left Content */}
-          <div className="space-y-8 lg:space-y-10 flex flex-col justify-center h-full">
+          <div className="space-y-4 lg:space-y-6 flex flex-col justify-center h-full">
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-6xl leading-[1.1] text-left font-bold text-[#001f3f] xl:text-5xl">Your Health Companion
 for GLP1 Medication</h1>
