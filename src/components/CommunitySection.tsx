@@ -30,7 +30,7 @@ const CommunitySection = () => {
               You're Not Alone
             </h2>
             
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-slate-600 text-[18px] font-sans font-normal leading-relaxed">
               Join a supportive, judgement-free community where you can ask questions, 
               share progress, and connect with others who understand your journey. 
               Whether you're just starting or deep into your transformation, there's a 
