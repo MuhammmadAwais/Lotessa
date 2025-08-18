@@ -27,7 +27,7 @@ for GLP1 Medication</h1>
                   or Wegovy.
                 </p>
                 
-                <p className="text-slate-600 text-base">
+                <p className="text-slate-600 text-base -my-2">
                   Lotessa is a digital health platform designed to support those 
                   using GLP-1 medications such as Ozempic, Mounjaro or 
                   Wegovy. It helps you manage your journey through 
