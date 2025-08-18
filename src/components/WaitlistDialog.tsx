@@ -60,7 +60,7 @@ const WaitlistDialog = ({
             <Label htmlFor="name" className="text-sm font-medium text-foreground">
               Name
             </Label>
-            <Input id="name" type="text" placeholder="Add text" value={formData.name} onChange={e => setFormData({
+            <Input id="name" type="text" placeholder="Enter your full name" value={formData.name} onChange={e => setFormData({
             ...formData,
             name: e.target.value
           })} className="bg-muted border-0 h-12" required />
@@ -70,7 +70,7 @@ const WaitlistDialog = ({
             <Label htmlFor="email" className="text-sm font-medium text-foreground">
               Email
             </Label>
-            <Input id="email" type="email" placeholder="Add text" value={formData.email} onChange={e => setFormData({
+            <Input id="email" type="email" placeholder="Enter your email address" value={formData.email} onChange={e => setFormData({
             ...formData,
             email: e.target.value
           })} className="bg-muted border-0 h-12" required />
