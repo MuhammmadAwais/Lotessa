@@ -19,7 +19,7 @@ const CommunitySection = () => {
           {/* Left - Community Illustration */}
           <div className="relative order-2 lg:order-1">
             <div className="max-w-md mx-auto lg:mx-0 relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#B2AC88] to-[#B2AC88]/70 rounded-2xl -z-10"></div>
+              <div className="absolute inset-0 bg-gradient-radial from-[#B2AC88] via-[#B2AC88]/90 to-[#B2AC88]/40 rounded-2xl -z-10 scale-110"></div>
               <img src="/lovable-uploads/27dc1d46-0829-4924-bc8f-fb7909028f7e.png" alt="Community of diverse people connected with dotted lines representing supportive network" className="w-full h-auto relative z-10" />
             </div>
           </div>
