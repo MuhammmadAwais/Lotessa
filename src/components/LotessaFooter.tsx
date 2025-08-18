@@ -1,8 +1,6 @@
-import { useState } from "react";
 import { Heart, Download, Users, Instagram, Linkedin, Facebook } from "lucide-react";
 
 const LotessaFooter = () => {
-  const [dialogOpen, setDialogOpen] = useState(false);
   return (
     <footer className="bg-secondary py-16">
       <div className="container mx-auto px-6 max-w-7xl">
@@ -24,7 +22,7 @@ const LotessaFooter = () => {
                 Download the App
               </button>
               
-              <button className="community-btn" onClick={() => setDialogOpen(true)}>
+              <button className="community-btn">
                 <Users size={20} />
                 Join the Lotessa Community
               </button>
