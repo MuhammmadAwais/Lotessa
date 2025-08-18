@@ -1,7 +1,13 @@
+import { useState } from "react";
 import { Download, Users } from "lucide-react";
 import phoneMockups from "@/assets/phone-mockups.jpg";
+import WaitlistDialog from "./WaitlistDialog";
 const HeroSection = () => {
-  return <section className="py-16 lg:py-24 bg-slate-50">
+  const [dialogOpen, setDialogOpen] = useState(false);
+
+  return (
+    <>
+      <section className="py-16 lg:py-24 bg-slate-50">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="rounded-2xl p-8 lg:p-12 shadow-sm bg-[#f5f5f3]">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -41,7 +47,10 @@ for GLP1 Medication</h1>
                 Download the App
               </button>
               
-              <button className="community-btn flex items-center justify-center gap-3 px-6 py-4 text-lg font-semibold">
+              <button 
+                className="community-btn flex items-center justify-center gap-3 px-6 py-4 text-lg font-semibold"
+                onClick={() => setDialogOpen(true)}
+              >
                 <Users size={20} />
                 Join the Lotessa Community
               </button>
@@ -57,6 +66,10 @@ for GLP1 Medication</h1>
         </div>
         </div>
       </div>
-    </section>;
+    </section>
+    
+    <WaitlistDialog open={dialogOpen} onOpenChange={setDialogOpen} />
+    </>
+  );
 };
 export default HeroSection;

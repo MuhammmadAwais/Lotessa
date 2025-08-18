@@ -1,6 +1,12 @@
+import { useState } from "react";
 import { Users } from "lucide-react";
+import WaitlistDialog from "./WaitlistDialog";
 const CommunitySection = () => {
-  return <section className="py-16 lg:py-24 bg-slate-50">
+  const [dialogOpen, setDialogOpen] = useState(false);
+
+  return (
+    <>
+      <section className="py-16 lg:py-24 bg-slate-50">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="rounded-2xl p-8 lg:p-12 shadow-sm bg-[#f5f5f3]">
         {/* Section Header */}
@@ -32,7 +38,10 @@ const CommunitySection = () => {
             </p>
 
             <div className="pt-4">
-              <button className="community-btn">
+              <button 
+                className="community-btn"
+                onClick={() => setDialogOpen(true)}
+              >
                 <Users size={20} />
                 Join the Lotessa Community
               </button>
@@ -41,6 +50,10 @@ const CommunitySection = () => {
         </div>
         </div>
       </div>
-    </section>;
+    </section>
+    
+    <WaitlistDialog open={dialogOpen} onOpenChange={setDialogOpen} />
+    </>
+  );
 };
 export default CommunitySection;
