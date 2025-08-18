@@ -4,14 +4,15 @@ const LotessaFooter = () => {
   return (
     <footer className="py-16 mt-16" style={{ background: '#EFEEE7' }}>
       <div className="container mx-auto px-6 max-w-7xl">
+        {/* Logo - Separate Row */}
+        <div className="flex items-center mb-12">
+          <img src="/lovable-uploads/69f7fc17-c67d-4671-ade7-a76320c0adb8.png" alt="Lotessa logo" className="h-10" />
+        </div>
+
+        {/* Main Content - 2 Columns */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left Content */}
           <div className="space-y-8">
-            {/* Logo */}
-            <div className="flex items-center">
-              <img src="/lovable-uploads/69f7fc17-c67d-4671-ade7-a76320c0adb8.png" alt="Lotessa logo" className="h-10" />
-            </div>
-
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="flex items-center justify-center">
