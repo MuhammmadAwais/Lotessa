@@ -18,8 +18,8 @@ const PartnerSection = () => {
         </div>
 
         {/* Main Content */}
-        <div className="text-center mb-8 lg:mb-12">
-          <p className="text-[#001F3F] text-[18px] font-sans font-normal max-w-4xl mx-auto">
+        <div className="mb-8 lg:mb-12">
+          <p className="text-[#001F3F] text-[18px] font-sans font-normal max-w-4xl">
             Lotessa offers a powerful platform for partnerships, whether you're looking to sponsor content, 
             support a community group, or explore collaboration opportunities. We welcome opportunities to 
             work with organizations that align with our mission of inclusive, sustainable health support.
