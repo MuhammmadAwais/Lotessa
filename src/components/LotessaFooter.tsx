@@ -59,7 +59,8 @@ const LotessaFooter = () => {
             <div className="flex flex-wrap gap-6 text-sm">
               <a 
                 href="#" 
-                className="text-foreground hover:text-primary transition-colors underline font-medium"
+                className="hover:text-primary transition-colors underline font-medium text-base"
+                style={{ color: '#001f3f' }}
               >
                 Terms & Conditions
               </a>
