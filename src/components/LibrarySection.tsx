@@ -51,7 +51,7 @@ const LibrarySection = () => {
 
         {/* Articles Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {articles.map(article => <div key={article.id} className="article-card group cursor-pointer h-full">
+          {articles.map(article => <div key={article.id} className="article-card group cursor-pointer h-full aspect-[1/1.289]">
               <div className="flex justify-end mb-6">
                 <div className="w-10 h-10 rounded-full border-2 border-muted-foreground flex items-center justify-center group-hover:border-primary transition-colors">
                   <ArrowRight className="text-muted-foreground group-hover:text-primary transition-colors" size={20} />
