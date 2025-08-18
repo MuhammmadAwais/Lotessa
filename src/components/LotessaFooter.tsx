@@ -2,7 +2,7 @@ import { Heart, Download, Users, Instagram, Linkedin, Facebook } from "lucide-re
 
 const LotessaFooter = () => {
   return (
-    <footer className="bg-secondary py-16">
+    <footer className="py-16" style={{ background: '#EFEEE7' }}>
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left Content */}
