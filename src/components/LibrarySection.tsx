@@ -33,7 +33,7 @@ const LibrarySection = () => {
   }];
   return <section className="pt-6 pb-24 lg:pt-8 lg:pb-32" style={{background: '#EFEEE7'}}>
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="rounded-2xl p-8 lg:p-12 bg-white">
+        <div className="rounded-2xl p-8 lg:p-12" style={{background: '#EFEEE7'}}>
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <h3 className="text-[30px] font-normal text-[#001F3F] font-sans">
@@ -51,7 +51,7 @@ const LibrarySection = () => {
 
         {/* Articles Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {articles.map(article => <div key={article.id} className="article-card gradient-bg group cursor-pointer h-full aspect-[1/1.289] px-6 pt-6 pb-2 flex flex-col">
+          {articles.map(article => <div key={article.id} className="article-card group cursor-pointer h-full aspect-[1/1.289] px-6 pt-6 pb-2 flex flex-col">
               <div className="flex justify-end mb-4">
                 <div className="w-10 h-10 rounded-full border-2 border-muted-foreground flex items-center justify-center group-hover:border-primary transition-colors">
                   <ArrowRight className="text-muted-foreground group-hover:text-primary transition-colors" size={20} />
