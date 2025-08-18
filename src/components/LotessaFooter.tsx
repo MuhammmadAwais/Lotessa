@@ -51,7 +51,7 @@ const LotessaFooter = () => {
 
           {/* Right Content - Legal Text */}
           <div className="space-y-6">
-            <p className="leading-relaxed text-base" style={{ color: '#001f3f' }}>
+            <p className="leading-relaxed text-lg" style={{ color: '#001f3f' }}>
               Lotessa is <span className="font-semibold underline">not a medical device</span> and does not provide medical advice. 
               Always consult a qualified healthcare professional regarding your health condition and treatment.
             </p>
