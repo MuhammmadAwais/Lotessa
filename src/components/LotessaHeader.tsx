@@ -10,7 +10,7 @@ const LotessaHeader = () => {
   ];
 
   return (
-    <header className="w-full gradient-bg py-4">
+    <header className="w-full bg-white py-4">
       <nav className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
