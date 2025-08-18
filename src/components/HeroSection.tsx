@@ -5,9 +5,7 @@ import WaitlistDialog from "./WaitlistDialog";
 import TestFlightIcon from "./ui/testflight-icon";
 const HeroSection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
-
-  return (
-    <>
+  return <>
       <section className="py-16 lg:py-24 gradient-bg">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="rounded-2xl p-8 lg:p-12 shadow-sm gradient-bg">
@@ -15,7 +13,7 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="space-y-8 lg:space-y-10 flex flex-col justify-center h-full">
             <div className="space-y-6">
-              <h1 className="text-5xl lg:text-6xl text-primary leading-[1.1] text-left font-semibold xl:text-4xl">Your Health Companion
+              <h1 className="text-5xl lg:text-6xl leading-[1.1] text-left xl:text-4xl font-bold text-[#001f3f]">Your Health Companion
 for GLP1 Medication</h1>
               
               <h2 className="text-2xl text-foreground lg:text-2xl font-medium">
@@ -48,10 +46,7 @@ for GLP1 Medication</h1>
                 Download the App
               </button>
               
-              <button 
-                className="community-btn flex items-center justify-center gap-3 px-5 py-3 text-lg font-semibold"
-                onClick={() => setDialogOpen(true)}
-              >
+              <button className="community-btn flex items-center justify-center gap-3 px-5 py-3 text-lg font-semibold" onClick={() => setDialogOpen(true)}>
                 <img src="/lovable-uploads/ffd79690-db7e-406b-9046-9a7ce5703267.png" alt="Person icon" className="w-8 h-8" />
                 Join the Lotessa Community
               </button>
@@ -70,7 +65,6 @@ for GLP1 Medication</h1>
     </section>
     
     <WaitlistDialog open={dialogOpen} onOpenChange={setDialogOpen} />
-    </>
-  );
+    </>;
 };
 export default HeroSection;
