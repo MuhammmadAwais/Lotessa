@@ -75,5 +75,5 @@ export const useAnalytics = () => {
     }
   };
 
-  return { trackInteraction, analyticsData };
+  return { trackInteraction, analyticsData, getBrowserId };
 };

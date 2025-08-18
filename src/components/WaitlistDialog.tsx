@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { supabase } from "@/integrations/supabase/client";
+import { useAnalytics } from "@/hooks/useAnalytics";
+import { toast } from "sonner";
 interface WaitlistDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -18,30 +21,68 @@ const WaitlistDialog = ({
     usingMedication: "",
     journeyStage: ""
   });
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { getBrowserId } = useAnalytics();
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    // Validate form fields
-    if (!formData.name.trim()) {
-      alert("Please enter your name");
-      return;
-    }
-    if (!formData.email.trim()) {
-      alert("Please enter your email");
-      return;
-    }
-    if (!formData.usingMedication) {
-      alert("Please select if you are currently using a GLP-1 medication");
-      return;
-    }
-    if (!formData.journeyStage) {
-      alert("Please select your stage of journey");
-      return;
-    }
+    try {
+      // Validate form fields
+      if (!formData.name.trim()) {
+        toast.error("Please enter your name");
+        return;
+      }
+      if (!formData.email.trim()) {
+        toast.error("Please enter your email");
+        return;
+      }
+      if (!formData.email.includes('@')) {
+        toast.error("Please enter a valid email address");
+        return;
+      }
+      if (!formData.usingMedication) {
+        toast.error("Please select if you are currently using a GLP-1 medication");
+        return;
+      }
+      if (!formData.journeyStage) {
+        toast.error("Please select your stage of journey");
+        return;
+      }
 
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    onOpenChange(false);
+      // Save to Supabase
+      const { error } = await supabase
+        .from('waitlist')
+        .insert({
+          name: formData.name.trim(),
+          email: formData.email.trim().toLowerCase(),
+          using_medication: formData.usingMedication,
+          journey_stage: formData.journeyStage,
+          browser_id: getBrowserId()
+        });
+
+      if (error) {
+        console.error('Error saving to waitlist:', error);
+        toast.error("Something went wrong. Please try again.");
+        return;
+      }
+
+      toast.success("Thank you! You've been added to our waitlist.");
+      onOpenChange(false);
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        usingMedication: "",
+        journeyStage: ""
+      });
+    } catch (error) {
+      console.error('Unexpected error:', error);
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   return <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-xl bg-white p-8 px-[50px] py-[50px]">
@@ -122,8 +163,8 @@ const WaitlistDialog = ({
             </RadioGroup>
           </div>
 
-          <Button type="submit" className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold mt-8">
-            Join the Waiting List
+          <Button type="submit" disabled={isSubmitting} className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold mt-8">
+            {isSubmitting ? "Joining..." : "Join the Waiting List"}
           </Button>
 
           <p className="text-xs text-center mt-4 leading-relaxed" style={{ color: '#001f3f' }}>
