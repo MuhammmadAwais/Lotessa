@@ -31,9 +31,9 @@ const LibrarySection = () => {
     description: "So, you've done your homework, talked to your doctor, and maybe even decided to start (or seriously consider) a GLP-1 medication. Then the opinions start arriving. A colleague tells you it's \"basically cheating.\" A family member warns you that you'll \"never be able to enjoy your favourite foods again.\" And somewhere online, someone claims they \"lost 20 pounds in a month without changing a thing.\" It can be hard to know what's real and what's just a story passed along without facts. Let's sort through some of the most common myths — and the truths you actually need to hear.",
     id: 6
   }];
-  return <section className="py-16 lg:py-24 bg-slate-50">
+  return <section className="py-16 lg:py-24 gradient-bg">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="rounded-2xl p-8 lg:p-12 shadow-sm bg-[#f5f5f3]">
+        <div className="rounded-2xl p-8 lg:p-12 shadow-sm gradient-bg">
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <h3 className="text-lg font-medium text-muted-foreground">
