@@ -16,7 +16,7 @@ const HeroSection = () => {
               <h1 className="text-5xl lg:text-6xl leading-[1.1] text-left font-bold text-[#001f3f] xl:text-5xl">Your Health Companion
 for GLP1 Medication</h1>
               
-              <h2 className="text-2xl text-foreground lg:text-2xl font-medium">
+              <h2 className="text-[28px] text-foreground font-bold font-sans">
                 Track. Learn. Connect. All in one place.
               </h2>
               
