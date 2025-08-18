@@ -1,5 +1,4 @@
 import { Users } from "lucide-react";
-import communityAvatars from "@/assets/community-avatars.jpg";
 const CommunitySection = () => {
   return <section className="py-16 lg:py-24 bg-slate-50">
       <div className="container mx-auto px-6 max-w-7xl">
@@ -15,7 +14,7 @@ const CommunitySection = () => {
           {/* Left - Community Illustration */}
           <div className="relative order-2 lg:order-1">
             <div className="max-w-md mx-auto lg:mx-0">
-              <img src={communityAvatars} alt="Community of diverse people connected with dotted lines representing supportive network" className="w-full h-auto" />
+              <img src="/lovable-uploads/191d085f-2f8b-4a3c-8303-f75d6046a504.png" alt="Community of diverse people connected with dotted lines representing supportive network" className="w-full h-auto" />
             </div>
           </div>
 
