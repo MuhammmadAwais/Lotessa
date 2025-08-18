@@ -6,9 +6,9 @@ import TestFlightIcon from "./ui/testflight-icon";
 const HeroSection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   return <>
-      <section className="py-5 lg:py-7 gradient-bg">
-      <div className="container mx-auto px-5 max-w-7xl">
-        <div className="rounded-2xl px-[24px] py-8 lg:px-[36px] lg:py-12 gradient-bg font-sans font-normal text-[18px]">
+      <section className="py-3 lg:py-5 gradient-bg">
+      <div className="container mx-auto px-3 max-w-7xl">
+        <div className="rounded-2xl px-[16px] py-6 lg:px-[24px] lg:py-8 gradient-bg font-sans font-normal text-[18px]">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center lg:min-h-[650px]">
            {/* Left Content */}
            <div className="flex flex-col justify-center min-h-[650px]">
@@ -51,9 +51,9 @@ for GLP1 Medication</h1>
 
            {/* Right Content - Phone Mockups */}
            <div className="flex justify-center lg:justify-end items-center min-h-[650px]">
-             <div className="relative max-w-xl w-full flex items-center justify-center">
-               <div className="absolute inset-0 bg-gradient-radial from-white via-white/90 to-white/40 rounded-2xl -z-10 scale-110"></div>
-               <img src="/lovable-uploads/ede3f8df-6167-46ea-8bcd-249fdd2c788a.png" alt="Lotessa app interface showing weight tracking charts, medication dosage tracking, and progress visualization on two mobile phones" className="w-full h-auto max-h-full object-contain relative z-10" />
+              <div className="relative max-w-2xl w-full flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-radial from-white via-white/90 to-white/40 rounded-2xl -z-10 scale-110"></div>
+                <img src="/lovable-uploads/ede3f8df-6167-46ea-8bcd-249fdd2c788a.png" alt="Lotessa app interface showing weight tracking charts, medication dosage tracking, and progress visualization on two mobile phones" className="w-full h-auto max-h-full object-contain relative z-10 scale-105" />
              </div>
            </div>
         </div>
