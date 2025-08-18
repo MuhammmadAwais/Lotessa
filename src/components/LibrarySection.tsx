@@ -67,7 +67,7 @@ const LibrarySection = () => {
                     {article.subtitle}
                   </h4>}
                 
-                <p className="text-[#001F3F] text-[16px] leading-relaxed font-sans font-bold">
+                <p className="text-[#001F3F] text-[16px] leading-relaxed font-sans font-normal">
                   {article.description}
                 </p>
               </div>
