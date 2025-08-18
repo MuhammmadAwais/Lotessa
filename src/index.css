@@ -128,7 +128,7 @@
     background: #082F5E;
     color: white;
     border-radius: 12px;
-    padding: 14px 24px;
+    padding: 12px 20px;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
@@ -148,7 +148,7 @@
     background: #082F5E;
     color: white;
     border-radius: 12px;
-    padding: 14px 24px;
+    padding: 12px 20px;
     font-weight: 600;
     transition: all 0.2s;
     border: none;
