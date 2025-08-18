@@ -49,7 +49,7 @@ const WaitlistDialog = ({
           <DialogTitle className="text-3xl font-bold text-center mb-2" style={{ color: '#001f3f' }}>
             Be First in Line
           </DialogTitle>
-          <p className="text-center text-muted-foreground text-sm leading-relaxed">
+          <p className="text-center text-2xl font-medium leading-relaxed" style={{ color: '#001f3f' }}>
             Leave your details and we'll notify you the moment<br />
             Lotessa is ready to download.
           </p>
