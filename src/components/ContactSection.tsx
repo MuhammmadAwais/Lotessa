@@ -27,7 +27,7 @@ const ContactSection = () => {
           </div>
 
           {/* Right - Contact Form */}
-          <div className="rounded-lg p-6 lg:p-8 shadow-sm">
+          <div className="rounded-lg p-6 lg:p-8">
             <form className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
