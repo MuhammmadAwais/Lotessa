@@ -8,26 +8,26 @@ const HeroSection = () => {
   return <>
       <section className="py-6 lg:py-8 gradient-bg">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="rounded-2xl px-[32px] py-12 lg:px-[48px] lg:py-16 gradient-bg font-sans font-normal text-[20px]">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start lg:min-h-[700px]">
+        <div className="rounded-2xl px-[28px] py-10 lg:px-[42px] lg:py-14 gradient-bg font-sans font-normal text-[18px]">
+        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start lg:min-h-[650px]">
            {/* Left Content */}
-           <div className="space-y-6 lg:space-y-8 flex flex-col justify-center h-full">
-             <div className="space-y-8">
-               <h1 className="text-6xl lg:text-7xl leading-[1.1] text-left font-bold text-[#001f3f] xl:text-6xl">Your Health Companion
+           <div className="space-y-5 lg:space-y-7 flex flex-col justify-center h-full">
+             <div className="space-y-7">
+               <h1 className="text-5xl lg:text-6xl leading-[1.1] text-left font-bold text-[#001f3f] xl:text-5xl">Your Health Companion
 for GLP1 Medication</h1>
                
-               <h2 className="text-[32px] text-foreground font-bold font-sans">
+               <h2 className="text-[30px] text-foreground font-bold font-sans">
                  Track. Learn. Connect. All in one place.
                </h2>
                
-               <div className="space-y-8 text-xl lg:text-2xl text-muted-foreground leading-relaxed">
-                 <p className="text-slate-600 text-[20px] font-sans font-normal -mt-2">
+               <div className="space-y-7 text-lg lg:text-xl text-muted-foreground leading-relaxed">
+                 <p className="text-slate-600 text-[19px] font-sans font-normal -mt-2">
                    Lotessa is launching soon. Be the first to access the all-in-one 
                    app for adults using GLP1 medications like Ozempic, Mounjaro 
                    or Wegovy.
                  </p>
                  
-                 <p className="text-slate-600 text-lg -my-2">
+                 <p className="text-slate-600 text-[17px] -my-2">
                    Lotessa is a digital health platform designed to support those 
                    using GLP-1 medications such as Ozempic, Mounjaro or 
                    Wegovy. It helps you manage your journey through 
@@ -38,13 +38,13 @@ for GLP1 Medication</h1>
              </div>
 
              {/* CTA Buttons */}
-             <div className="flex flex-col sm:flex-row gap-6 pt-4">
+             <div className="flex flex-col sm:flex-row gap-5 pt-4">
                <button className="flex items-center justify-center">
-                 <img src="/lovable-uploads/e62ee210-e1fc-485b-9080-27c924643742.png" alt="Download the App" className="h-14 w-auto" />
+                 <img src="/lovable-uploads/e62ee210-e1fc-485b-9080-27c924643742.png" alt="Download the App" className="h-13 w-auto" />
                </button>
                
                <button className="flex items-center justify-center" onClick={() => setDialogOpen(true)}>
-                 <img src="/lovable-uploads/a97005af-398c-4b31-af1a-d153e144ef44.png" alt="Join the Lotessa Community" className="h-14 w-auto" />
+                 <img src="/lovable-uploads/a97005af-398c-4b31-af1a-d153e144ef44.png" alt="Join the Lotessa Community" className="h-13 w-auto" />
                </button>
              </div>
            </div>
