@@ -1,6 +1,7 @@
 import { Heart, Download, Users, Instagram, Linkedin, Facebook } from "lucide-react";
 
 const LotessaFooter = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
   return (
     <footer className="bg-secondary py-16">
       <div className="container mx-auto px-6 max-w-7xl">
