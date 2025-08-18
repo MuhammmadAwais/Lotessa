@@ -3,8 +3,8 @@ import { Heart, Download, Users, Instagram, Linkedin, Facebook } from "lucide-re
 const LotessaFooter = () => {
   return (
     <footer className="bg-secondary py-16">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left Content */}
           <div className="space-y-8">
             {/* Logo */}
@@ -56,21 +56,21 @@ const LotessaFooter = () => {
 
           {/* Right Content - Legal Text */}
           <div className="space-y-6">
-            <p className="text-muted-foreground leading-relaxed">
-              Lotessa is <strong>not a medical device</strong> and does not provide medical advice. 
+            <p className="text-muted-foreground leading-relaxed text-base">
+              Lotessa is <span className="font-semibold underline">not a medical device</span> and does not provide medical advice. 
               Always consult a qualified healthcare professional regarding your health condition and treatment.
             </p>
             
             <div className="flex flex-wrap gap-6 text-sm">
               <a 
                 href="#" 
-                className="text-foreground hover:text-primary transition-colors underline"
+                className="text-foreground hover:text-primary transition-colors underline font-medium"
               >
                 Terms & Conditions
               </a>
               <a 
                 href="#" 
-                className="text-foreground hover:text-primary transition-colors underline"
+                className="text-foreground hover:text-primary transition-colors underline font-medium"
               >
                 Privacy Policy
               </a>

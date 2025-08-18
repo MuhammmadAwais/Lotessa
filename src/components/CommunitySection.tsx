@@ -3,8 +3,8 @@ import communityAvatars from "@/assets/community-avatars.jpg";
 
 const CommunitySection = () => {
   return (
-    <section className="py-16 lg:py-24 bg-secondary">
-      <div className="container mx-auto px-6">
+    <section className="py-16 lg:py-24 bg-white">
+      <div className="container mx-auto px-6 max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h3 className="text-lg font-medium text-muted-foreground mb-4">
@@ -12,19 +12,21 @@ const CommunitySection = () => {
           </h3>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left - Community Illustration */}
-          <div className="relative">
-            <img
-              src={communityAvatars}
-              alt="Community of people connected together"
-              className="w-full h-auto max-w-md mx-auto"
-            />
+          <div className="relative order-2 lg:order-1">
+            <div className="max-w-md mx-auto lg:mx-0">
+              <img
+                src={communityAvatars}
+                alt="Community of diverse people connected with dotted lines representing supportive network"
+                className="w-full h-auto"
+              />
+            </div>
           </div>
 
           {/* Right - Content */}
-          <div className="space-y-8">
-            <h2 className="text-4xl lg:text-5xl font-bold text-primary">
+          <div className="space-y-6 lg:space-y-8 order-1 lg:order-2">
+            <h2 className="text-4xl lg:text-5xl font-bold text-primary leading-tight">
               You're Not Alone
             </h2>
             
@@ -35,10 +37,12 @@ const CommunitySection = () => {
               space for you here.
             </p>
 
-            <button className="community-btn">
-              <Users size={20} />
-              Join the Lotessa Community
-            </button>
+            <div className="pt-4">
+              <button className="community-btn">
+                <Users size={20} />
+                Join the Lotessa Community
+              </button>
+            </div>
           </div>
         </div>
       </div>

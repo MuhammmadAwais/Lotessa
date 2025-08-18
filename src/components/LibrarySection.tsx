@@ -41,46 +41,48 @@ const LibrarySection = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-white">
-      <div className="container mx-auto px-6">
+    <section className="py-16 lg:py-24 bg-secondary">
+      <div className="container mx-auto px-6 max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <h3 className="text-lg font-medium text-muted-foreground">
             Lotessa Library
           </h3>
           
-          <h2 className="text-4xl lg:text-5xl font-bold text-primary">
+          <h2 className="text-4xl lg:text-5xl font-bold text-primary leading-tight">
             Discover Expert Content, Anytime
           </h2>
           
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Bite-sized insights, real-world tips, and trustworthy health information
           </p>
         </div>
 
         {/* Articles Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {articles.map((article) => (
-            <div key={article.id} className="article-card group cursor-pointer">
-              <div className="flex justify-end mb-4">
-                <ArrowRight 
-                  className="text-muted-foreground group-hover:text-primary transition-colors" 
-                  size={24} 
-                />
+            <div key={article.id} className="article-card group cursor-pointer h-full">
+              <div className="flex justify-end mb-6">
+                <div className="w-10 h-10 rounded-full border-2 border-muted-foreground flex items-center justify-center group-hover:border-primary transition-colors">
+                  <ArrowRight 
+                    className="text-muted-foreground group-hover:text-primary transition-colors" 
+                    size={20} 
+                  />
+                </div>
               </div>
               
               <div className="space-y-4">
-                <h3 className="font-bold text-xl text-primary leading-tight">
+                <h3 className="font-bold text-xl text-primary leading-tight min-h-[3rem]">
                   {article.title}
                 </h3>
                 
                 {article.subtitle && (
-                  <h4 className="font-semibold text-foreground">
+                  <h4 className="font-semibold text-foreground text-base leading-tight">
                     {article.subtitle}
                   </h4>
                 )}
                 
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground text-base leading-relaxed">
                   {article.description}
                 </p>
               </div>

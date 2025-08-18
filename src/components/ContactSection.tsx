@@ -6,7 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 const ContactSection = () => {
   return (
     <section className="py-16 lg:py-24 bg-secondary">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-8">
@@ -14,10 +14,10 @@ const ContactSection = () => {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left Content */}
-          <div className="space-y-8">
-            <h3 className="text-3xl lg:text-4xl font-bold text-primary">
+          <div className="space-y-6 lg:space-y-8">
+            <h3 className="text-3xl lg:text-4xl font-bold text-primary leading-tight">
               We'd Love to Hear from You
             </h3>
             
@@ -28,7 +28,7 @@ const ContactSection = () => {
           </div>
 
           {/* Right - Contact Form */}
-          <div className="bg-white rounded-lg p-8 shadow-sm">
+          <div className="bg-white rounded-lg p-6 lg:p-8 shadow-sm">
             <form className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -37,7 +37,7 @@ const ContactSection = () => {
                 <Input 
                   id="name" 
                   placeholder="Add text" 
-                  className="w-full"
+                  className="w-full h-12 text-base"
                 />
               </div>
 
@@ -49,7 +49,7 @@ const ContactSection = () => {
                   id="email" 
                   type="email" 
                   placeholder="Add text" 
-                  className="w-full"
+                  className="w-full h-12 text-base"
                 />
               </div>
 
@@ -58,7 +58,7 @@ const ContactSection = () => {
                   Topic
                 </label>
                 <Select>
-                  <SelectTrigger className="w-full">
+                  <SelectTrigger className="w-full h-12 text-base">
                     <SelectValue placeholder="App Support" />
                   </SelectTrigger>
                   <SelectContent>
@@ -78,13 +78,13 @@ const ContactSection = () => {
                   id="message" 
                   rows={6} 
                   placeholder="Add text" 
-                  className="w-full resize-none"
+                  className="w-full resize-none text-base"
                 />
               </div>
 
               <Button 
                 type="submit" 
-                className="w-full community-btn text-center justify-center"
+                className="w-full community-btn text-center justify-center h-12 text-base font-semibold"
               >
                 Send Message
               </Button>
