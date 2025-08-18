@@ -59,15 +59,15 @@ const LibrarySection = () => {
               </div>
               
               <div className="space-y-4">
-                <h3 className="font-bold text-xl text-primary leading-tight min-h-[3rem]">
+                <h3 className="font-bold text-[18px] text-[#001F3F] leading-tight min-h-[3rem] font-sans">
                   {article.title}
                 </h3>
                 
-                {article.subtitle && <h4 className="font-semibold text-foreground text-base leading-tight">
+                {article.subtitle && <h4 className="font-bold text-[16px] text-[#001F3F] leading-tight font-sans">
                     {article.subtitle}
                   </h4>}
                 
-                <p className="text-muted-foreground text-base leading-relaxed">
+                <p className="text-[#001F3F] text-[16px] leading-relaxed font-sans font-bold">
                   {article.description}
                 </p>
               </div>
