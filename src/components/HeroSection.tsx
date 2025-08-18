@@ -1,8 +1,9 @@
 import { Download, Users } from "lucide-react";
 import phoneMockups from "@/assets/phone-mockups.jpg";
 const HeroSection = () => {
-  return <section className="py-16 lg:py-24 bg-[f2f1ec] bg-neutral-100">
+  return <section className="py-16 lg:py-24 bg-neutral-100">
       <div className="container mx-auto px-6 max-w-7xl">
+        <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-sm">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
           <div className="space-y-8 lg:space-y-10">
@@ -54,6 +55,7 @@ const HeroSection = () => {
               <img src="/lovable-uploads/abc220d9-c1c4-4d28-bfa0-ee7571fc840e.png" alt="Lotessa app interface showing weight tracking charts, medication dosage tracking, and progress visualization on two mobile phones" className="w-full h-auto" />
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>;

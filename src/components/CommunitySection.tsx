@@ -3,8 +3,9 @@ import communityAvatars from "@/assets/community-avatars.jpg";
 
 const CommunitySection = () => {
   return (
-    <section className="py-16 lg:py-24 bg-white">
+    <section className="py-16 lg:py-24 bg-neutral-100">
       <div className="container mx-auto px-6 max-w-7xl">
+        <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-sm">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h3 className="text-lg font-medium text-muted-foreground mb-4">
@@ -44,6 +45,7 @@ const CommunitySection = () => {
               </button>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>

@@ -5,8 +5,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 const ContactSection = () => {
   return (
-    <section className="py-16 lg:py-24 bg-secondary">
+    <section className="py-16 lg:py-24 bg-neutral-100">
       <div className="container mx-auto px-6 max-w-7xl">
+        <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-sm">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-8">
@@ -90,6 +91,7 @@ const ContactSection = () => {
               </Button>
             </form>
           </div>
+        </div>
         </div>
       </div>
     </section>
