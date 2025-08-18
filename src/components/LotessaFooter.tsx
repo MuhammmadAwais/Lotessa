@@ -22,7 +22,7 @@ const LotessaFooter = () => {
                 Download the App
               </button>
               
-              <button className="community-btn">
+              <button className="community-btn", onClick={() => setDialogOpen(true)}>
                 <Users size={20} />
                 Join the Lotessa Community
               </button>
