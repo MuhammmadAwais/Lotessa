@@ -41,7 +41,7 @@ const CommunitySection = () => {
                 className="community-btn"
                 onClick={() => setDialogOpen(true)}
               >
-                <img src="/lovable-uploads/ffd79690-db7e-406b-9046-9a7ce5703267.png" alt="Person icon" className="w-5 h-5" />
+                <img src="/lovable-uploads/ffd79690-db7e-406b-9046-9a7ce5703267.png" alt="Person icon" className="w-6 h-6" />
                 Join the Lotessa Community
               </button>
             </div>
