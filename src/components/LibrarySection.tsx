@@ -40,7 +40,7 @@ const LibrarySection = () => {
             Lotessa Library
           </h3>
           
-          <h2 className="text-4xl lg:text-5xl font-bold text-primary leading-tight">
+          <h2 className="text-[52px] font-bold text-[#001F3F] leading-tight font-sans">
             Discover Expert Content, Anytime
           </h2>
           
