@@ -55,11 +55,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				creative: {
-					orange: 'hsl(var(--creative-orange))',
-					terracotta: 'hsl(var(--creative-terracotta))',
-					warm: 'hsl(var(--creative-warm))',
-					earth: 'hsl(var(--creative-earth))'
+				health: {
+					blue: 'hsl(var(--health-blue))',
+					teal: 'hsl(var(--health-teal))',
+					light: 'hsl(var(--health-light))',
+					gray: 'hsl(var(--health-gray))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

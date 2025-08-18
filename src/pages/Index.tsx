@@ -1,21 +1,23 @@
-import Header from "@/components/Header";
+import LotessaHeader from "@/components/LotessaHeader";
 import HeroSection from "@/components/HeroSection";
-import WorkSection from "@/components/WorkSection";
-import AboutSection from "@/components/AboutSection";
+import CommunitySection from "@/components/CommunitySection";
+import LibrarySection from "@/components/LibrarySection";
+import PartnerSection from "@/components/PartnerSection";
 import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
+import LotessaFooter from "@/components/LotessaFooter";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Header />
+      <LotessaHeader />
       <main>
         <HeroSection />
-        <WorkSection />
-        <AboutSection />
+        <CommunitySection />
+        <LibrarySection />
+        <PartnerSection />
         <ContactSection />
       </main>
-      <Footer />
+      <LotessaFooter />
     </div>
   );
 };

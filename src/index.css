@@ -2,59 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Lotessa Portfolio Design System - African-inspired modern design */
+/* Lotessa Health App Design System */
 
 @layer base {
   :root {
-    /* Core Colors */
-    --background: 35 20% 97%;
-    --foreground: 25 15% 15%;
+    /* Core Colors - Medical/Health Theme */
+    --background: 0 0% 98%;
+    --foreground: 213 84% 20%;
 
     /* Cards & Surfaces */
-    --card: 35 25% 94%;
-    --card-foreground: 25 15% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 213 84% 20%;
 
-    --popover: 35 25% 94%;
-    --popover-foreground: 25 15% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 84% 20%;
 
-    /* Brand Colors - Warm earth tones with vibrant accents */
-    --primary: 25 65% 25%;
-    --primary-foreground: 35 20% 97%;
+    /* Brand Colors - Navy Blue Primary */
+    --primary: 213 84% 20%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 45 35% 85%;
-    --secondary-foreground: 25 65% 25%;
+    /* Light backgrounds */
+    --secondary: 210 17% 95%;
+    --secondary-foreground: 213 84% 20%;
 
-    --muted: 35 15% 88%;
-    --muted-foreground: 25 25% 45%;
+    --muted: 210 17% 95%;
+    --muted-foreground: 213 40% 50%;
 
-    --accent: 15 85% 60%;
-    --accent-foreground: 35 20% 97%;
+    /* Accent - Teal/Blue */
+    --accent: 195 100% 45%;
+    --accent-foreground: 0 0% 100%;
 
-    /* Creative Accents */
-    --creative-orange: 25 85% 65%;
-    --creative-terracotta: 15 65% 55%;
-    --creative-warm: 45 75% 70%;
-    --creative-earth: 35 45% 35%;
+    /* Health App Specific Colors */
+    --health-blue: 213 84% 20%;
+    --health-teal: 195 100% 45%;
+    --health-light: 210 17% 95%;
+    --health-gray: 213 20% 70%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--creative-orange)) 0%, hsl(var(--creative-terracotta)) 100%);
-    --gradient-accent: linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--creative-warm)) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--card)) 100%);
-
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -8px hsl(var(--creative-earth) / 0.15);
-    --shadow-medium: 0 8px 30px -12px hsl(var(--creative-earth) / 0.25);
-    --shadow-glow: 0 0 40px hsl(var(--accent) / 0.3);
+    /* App Store Blue */
+    --app-store: 214 100% 60%;
 
     /* System colors */
     --destructive: 0 75% 60%;
-    --destructive-foreground: 35 20% 97%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 35 20% 85%;
-    --input: 35 20% 85%;
-    --ring: 25 65% 25%;
+    --border: 210 17% 90%;
+    --input: 210 17% 90%;
+    --ring: 213 84% 20%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -74,38 +69,38 @@
   }
 
   .dark {
-    --background: 25 15% 8%;
-    --foreground: 35 20% 92%;
+    --background: 213 84% 4%;
+    --foreground: 0 0% 98%;
 
-    --card: 25 15% 12%;
-    --card-foreground: 35 20% 92%;
+    --card: 213 84% 8%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 25 15% 12%;
-    --popover-foreground: 35 20% 92%;
+    --popover: 213 84% 8%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 35 20% 92%;
-    --primary-foreground: 25 15% 8%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 213 84% 20%;
 
-    --secondary: 25 20% 18%;
-    --secondary-foreground: 35 20% 92%;
+    --secondary: 213 30% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 25 20% 18%;
-    --muted-foreground: 35 15% 65%;
+    --muted: 213 30% 15%;
+    --muted-foreground: 213 20% 65%;
 
-    --accent: 15 85% 65%;
-    --accent-foreground: 25 15% 8%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 213 84% 20%;
 
-    --creative-orange: 25 85% 70%;
-    --creative-terracotta: 15 70% 60%;
-    --creative-warm: 45 80% 75%;
-    --creative-earth: 35 50% 25%;
+    --health-blue: 0 0% 98%;
+    --health-teal: 195 100% 50%;
+    --health-light: 213 30% 15%;
+    --health-gray: 213 20% 50%;
 
     --destructive: 0 75% 65%;
-    --destructive-foreground: 25 15% 8%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 25 20% 18%;
-    --input: 25 20% 18%;
-    --ring: 35 20% 92%;
+    --border: 213 30% 15%;
+    --input: 213 30% 15%;
+    --ring: 0 0% 98%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -125,70 +120,53 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
-
-  /* Custom scroll bar */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--muted));
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: hsl(var(--accent));
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--creative-orange));
-  }
 }
 
 @layer components {
-  /* Hero text animations */
-  .text-gradient {
-    background: var(--gradient-hero);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  /* App Store Button Styling */
+  .app-store-btn {
+    background: hsl(var(--app-store));
+    color: white;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
   }
 
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
+  .app-store-btn:hover {
+    background: hsl(214 100% 55%);
+    transform: translateY(-1px);
   }
 
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+  /* Community Button */
+  .community-btn {
+    background: hsl(var(--health-blue));
+    color: white;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 600;
+    transition: all 0.2s;
   }
 
-  /* Hover effects */
-  .hover-lift {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  .community-btn:hover {
+    background: hsl(213 84% 15%);
+    transform: translateY(-1px);
   }
 
-  .hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-medium);
+  /* Article Cards */
+  .article-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
   }
 
-  /* Creative elements */
-  .creative-border {
-    position: relative;
-  }
-
-  .creative-border::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--gradient-accent);
-    border-radius: inherit;
-    padding: 2px;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
+  .article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   }
 }
