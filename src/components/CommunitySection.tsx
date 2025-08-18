@@ -5,7 +5,7 @@ const CommunitySection = () => {
 
   return (
     <>
-      <section className="pb-16 lg:pb-24 gradient-bg">
+      <section className="pb-24 lg:pb-32 gradient-bg">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="rounded-2xl px-[22px] py-8 lg:px-[38px] lg:py-12 gradient-bg">
         {/* Section Header */}
