@@ -51,23 +51,23 @@ const LibrarySection = () => {
 
         {/* Articles Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {articles.map(article => <div key={article.id} className="article-card group cursor-pointer h-full aspect-[1/1.289] px-6 pt-4 pb-6 flex flex-col">
-              <div className="flex justify-end mb-2">
+          {articles.map(article => <div key={article.id} className="article-card group cursor-pointer h-full aspect-[1/1.289] px-6 pt-6 pb-6 flex flex-col">
+              <div className="flex justify-end mb-4">
                 <div className="w-10 h-10 rounded-full border-2 border-muted-foreground flex items-center justify-center group-hover:border-primary transition-colors">
                   <ArrowRight className="text-muted-foreground group-hover:text-primary transition-colors" size={20} />
                 </div>
               </div>
               
-              <div className="space-y-1 flex-1 flex flex-col overflow-hidden justify-between">
-                <h3 className="font-bold text-[18px] text-[#001F3F] leading-tight font-sans line-clamp-3 overflow-hidden">
+              <div className="flex-1 flex flex-col overflow-hidden">
+                <h3 className="font-bold text-[18px] text-[#001F3F] leading-tight font-sans line-clamp-3 overflow-hidden mb-2">
                   {article.title}
                 </h3>
                 
-                {article.subtitle && <h4 className="font-bold text-[16px] text-[#001F3F] leading-tight font-sans line-clamp-2 overflow-hidden">
+                {article.subtitle && <h4 className="font-bold text-[16px] text-[#001F3F] leading-tight font-sans line-clamp-2 overflow-hidden mb-3">
                     {article.subtitle}
                   </h4>}
                 
-                <p className="text-[#001F3F] text-[16px] leading-relaxed font-sans font-normal overflow-hidden mb-0">
+                <p className="text-[#001F3F] text-[16px] leading-relaxed font-sans font-normal overflow-hidden flex-1">
                   <span className="line-clamp-6">
                     {article.description.length > 150 
                       ? `${article.description.substring(0, 150)}... see more`
