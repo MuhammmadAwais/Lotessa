@@ -25,7 +25,7 @@ const LotessaFooter = () => {
             </div>
 
             {/* Social Media - Aligned with Terms */}
-            <div className="flex gap-6 mt-12 lg:mt-0 mx-[10px]">
+            <div className="flex gap-6 mt-16 lg:mt-0 mx-[10px]">
               <a href="#" className="hover:scale-110 transition-transform" aria-label="Instagram">
                 <img src="/lovable-uploads/dd5fb84e-0a6c-4d43-a075-987ba10c3bc9.png" alt="Instagram" className="w-12 h-12" />
               </a>
