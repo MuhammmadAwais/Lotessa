@@ -44,7 +44,7 @@ const WaitlistDialog = ({
     onOpenChange(false);
   };
   return <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-lg bg-white p-8 px-[50px] py-[50px]">
+      <DialogContent className="sm:max-w-xl bg-white p-8 px-[50px] py-[50px]">
         <DialogHeader>
           <DialogTitle className="text-3xl font-bold text-center mb-2" style={{ color: '#001f3f' }}>
             Be First in Line
