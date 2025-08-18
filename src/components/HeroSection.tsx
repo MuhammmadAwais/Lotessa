@@ -54,7 +54,7 @@ const HeroSection = () => {
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative max-w-lg w-full">
               <img
-                src={phoneMockups}
+                src="/lovable-uploads/abc220d9-c1c4-4d28-bfa0-ee7571fc840e.png"
                 alt="Lotessa app interface showing weight tracking charts, medication dosage tracking, and progress visualization on two mobile phones"
                 className="w-full h-auto"
               />
