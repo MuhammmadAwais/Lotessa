@@ -16,11 +16,11 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left Content */}
           <div className="space-y-6 lg:space-y-8">
-            <h3 className="text-[52px] font-bold text-[#001F3F] leading-tight font-sans">
+            <h3 className="text-3xl lg:text-4xl font-bold text-primary leading-tight">
               We'd Love to Hear from You
             </h3>
             
-            <p className="text-slate-600 text-[18px] font-sans font-normal leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Questions about the app? Curious about a partnership? Just want to say 
               hello? Drop us a message and the Lotessa team will be in touch.
             </p>
