@@ -5,7 +5,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 const ContactSection = () => {
   return <section className="pt-6 pb-32 lg:pt-8 lg:pb-40 bg-[#EFEEE7]">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="rounded-2xl px-[22px] py-8 lg:px-[38px] lg:py-12">
+        <div className="rounded-2xl px-[22px] py-8 lg:px-[38px] lg:py-6">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-[30px] font-normal text-[#001F3F] font-sans mb-8">
