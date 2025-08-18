@@ -8,7 +8,7 @@ import LotessaFooter from "@/components/LotessaFooter";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <LotessaHeader />
       <div className="pt-20"></div>
       <main className="space-y-16">
