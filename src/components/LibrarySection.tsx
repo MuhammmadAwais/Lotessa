@@ -63,7 +63,7 @@ const LibrarySection = () => {
                   {article.title}
                 </h3>
                 
-                {article.subtitle && <h4 className="font-bold text-[16px] text-[#001F3F] leading-tight font-sans line-clamp-2 overflow-hidden mb-3">
+                {article.subtitle && <h4 className="font-bold text-[14px] text-[#001F3F] leading-tight font-sans line-clamp-2 overflow-hidden mb-3">
                     {article.subtitle}
                   </h4>}
                 
