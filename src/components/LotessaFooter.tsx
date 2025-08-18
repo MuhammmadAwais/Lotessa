@@ -10,9 +10,9 @@ const LotessaFooter = () => {
         </div>
 
         {/* Main Content - 2 Columns */}
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-32">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-32 min-h-[200px]">
           {/* Left Content */}
-          <div className="flex flex-col justify-between h-full">
+          <div className="flex flex-col justify-between">
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="flex items-center justify-center">
@@ -25,7 +25,7 @@ const LotessaFooter = () => {
             </div>
 
             {/* Social Media - Aligned with Terms */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 mt-8 lg:mt-0">
               <a 
                 href="#" 
                 className="hover:scale-110 transition-transform"
@@ -51,13 +51,13 @@ const LotessaFooter = () => {
           </div>
 
           {/* Right Content */}
-          <div className="flex flex-col justify-between h-full">
+          <div className="flex flex-col justify-between">
             <p className="leading-relaxed text-lg" style={{ color: '#001f3f' }}>
               Lotessa is <span className="font-semibold underline">not a medical device</span> and does not provide medical advice. 
               Always consult a qualified healthcare professional regarding your health condition and treatment.
             </p>
             
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap gap-6 mt-8 lg:mt-0">
               <a 
                 href="#" 
                 className="hover:text-primary transition-colors underline font-medium text-base"
