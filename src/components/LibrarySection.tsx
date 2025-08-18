@@ -69,10 +69,7 @@ const LibrarySection = () => {
                 
                 <p className="text-[#001F3F] text-[16px] leading-relaxed font-sans font-normal overflow-hidden flex-1">
                   <span className="line-clamp-6">
-                    {article.description.length > 150 
-                      ? `${article.description.substring(0, 150)}... see more`
-                      : article.description
-                    }
+                    {article.description}
                   </span>
                 </p>
               </div>
