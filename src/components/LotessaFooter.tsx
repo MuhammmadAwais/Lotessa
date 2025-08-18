@@ -10,7 +10,7 @@ const LotessaFooter = () => {
         </div>
 
         {/* Main Content - 2 Columns */}
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-32 min-h-[120px]">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-32 min-h-[160px]">
           {/* Left Content */}
           <div className="flex flex-col justify-between px-0 my-[10px]">
             {/* CTA Buttons */}
