@@ -126,10 +126,11 @@ const WaitlistDialog = ({
             Join the Waiting List
           </Button>
 
-          <p className="text-xs text-center text-muted-foreground mt-4 leading-relaxed">
-            Your details are safe with us. We promise not to share or sell your personal data.<br />
+          <p className="text-xs text-center mt-4 leading-relaxed" style={{ color: '#001f3f' }}>
+            Your details are safe with us. We promise not to share or sell your personal data.
             <br />
-            *Get early access + a free starter guide when this app "arrives"
+            <br />
+            <span className="font-medium">*Get early access + a free starter guide when this app "arrives"</span>
           </p>
         </form>
       </DialogContent>
