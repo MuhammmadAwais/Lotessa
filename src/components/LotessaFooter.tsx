@@ -27,24 +27,24 @@ const LotessaFooter = () => {
             <div className="flex gap-4">
               <a 
                 href="#" 
-                className="w-12 h-12 bg-health-gray rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                className="hover:scale-110 transition-transform"
                 aria-label="Instagram"
               >
-                <Instagram size={20} />
+                <img src="/lovable-uploads/dd5fb84e-0a6c-4d43-a075-987ba10c3bc9.png" alt="Instagram" className="w-12 h-12" />
               </a>
               <a 
                 href="#" 
-                className="w-12 h-12 bg-health-gray rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                className="hover:scale-110 transition-transform"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={20} />
+                <img src="/lovable-uploads/ab5cf166-f44f-433b-bcff-4658d708f98e.png" alt="LinkedIn" className="w-12 h-12" />
               </a>
               <a 
                 href="#" 
-                className="w-12 h-12 bg-health-gray rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                className="hover:scale-110 transition-transform"
                 aria-label="Facebook"
               >
-                <Facebook size={20} />
+                <img src="/lovable-uploads/e9b6ce86-0005-45cb-8b4a-eda5b5b26234.png" alt="Facebook" className="w-12 h-12" />
               </a>
             </div>
           </div>
