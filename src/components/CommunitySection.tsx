@@ -26,7 +26,7 @@ const CommunitySection = () => {
 
           {/* Right - Content */}
           <div className="space-y-6 lg:space-y-8 order-1 lg:order-2">
-            <h2 className="text-4xl lg:text-5xl font-bold text-primary leading-tight">
+            <h2 className="text-[52px] font-bold text-[#001F3F] leading-tight font-sans">
               You're Not Alone
             </h2>
             
