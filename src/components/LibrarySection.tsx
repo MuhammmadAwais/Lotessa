@@ -58,7 +58,7 @@ const LibrarySection = () => {
                 </div>
               </div>
               
-              <div className="space-y-3 flex-1 flex flex-col overflow-hidden justify-between">
+              <div className="space-y-1 flex-1 flex flex-col overflow-hidden justify-between">
                 <h3 className="font-bold text-[18px] text-[#001F3F] leading-tight font-sans line-clamp-3 overflow-hidden">
                   {article.title}
                 </h3>
