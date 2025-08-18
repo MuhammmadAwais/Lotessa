@@ -15,7 +15,7 @@ const LotessaHeader = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <img src="/lovable-uploads/3549901c-8a53-4e38-8ec4-db1d37773806.png" alt="Lotessa logo" className="h-8" />
+            <img src="/lovable-uploads/69f7fc17-c67d-4671-ade7-a76320c0adb8.png" alt="Lotessa logo" className="h-8" />
           </div>
 
           {/* Desktop Navigation */}
