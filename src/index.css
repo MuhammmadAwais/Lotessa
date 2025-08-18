@@ -37,6 +37,9 @@
     --health-teal: 195 100% 45%;
     --health-light: 210 17% 95%;
     --health-gray: 213 20% 70%;
+    
+    /* Custom Navy Blue */
+    --navy-dark: 210 100% 12%;
 
     /* App Store Blue */
     --app-store: 214 100% 60%;
