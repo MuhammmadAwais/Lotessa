@@ -12,7 +12,7 @@ const PartnerSection = () => {
             Support a Growing GLP1 Community
           </h2>
           
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+          <p className="text-[28px] text-foreground font-bold font-sans mx-auto whitespace-nowrap text-center">
             Are you a health brand, medical professional, or researcher? Let's collaborate
           </p>
         </div>
