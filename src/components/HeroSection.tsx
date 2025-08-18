@@ -50,9 +50,9 @@ for GLP1 Medication</h1>
           </div>
 
           {/* Right Content - Phone Mockups */}
-          <div className="relative flex justify-center lg:justify-end h-full items-center">
-            <div className="relative max-w-lg w-full">
-              <img src="/lovable-uploads/ede3f8df-6167-46ea-8bcd-249fdd2c788a.png" alt="Lotessa app interface showing weight tracking charts, medication dosage tracking, and progress visualization on two mobile phones" className="w-full h-auto" />
+          <div className="relative flex justify-center lg:justify-end items-center h-full">
+            <div className="relative max-w-lg w-full h-full flex items-center">
+              <img src="/lovable-uploads/ede3f8df-6167-46ea-8bcd-249fdd2c788a.png" alt="Lotessa app interface showing weight tracking charts, medication dosage tracking, and progress visualization on two mobile phones" className="w-full h-auto max-h-full object-contain" />
             </div>
           </div>
         </div>
