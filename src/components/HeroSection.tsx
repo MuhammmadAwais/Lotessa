@@ -11,9 +11,9 @@ const HeroSection = () => {
       <section className="py-16 lg:py-24 gradient-bg">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="rounded-2xl p-8 lg:p-12 shadow-sm gradient-bg">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start lg:min-h-[600px]">
           {/* Left Content */}
-          <div className="space-y-8 lg:space-y-10">
+          <div className="space-y-8 lg:space-y-10 flex flex-col justify-center h-full">
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-6xl text-primary leading-[1.1] text-left font-semibold xl:text-4xl">Your Health Companion
 for GLP1 Medication</h1>
@@ -59,9 +59,9 @@ for GLP1 Medication</h1>
           </div>
 
           {/* Right Content - Phone Mockups */}
-          <div className="relative flex justify-center lg:justify-end">
+          <div className="relative flex justify-center lg:justify-end h-full items-center">
             <div className="relative max-w-lg w-full">
-              <img src="/lovable-uploads/abc220d9-c1c4-4d28-bfa0-ee7571fc840e.png" alt="Lotessa app interface showing weight tracking charts, medication dosage tracking, and progress visualization on two mobile phones" className="w-full h-auto" />
+              <img src="/lovable-uploads/ede3f8df-6167-46ea-8bcd-249fdd2c788a.png" alt="Lotessa app interface showing weight tracking charts, medication dosage tracking, and progress visualization on two mobile phones" className="w-full h-auto" />
             </div>
           </div>
         </div>
