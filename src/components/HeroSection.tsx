@@ -1,7 +1,14 @@
-import { Download, Users } from "lucide-react";
+import { useState } from "react";
+import { Users } from "lucide-react";
 import phoneMockups from "@/assets/phone-mockups.jpg";
+import WaitlistDialog from "./WaitlistDialog";
+import TestFlightIcon from "./ui/testflight-icon";
 const HeroSection = () => {
-  return <section className="py-16 lg:py-24 bg-slate-50">
+  const [dialogOpen, setDialogOpen] = useState(false);
+
+  return (
+    <>
+      <section className="py-16 lg:py-24 bg-slate-50">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="rounded-2xl p-8 lg:p-12 shadow-sm bg-[#f5f5f3]">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -34,15 +41,18 @@ for GLP1 Medication</h1>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
-              <button className="app-store-btn flex items-center justify-center gap-3 py-4 text-lg font-semibold px-[24px]">
-                <div className="w-6 h-6 bg-white rounded-sm flex items-center justify-center">
-                  <Download size={16} className="text-blue-500" />
+              <button className="app-store-btn flex items-center justify-center gap-3 py-3 text-lg font-semibold px-[20px]">
+                <div className="w-6 h-6 flex items-center justify-center">
+                  <img src="/lovable-uploads/dc47f67e-9659-4dac-a80c-b332dfa0a032.png" alt="App Store icon" className="w-6 h-6" />
                 </div>
                 Download the App
               </button>
               
-              <button className="community-btn flex items-center justify-center gap-3 px-6 text-lg font-semibold py-0">
-                <Users size={20} />
+              <button 
+                className="community-btn flex items-center justify-center gap-3 px-5 py-3 text-lg font-semibold"
+                onClick={() => setDialogOpen(true)}
+              >
+                <img src="/lovable-uploads/ffd79690-db7e-406b-9046-9a7ce5703267.png" alt="Person icon" className="w-6 h-6" />
                 Join the Lotessa Community
               </button>
             </div>
@@ -57,6 +67,10 @@ for GLP1 Medication</h1>
         </div>
         </div>
       </div>
-    </section>;
+    </section>
+    
+    <WaitlistDialog open={dialogOpen} onOpenChange={setDialogOpen} />
+    </>
+  );
 };
 export default HeroSection;
