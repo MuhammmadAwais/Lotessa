@@ -42,8 +42,8 @@ for GLP1 Medication</h1>
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <button className="app-store-btn flex items-center justify-center gap-3 py-3 text-lg font-semibold px-[20px]">
-                <div className="w-6 h-6 flex items-center justify-center">
-                  <img src="/lovable-uploads/dc47f67e-9659-4dac-a80c-b332dfa0a032.png" alt="App Store icon" className="w-6 h-6" />
+                <div className="w-8 h-8 flex items-center justify-center">
+                  <img src="/lovable-uploads/dc47f67e-9659-4dac-a80c-b332dfa0a032.png" alt="App Store icon" className="w-8 h-8" />
                 </div>
                 Download the App
               </button>
@@ -52,7 +52,7 @@ for GLP1 Medication</h1>
                 className="community-btn flex items-center justify-center gap-3 px-5 py-3 text-lg font-semibold"
                 onClick={() => setDialogOpen(true)}
               >
-                <img src="/lovable-uploads/ffd79690-db7e-406b-9046-9a7ce5703267.png" alt="Person icon" className="w-6 h-6" />
+                <img src="/lovable-uploads/ffd79690-db7e-406b-9046-9a7ce5703267.png" alt="Person icon" className="w-8 h-8" />
                 Join the Lotessa Community
               </button>
             </div>
