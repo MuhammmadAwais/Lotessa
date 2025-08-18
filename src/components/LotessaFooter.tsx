@@ -1,8 +1,8 @@
 import { Heart, Download, Users, Instagram, Linkedin, Facebook } from "lucide-react";
-
 const LotessaFooter = () => {
-  return (
-    <footer className="py-8 mt-16" style={{ background: '#EFEEE7' }}>
+  return <footer className="py-8 mt-16" style={{
+    background: '#EFEEE7'
+  }}>
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Logo - Separate Row */}
         <div className="flex items-center mb-6">
@@ -12,7 +12,7 @@ const LotessaFooter = () => {
         {/* Main Content - 2 Columns */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 min-h-[120px]">
           {/* Left Content */}
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col justify-between px-0 my-[10px]">
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="flex items-center justify-center">
@@ -25,26 +25,14 @@ const LotessaFooter = () => {
             </div>
 
             {/* Social Media - Aligned with Terms */}
-            <div className="flex gap-4 mt-8 lg:mt-0">
-              <a 
-                href="#" 
-                className="hover:scale-110 transition-transform"
-                aria-label="Instagram"
-              >
+            <div className="flex gap-4 mt-8 lg:mt-0 mx-[10px]">
+              <a href="#" className="hover:scale-110 transition-transform" aria-label="Instagram">
                 <img src="/lovable-uploads/dd5fb84e-0a6c-4d43-a075-987ba10c3bc9.png" alt="Instagram" className="w-12 h-12" />
               </a>
-              <a 
-                href="#" 
-                className="hover:scale-110 transition-transform"
-                aria-label="LinkedIn"
-              >
+              <a href="#" className="hover:scale-110 transition-transform" aria-label="LinkedIn">
                 <img src="/lovable-uploads/ab5cf166-f44f-433b-bcff-4658d708f98e.png" alt="LinkedIn" className="w-12 h-12" />
               </a>
-              <a 
-                href="#" 
-                className="hover:scale-110 transition-transform"
-                aria-label="Facebook"
-              >
+              <a href="#" className="hover:scale-110 transition-transform" aria-label="Facebook">
                 <img src="/lovable-uploads/e9b6ce86-0005-45cb-8b4a-eda5b5b26234.png" alt="Facebook" className="w-12 h-12" />
               </a>
             </div>
@@ -52,32 +40,28 @@ const LotessaFooter = () => {
 
           {/* Right Content */}
           <div className="flex flex-col justify-between">
-            <p className="leading-relaxed text-lg" style={{ color: '#001f3f' }}>
+            <p className="leading-relaxed text-lg" style={{
+            color: '#001f3f'
+          }}>
               Lotessa is <span className="font-semibold underline">not a medical device</span> and does not provide medical advice. 
               Always consult a qualified healthcare professional regarding your health condition and treatment.
             </p>
             
             <div className="flex flex-wrap gap-6 mt-8 lg:mt-0">
-              <a 
-                href="#" 
-                className="hover:text-primary transition-colors underline font-medium text-base"
-                style={{ color: '#001f3f' }}
-              >
+              <a href="#" className="hover:text-primary transition-colors underline font-medium text-base" style={{
+              color: '#001f3f'
+            }}>
                 Terms & Conditions
               </a>
-              <a 
-                href="#" 
-                className="hover:text-primary transition-colors underline font-medium text-base"
-                style={{ color: '#001f3f' }}
-              >
+              <a href="#" className="hover:text-primary transition-colors underline font-medium text-base" style={{
+              color: '#001f3f'
+            }}>
                 Privacy Policy
               </a>
             </div>
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default LotessaFooter;
