@@ -14,11 +14,8 @@ const LotessaHeader = () => {
       <nav className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 flex items-center justify-center">
-              <img src="/lovable-uploads/87c24efa-cef2-452b-834f-7728d55c389d.png" alt="Lotessa logo" className="w-8 h-8" />
-            </div>
-            <span className="text-2xl font-bold text-primary">LOTESSA</span>
+          <div className="flex items-center">
+            <img src="/lovable-uploads/3549901c-8a53-4e38-8ec4-db1d37773806.png" alt="Lotessa logo" className="h-8" />
           </div>
 
           {/* Desktop Navigation */}
