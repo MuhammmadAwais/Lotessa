@@ -71,6 +71,39 @@ export type Database = {
         }
         Relationships: []
       }
+      waitlist: {
+        Row: {
+          browser_id: string | null
+          created_at: string
+          email: string
+          id: string
+          journey_stage: string
+          name: string
+          updated_at: string
+          using_medication: string
+        }
+        Insert: {
+          browser_id?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          journey_stage: string
+          name: string
+          updated_at?: string
+          using_medication: string
+        }
+        Update: {
+          browser_id?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          journey_stage?: string
+          name?: string
+          updated_at?: string
+          using_medication?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
