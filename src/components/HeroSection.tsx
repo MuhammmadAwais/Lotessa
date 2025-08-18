@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Users } from "lucide-react";
 import phoneMockups from "@/assets/phone-mockups.jpg";
+import { useAnalytics } from "@/hooks/useAnalytics";
 import WaitlistDialog from "./WaitlistDialog";
 import TestFlightIcon from "./ui/testflight-icon";
 const HeroSection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
+  const { trackInteraction } = useAnalytics();
   return <>
       <section id="download" className="py-3 lg:py-5 bg-white">
       <div className="container mx-auto px-3 max-w-7xl">
@@ -36,16 +38,23 @@ for GLP1 Medication</h1>
                  </p>
                </div>
                
-               {/* CTA Buttons */}
-               <div className="flex flex-col sm:flex-row gap-5 pt-4">
-                 <button className="flex items-center justify-center">
-                   <img src="/lovable-uploads/e62ee210-e1fc-485b-9080-27c924643742.png" alt="Download the App" className="h-13 w-auto" />
-                 </button>
-                 
-                 <button className="flex items-center justify-center" onClick={() => setDialogOpen(true)}>
-                   <img src="/lovable-uploads/a97005af-398c-4b31-af1a-d153e144ef44.png" alt="Join the Lotessa Community" className="h-13 w-auto" />
-                 </button>
-               </div>
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-5 pt-4">
+                  <button 
+                    className="flex items-center justify-center"
+                    onClick={() => {
+                      trackInteraction('click', 'download_button_hero');
+                      setDialogOpen(true);
+                    }}
+                    onMouseEnter={() => trackInteraction('hover', 'download_button_hero')}
+                  >
+                    <img src="/lovable-uploads/e62ee210-e1fc-485b-9080-27c924643742.png" alt="Download the App" className="h-13 w-auto" />
+                  </button>
+                  
+                  <button className="flex items-center justify-center" onClick={() => setDialogOpen(true)}>
+                    <img src="/lovable-uploads/a97005af-398c-4b31-af1a-d153e144ef44.png" alt="Join the Lotessa Community" className="h-13 w-auto" />
+                  </button>
+                </div>
              </div>
            </div>
 

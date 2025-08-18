@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { useAnalytics } from "@/hooks/useAnalytics";
 import WaitlistDialog from "./WaitlistDialog";
 
 const LotessaHeader = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
+  const { trackInteraction } = useAnalytics();
   const navItems = [
     { name: "Download the App", href: "#download" },
     { name: "Join the Community", href: "#community" },
@@ -17,6 +19,7 @@ const LotessaHeader = () => {
     
     // Special case for download - open dialog instead of scrolling
     if (href === "#download") {
+      trackInteraction('click', 'download_button_header');
       setDialogOpen(true);
       return;
     }
@@ -48,6 +51,11 @@ const LotessaHeader = () => {
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
+                onMouseEnter={() => {
+                  if (item.href === "#download") {
+                    trackInteraction('hover', 'download_button_header');
+                  }
+                }}
                 className="text-foreground hover:scale-105 transition-transform duration-200 font-medium cursor-pointer"
               >
                 {item.name}

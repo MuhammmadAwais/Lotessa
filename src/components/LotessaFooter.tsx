@@ -1,5 +1,7 @@
 import { Heart, Download, Users, Instagram, Linkedin, Facebook } from "lucide-react";
+import { useAnalytics } from "@/hooks/useAnalytics";
 const LotessaFooter = () => {
+  const { trackInteraction } = useAnalytics();
   return <footer className="py-12 mt-16" style={{
     background: '#EFEEE7'
   }}>
@@ -15,7 +17,11 @@ const LotessaFooter = () => {
           <div className="flex flex-col justify-between px-0 my-[10px]">
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6">
-              <button className="flex items-center justify-center">
+              <button 
+                className="flex items-center justify-center"
+                onClick={() => trackInteraction('click', 'download_button_footer')}
+                onMouseEnter={() => trackInteraction('hover', 'download_button_footer')}
+              >
                 <img src="/lovable-uploads/e62ee210-e1fc-485b-9080-27c924643742.png" alt="Download the App" className="h-12 w-auto" />
               </button>
               
