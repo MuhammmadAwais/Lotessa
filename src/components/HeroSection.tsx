@@ -52,7 +52,7 @@ for GLP1 Medication</h1>
            {/* Right Content - Phone Mockups */}
            <div className="flex justify-center lg:justify-end items-center min-h-[650px]">
               <div className="relative max-w-2xl w-full flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-radial from-white via-white/90 to-white/40 rounded-2xl -z-10 scale-110"></div>
+                <div className="absolute inset-0 bg-gradient-radial from-[#EFEEE7] via-[#EFEEE7]/90 to-[#EFEEE7]/40 rounded-2xl -z-10 scale-110"></div>
                 <img src="/lovable-uploads/ede3f8df-6167-46ea-8bcd-249fdd2c788a.png" alt="Lotessa app interface showing weight tracking charts, medication dosage tracking, and progress visualization on two mobile phones" className="w-full h-auto max-h-full object-contain relative z-10 scale-105" />
              </div>
            </div>
