@@ -123,32 +123,39 @@
 }
 
 @layer components {
-  /* App Store Button Styling */
+  /* App Store Button Styling - Exact match to reference */
   .app-store-btn {
-    background: hsl(var(--app-store));
+    background: #007AFF;
     color: white;
-    border-radius: 8px;
-    padding: 12px 24px;
+    border-radius: 12px;
+    padding: 14px 24px;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     transition: all 0.2s;
+    border: none;
+    cursor: pointer;
   }
 
   .app-store-btn:hover {
-    background: hsl(214 100% 55%);
+    background: #0056CC;
     transform: translateY(-1px);
   }
 
-  /* Community Button */
+  /* Community Button - Dark theme like reference */
   .community-btn {
     background: hsl(var(--health-blue));
     color: white;
-    border-radius: 8px;
-    padding: 12px 24px;
+    border-radius: 12px;
+    padding: 14px 24px;
     font-weight: 600;
     transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
   }
 
   .community-btn:hover {
