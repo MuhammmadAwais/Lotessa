@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 const ContactSection = () => {
-  return <section className="py-16 lg:py-24 gradient-bg">
+  return <section className="pt-6 pb-24 lg:pt-8 lg:pb-32 gradient-bg">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="rounded-2xl p-8 lg:p-12 shadow-sm gradient-bg">
         {/* Section Header */}
