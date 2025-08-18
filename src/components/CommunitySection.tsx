@@ -7,7 +7,7 @@ const CommunitySection = () => {
     <>
       <section className="pb-16 lg:pb-24 gradient-bg">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="rounded-2xl p-8 lg:p-12 shadow-sm gradient-bg">
+        <div className="rounded-2xl px-[22px] py-8 lg:px-[38px] lg:py-12 gradient-bg">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h3 className="text-lg font-medium text-muted-foreground mb-4">
