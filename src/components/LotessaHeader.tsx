@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import WaitlistDialog from "./WaitlistDialog";
 
 const LotessaHeader = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
   const navItems = [
     { name: "Download the App", href: "#download" },
     { name: "Join the Community", href: "#community" },
@@ -11,6 +14,13 @@ const LotessaHeader = () => {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
+    
+    // Special case for download - open dialog instead of scrolling
+    if (href === "#download") {
+      setDialogOpen(true);
+      return;
+    }
+    
     const element = document.querySelector(href) as HTMLElement;
     if (element) {
       const headerHeight = 80; // Account for fixed header
@@ -54,6 +64,8 @@ const LotessaHeader = () => {
           </Button>
         </div>
       </nav>
+      
+      <WaitlistDialog open={dialogOpen} onOpenChange={setDialogOpen} />
     </header>
   );
 };
