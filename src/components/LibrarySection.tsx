@@ -31,7 +31,7 @@ const LibrarySection = () => {
     description: "So, you've done your homework, talked to your doctor, and maybe even decided to start (or seriously consider) a GLP-1 medication.",
     id: 6
   }];
-  return <section className="py-3 lg:py-5" style={{background: '#EFEEE7'}}>
+  return <section id="library" className="py-3 lg:py-5" style={{background: '#EFEEE7'}}>
       <div className="container mx-auto px-3 max-w-7xl">
         <div className="rounded-2xl px-[16px] py-6 lg:px-[24px] lg:py-8" style={{background: '#EFEEE7'}}>
         {/* Section Header */}

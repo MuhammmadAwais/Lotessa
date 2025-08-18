@@ -1,5 +1,5 @@
 const PartnerSection = () => {
-  return <section className="py-3 lg:py-5 bg-white">
+  return <section id="partner" className="py-3 lg:py-5 bg-white">
       <div className="container mx-auto px-3 max-w-7xl">
         <div className="rounded-2xl px-[16px] py-6 lg:px-[24px] lg:py-8 bg-white">
         {/* Section Header */}

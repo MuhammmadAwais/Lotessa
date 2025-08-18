@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 const ContactSection = () => {
-  return <section className="py-3 lg:py-5 bg-[#EFEEE7]">
+  return <section id="contact" className="py-3 lg:py-5 bg-[#EFEEE7]">
       <div className="container mx-auto px-3 max-w-7xl">
         <div className="rounded-2xl px-[16px] py-6 lg:px-[24px] lg:py-8">
         {/* Section Header */}

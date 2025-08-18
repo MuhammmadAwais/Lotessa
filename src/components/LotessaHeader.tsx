@@ -9,6 +9,19 @@ const LotessaHeader = () => {
     { name: "Contact Us", href: "#contact" },
   ];
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href) as HTMLElement;
+    if (element) {
+      const headerHeight = 80; // Account for fixed header
+      const elementPosition = element.offsetTop - headerHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <header className="w-full bg-white py-4">
       <nav className="container mx-auto px-6">
@@ -24,7 +37,8 @@ const LotessaHeader = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:scale-105 transition-transform duration-200 font-medium"
+                onClick={(e) => handleNavClick(e, item.href)}
+                className="text-foreground hover:scale-105 transition-transform duration-200 font-medium cursor-pointer"
               >
                 {item.name}
               </a>
