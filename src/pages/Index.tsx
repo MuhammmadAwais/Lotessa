@@ -10,7 +10,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <LotessaHeader />
-      <main>
+      <main className="space-y-16">
         <HeroSection />
         <CommunitySection />
         <LibrarySection />
