@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Heart, Download, Users, Instagram, Linkedin, Facebook } from "lucide-react";
 
 const LotessaFooter = () => {
