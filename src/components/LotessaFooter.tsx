@@ -8,11 +8,8 @@ const LotessaFooter = () => {
           {/* Left Content */}
           <div className="space-y-8">
             {/* Logo */}
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded-sm flex items-center justify-center">
-                <Heart className="text-white" size={20} fill="currentColor" />
-              </div>
-              <span className="text-2xl font-bold text-primary">LOTESSA</span>
+            <div className="flex items-center">
+              <img src="/lovable-uploads/69f7fc17-c67d-4671-ade7-a76320c0adb8.png" alt="Lotessa logo" className="h-10" />
             </div>
 
             {/* CTA Buttons */}
