@@ -1,7 +1,7 @@
 const PartnerSection = () => {
   return <section className="pt-6 pb-24 lg:pt-8 lg:pb-32 gradient-bg">
       <div className="container mx-auto px-6 max-w-6xl">
-        <div className="rounded-2xl p-8 lg:p-12 gradient-bg">
+        <div className="rounded-2xl px-[22px] py-8 lg:px-[38px] lg:py-12 gradient-bg">
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <h3 className="text-[30px] font-normal text-[#001F3F] font-sans">
