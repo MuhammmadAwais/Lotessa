@@ -36,7 +36,7 @@ const LibrarySection = () => {
         <div className="rounded-2xl p-8 lg:p-12 shadow-sm gradient-bg">
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
-          <h3 className="text-lg font-medium text-muted-foreground">
+          <h3 className="text-[30px] font-normal text-[#001F3F] font-sans">
             Lotessa Library
           </h3>
           

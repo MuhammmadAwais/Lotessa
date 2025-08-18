@@ -8,7 +8,7 @@ const ContactSection = () => {
         <div className="rounded-2xl p-8 lg:p-12 shadow-sm gradient-bg">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-8">
+          <h2 className="text-[30px] font-normal text-[#001F3F] font-sans mb-8">
             Contact Us
           </h2>
         </div>
