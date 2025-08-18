@@ -6,10 +6,10 @@ import TestFlightIcon from "./ui/testflight-icon";
 const HeroSection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   return <>
-      <section className="py-6 lg:py-8 gradient-bg">
-      <div className="container mx-auto px-6 max-w-7xl">
+      <section className="min-h-screen flex items-center gradient-bg">
+      <div className="container mx-auto px-6 max-w-7xl w-full">
         <div className="rounded-2xl px-[22px] py-8 lg:px-[38px] lg:py-12 gradient-bg font-sans font-normal text-[18px]">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start lg:min-h-[600px]">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-[70vh]">
           {/* Left Content */}
           <div className="space-y-4 lg:space-y-6 flex flex-col justify-center h-full">
             <div className="space-y-6">
