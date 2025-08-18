@@ -9,7 +9,7 @@ const HeroSection = () => {
       <section className="py-5 lg:py-7 gradient-bg">
       <div className="container mx-auto px-5 max-w-7xl">
         <div className="rounded-2xl px-[24px] py-8 lg:px-[36px] lg:py-12 gradient-bg font-sans font-normal text-[18px]">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-18 items-start lg:min-h-[650px]">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start lg:min-h-[650px]">
            {/* Left Content */}
            <div className="space-y-5 lg:space-y-7 flex flex-col justify-center h-full">
              <div className="space-y-7">
