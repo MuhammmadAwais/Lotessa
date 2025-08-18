@@ -10,7 +10,7 @@ const CommunitySection = () => {
         <div className="rounded-2xl px-[22px] py-8 lg:px-[38px] lg:py-12 gradient-bg">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h3 className="text-lg font-medium text-muted-foreground mb-4">
+          <h3 className="text-[30px] font-normal text-[#001F3F] font-sans mb-4">
             Join the Community
           </h3>
         </div>
