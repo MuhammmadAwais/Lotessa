@@ -33,14 +33,14 @@ const ContactSection = () => {
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                   Name
                 </label>
-                <Input id="name" placeholder="Add text" className="w-full h-12 text-base" />
+                <Input id="name" placeholder="Enter your full name" className="w-full h-12 text-base" />
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                   Email
                 </label>
-                <Input id="email" type="email" placeholder="Add text" className="w-full h-12 text-base" />
+                <Input id="email" type="email" placeholder="Enter your email address" className="w-full h-12 text-base" />
               </div>
 
               <div>
@@ -49,7 +49,7 @@ const ContactSection = () => {
                 </label>
                 <Select>
                   <SelectTrigger className="w-full h-12 text-base">
-                    <SelectValue placeholder="App Support" />
+                    <SelectValue placeholder="Select a topic" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="app-support">App Support</SelectItem>
@@ -64,7 +64,7 @@ const ContactSection = () => {
                 <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
                   Message
                 </label>
-                <Textarea id="message" rows={6} placeholder="Add text" className="w-full resize-none text-base" />
+                <Textarea id="message" rows={6} placeholder="Tell us how we can help you..." className="w-full resize-none text-base" />
               </div>
 
               <Button type="submit" className="w-full community-btn text-center justify-center h-12 text-base font-semibold">
