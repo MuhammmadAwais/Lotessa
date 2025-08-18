@@ -14,14 +14,12 @@ const LotessaFooter = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="app-store-btn">
-                <Download size={20} />
-                Download the App
+              <button className="flex items-center justify-center">
+                <img src="/lovable-uploads/e62ee210-e1fc-485b-9080-27c924643742.png" alt="Download the App" className="h-12" />
               </button>
               
-              <button className="community-btn">
-                <Users size={20} />
-                Join the Lotessa Community
+              <button className="flex items-center justify-center -mt-2">
+                <img src="/lovable-uploads/a97005af-398c-4b31-af1a-d153e144ef44.png" alt="Join the Lotessa Community" className="h-12" />
               </button>
             </div>
 
