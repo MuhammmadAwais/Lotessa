@@ -20,7 +20,7 @@ const ContactSection = () => {
               We'd Love to Hear from You
             </h3>
             
-            <p className="text-[28px] font-bold font-sans text-center text-muted-foreground leading-relaxed">
+            <p className="text-[28px] font-bold font-sans text-center text-[#001F3F] leading-relaxed">
               Questions about the app? Curious about a partnership? Just want to say 
               hello? Drop us a message and the Lotessa team will be in touch.
             </p>
