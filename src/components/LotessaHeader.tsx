@@ -1,4 +1,3 @@
-import { Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const LotessaHeader = () => {
@@ -16,8 +15,8 @@ const LotessaHeader = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-sm flex items-center justify-center">
-              <Heart className="text-white" size={20} fill="currentColor" />
+            <div className="w-8 h-8 flex items-center justify-center">
+              <img src="/lovable-uploads/87c24efa-cef2-452b-834f-7728d55c389d.png" alt="Lotessa logo" className="w-8 h-8" />
             </div>
             <span className="text-2xl font-bold text-primary">LOTESSA</span>
           </div>
