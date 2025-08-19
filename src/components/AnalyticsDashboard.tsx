@@ -17,42 +17,10 @@ const AnalyticsDashboard = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchAnalytics = async () => {
-      try {
-        // Get total unique visitors
-        const { data: visitors, error: visitorsError } = await supabase
-          .from('visitors')
-          .select('browser_id');
-
-        if (visitorsError) throw visitorsError;
-
-        // Get interactions data
-        const { data: interactions, error: interactionsError } = await supabase
-          .from('interactions')
-          .select('event_type, element_name');
-
-        if (interactionsError) throw interactionsError;
-
-        // Process the data
-        const analytics: AnalyticsData = {
-          totalVisitors: visitors?.length || 0,
-          headerHovers: interactions?.filter(i => i.event_type === 'hover' && i.element_name === 'download_button_header').length || 0,
-          headerClicks: interactions?.filter(i => i.event_type === 'click' && i.element_name === 'download_button_header').length || 0,
-          heroHovers: interactions?.filter(i => i.event_type === 'hover' && i.element_name === 'download_button_hero').length || 0,
-          heroClicks: interactions?.filter(i => i.event_type === 'click' && i.element_name === 'download_button_hero').length || 0,
-          footerHovers: interactions?.filter(i => i.event_type === 'hover' && i.element_name === 'download_button_footer').length || 0,
-          footerClicks: interactions?.filter(i => i.event_type === 'click' && i.element_name === 'download_button_footer').length || 0,
-        };
-
-        setData(analytics);
-      } catch (error) {
-        console.error('Error fetching analytics:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchAnalytics();
+    // Analytics data is now secured and requires authentication
+    // Display a security notice instead of attempting to fetch data
+    setData(null);
+    setLoading(false);
   }, []);
 
   if (loading) {
@@ -60,7 +28,27 @@ const AnalyticsDashboard = () => {
   }
 
   if (!data) {
-    return <div className="p-8">Error loading analytics data.</div>;
+    return (
+      <div className="p-8 space-y-6">
+        <h2 className="text-3xl font-bold">Analytics Dashboard</h2>
+        <Card>
+          <CardHeader>
+            <CardTitle>Analytics Data Secured</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <p className="text-muted-foreground">
+                Analytics data access has been restricted for security reasons. Customer data and tracking information 
+                are now protected from unauthorized access.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                To restore analytics functionality, implement user authentication and create admin-level access controls.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
   }
 
   return (
