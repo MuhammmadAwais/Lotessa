@@ -10,7 +10,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <LotessaHeader />
-      <div className="pt-20"></div>
+      {/* <div className="pt-20"></div> */}
       <main className="space-y-16">
         <HeroSection />
         <CommunitySection />

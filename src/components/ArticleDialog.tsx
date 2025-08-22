@@ -57,8 +57,8 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
                 </h2>
               )}
 
-              {/* Article Meta */}
-              <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+             
+              {/* <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <span className="font-medium">By {article.author}</span>
                 </div>
@@ -70,7 +70,7 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
                   <Clock className="h-4 w-4" />
                   <span>{article.readTime}</span>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </DialogHeader>
@@ -79,7 +79,7 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
         <ScrollArea className="flex-1 px-6 pb-6">
           <div className="space-y-4">
             {/* Share Button */}
-            <div className="pt-2">
+            {/* <div className="pt-2">
               <Button
                 onClick={handleShare}
                 variant="outline"
@@ -89,7 +89,7 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
                 <Share2 className="mr-2 h-4 w-4" />
                 Share Article
               </Button>
-            </div>
+            </div> */}
 
             {/* Article Content */}
             <div className="prose prose-lg max-w-none">
@@ -136,7 +136,7 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
             {/* Article Footer */}
             <footer className="mt-12 pt-8 border-t border-border">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                <div>
+                {/* <div>
                   <p className="text-sm text-muted-foreground">
                     Written by <span className="font-medium">{article.author}</span>
                   </p>
@@ -144,15 +144,15 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
                     Published on {article.date}
                   </p>
                 </div>
-                
-                <Button
+                 */}
+                {/* <Button
                   onClick={handleShare}
                   variant="outline"
                   size="sm"
                 >
                   <Share2 className="mr-2 h-4 w-4" />
                   Share this article
-                </Button>
+                </Button> */}
               </div>
             </footer>
           </div>

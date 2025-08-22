@@ -14,36 +14,37 @@ export type Database = {
   }
   public: {
     Tables: {
-      interactions: {
+      contacts: {
         Row: {
-          browser_id: string
-          element_name: string
-          event_type: string
           id: string
-          page_url: string | null
-          session_id: string | null
-          timestamp: string
+          name: string
+          email: string
+          topic: string
+          message: string
+          created_at: string
+          updated_at: string
         }
         Insert: {
-          browser_id: string
-          element_name: string
-          event_type: string
           id?: string
-          page_url?: string | null
-          session_id?: string | null
-          timestamp?: string
+          name: string
+          email: string
+          topic: string
+          message: string
+          created_at?: string
+          updated_at?: string
         }
         Update: {
-          browser_id?: string
-          element_name?: string
-          event_type?: string
           id?: string
-          page_url?: string | null
-          session_id?: string | null
-          timestamp?: string
+          name?: string
+          email?: string
+          topic?: string
+          message?: string
+          created_at?: string
+          updated_at?: string
         }
         Relationships: []
       }
+
       visitors: {
         Row: {
           browser_id: string
@@ -101,6 +102,72 @@ export type Database = {
           name?: string
           updated_at?: string
           using_medication?: string
+        }
+        Relationships: []
+      }
+      interactions: {
+        Row: {
+          id: string
+          browser_id: string
+          session_id: string
+          page_url: string
+          element_name: string
+          event_type: string
+          timestamp: string
+        }
+        Insert: {
+          id?: string
+          browser_id: string
+          session_id: string
+          page_url: string
+          element_name: string
+          event_type: string
+          timestamp?: string
+        }
+        Update: {
+          id?: string
+          browser_id?: string
+          session_id?: string
+          page_url?: string
+          element_name?: string
+          event_type?: string
+          timestamp?: string
+        }
+        Relationships: []
+      }
+      article_clicks: {
+        Row: {
+          id: string
+          article_id: number
+          article_title: string
+          browser_id: string
+          session_id: string
+          page_url: string
+          clicked_at: string
+          user_agent: string | null
+          ip_address: unknown | null
+        }
+        Insert: {
+          id?: string
+          article_id: number
+          article_title: string
+          browser_id: string
+          session_id: string
+          page_url: string
+          clicked_at?: string
+          user_agent?: string | null
+          ip_address?: unknown | null
+        }
+        Update: {
+          id?: string
+          article_id?: number
+          article_title?: string
+          browser_id?: string
+          session_id?: string
+          page_url?: string
+          clicked_at?: string
+          user_agent?: string | null
+          ip_address?: unknown | null
         }
         Relationships: []
       }

@@ -1,10 +1,23 @@
 import { Heart, Download, Users, Instagram, Linkedin, Facebook } from "lucide-react";
 import { useAnalytics } from "@/hooks/useAnalytics";
+import { useState } from "react";
+import LegalModal from "./LegalModal";
+import TermsContent from "./TermsContent";
+import PrivacyContent from "./PrivacyContent";
+import TermsConditionsContent from "./TermsConditionsContent";
+import WaitlistDialog from "./WaitlistDialog";
+
 const LotessaFooter = () => {
   const { trackInteraction } = useAnalytics();
-  return <footer className="py-12 mt-16" style={{
-    background: '#EFEEE7'
-  }}>
+  const [isCookiesOpen, setIsCookiesOpen] = useState(false);
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+  const [isTermsOpen, setIsTermsOpen] = useState(false);
+  const [waitlistDialogOpen, setWaitlistDialogOpen] = useState(false);
+  
+  return (
+    <footer className="py-12 mt-16" style={{
+      background: '#EFEEE7'
+    }}>
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Logo - Separate Row */}
         <div className="flex items-center mb-6">
@@ -17,17 +30,23 @@ const LotessaFooter = () => {
           <div className="flex flex-col justify-between px-0 my-[10px]">
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6">
-              <button 
-                className="flex items-center justify-center"
-                onClick={() => trackInteraction('click', 'download_button_footer')}
-                onMouseEnter={() => trackInteraction('hover', 'download_button_footer')}
-              >
-                <img src="/lovable-uploads/e62ee210-e1fc-485b-9080-27c924643742.png" alt="Download the App" className="h-12 w-auto" />
-              </button>
+                             <button 
+                 className="flex items-center justify-center"
+                 onClick={() => {
+                   trackInteraction('click', 'download_button_footer');
+                   setWaitlistDialogOpen(true);
+                 }}
+                 onMouseEnter={() => trackInteraction('hover', 'download_button_footer')}
+               >
+                 <img src="/lovable-uploads/e62ee210-e1fc-485b-9080-27c924643742.png" alt="Download the App" className="h-12 w-auto" />
+               </button>
               
-              <button className="flex items-center justify-center">
-                <img src="/lovable-uploads/a97005af-398c-4b31-af1a-d153e144ef44.png" alt="Join the Lotessa Community" className="h-12 w-auto" />
-              </button>
+                             <button 
+                 className="flex items-center justify-center"
+                 onClick={() => setWaitlistDialogOpen(true)}
+               >
+                 <img src="/lovable-uploads/a97005af-398c-4b31-af1a-d153e144ef44.png" alt="Join the Lotessa Community" className="h-12 w-auto" />
+               </button>
             </div>
 
             {/* Social Media - Aligned with Terms */}
@@ -54,20 +73,69 @@ const LotessaFooter = () => {
             </p>
             
             <div className="flex flex-wrap gap-6 mt-8 lg:mt-0">
-              <a href="#" className="hover:text-primary transition-colors underline font-medium text-base" style={{
-              color: '#001f3f'
-            }}>
-                Terms & Conditions
-              </a>
-              <a href="#" className="hover:text-primary transition-colors underline font-medium text-base" style={{
-              color: '#001f3f'
-            }}>
+              <button 
+                onClick={() => {
+                  trackInteraction('click', 'terms_conditions_footer');
+                  setIsTermsOpen(true);
+                }}
+                onMouseEnter={() => trackInteraction('hover', 'terms_conditions_footer')}
+                className="hover:text-primary transition-all duration-200 underline font-medium text-base cursor-pointer hover:scale-105" 
+                style={{ color: '#001f3f' }}
+              >
+                Terms and Conditions
+              </button>
+              <button 
+                onClick={() => {
+                  trackInteraction('click', 'cookies_policy_footer');
+                  setIsCookiesOpen(true);
+                }}
+                onMouseEnter={() => trackInteraction('hover', 'cookies_policy_footer')}
+                className="hover:text-primary transition-all duration-200 underline font-medium text-base cursor-pointer hover:scale-105" 
+                style={{ color: '#001f3f' }}
+              >
+                Cookies Policy
+              </button>
+              <button 
+                onClick={() => {
+                  trackInteraction('click', 'privacy_policy_footer');
+                  setIsPrivacyOpen(true);
+                }}
+                onMouseEnter={() => trackInteraction('hover', 'privacy_policy_footer')}
+                className="hover:text-primary transition-all duration-200 underline font-medium text-base cursor-pointer hover:scale-105" 
+                style={{ color: '#001f3f' }}
+              >
                 Privacy Policy
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </div>
-    </footer>;
+
+      {/* Legal Modals */}
+                  <LegalModal
+              isOpen={isCookiesOpen}
+              onClose={() => setIsCookiesOpen(false)}
+              title="Website Privacy and Cookies Policy"
+              content={<TermsContent />}
+            />
+      
+      <LegalModal
+        isOpen={isPrivacyOpen}
+        onClose={() => setIsPrivacyOpen(false)}
+        title="Privacy Policy"
+        content={<PrivacyContent />}
+      />
+      
+      <LegalModal
+        isOpen={isTermsOpen}
+        onClose={() => setIsTermsOpen(false)}
+        title="Digital Products Terms and Conditions"
+        content={<TermsConditionsContent />}
+      />
+      
+      <WaitlistDialog open={waitlistDialogOpen} onOpenChange={setWaitlistDialogOpen} />
+    </footer>
+  );
 };
+
 export default LotessaFooter;
