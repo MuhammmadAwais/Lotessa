@@ -118,9 +118,9 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
                 </div>
               </div>
 
-              {/* Right Side - Sticky Mobile Mockup */}
+              {/* Right Side - Fixed Mobile Mockup */}
               <div className="lg:w-1/3 flex justify-center items-start pt-8">
-                <div className="sticky top-8 w-full max-w-xs">
+                <div className="fixed top-20 right-8 w-full max-w-xs lg:max-w-[280px]">
                   <img
                     src="/lovable-uploads/257ea2ad-1c1a-4d20-832e-0a1f30850e51.png"
                     alt="Lotessa Mobile App Interface"
