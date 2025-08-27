@@ -70,7 +70,7 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
               msOverflowStyle: 'none', /* Internet Explorer 10+ */
             }}
           >
-            <style jsx>{`
+            <style>{`
               div::-webkit-scrollbar {
                 display: none; /* Chrome, Safari, Opera */
               }
@@ -130,7 +130,7 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
           <div className="lg:w-1/3 flex justify-center items-start sticky top-24">
             <div className="w-full max-w-sm aspect-[2/3]">
               <img
-                src="/lovable-uploads/ede3f8df-6167-46ea-8bcd-249fdd2c788a.png"
+                src="/lovable-uploads/257ea2ad-1c1a-4d20-832e-0a1f30850e51.png"
                 alt="Article Image"
                 className="rounded-lg  w-full h-auto object-contain"
               />

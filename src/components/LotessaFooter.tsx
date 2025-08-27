@@ -75,10 +75,9 @@ const LotessaFooter = () => {
             <div className="flex flex-wrap gap-6 mt-8 lg:mt-0">
               <button 
                 onClick={() => {
-                  trackInteraction('click', 'terms_conditions_footer');
                   setIsTermsOpen(true);
                 }}
-                onMouseEnter={() => trackInteraction('hover', 'terms_conditions_footer')}
+                onMouseEnter={() => {}}
                 className="hover:text-primary transition-all duration-200 underline font-medium text-base cursor-pointer hover:scale-105" 
                 style={{ color: '#001f3f' }}
               >
@@ -86,10 +85,9 @@ const LotessaFooter = () => {
               </button>
               <button 
                 onClick={() => {
-                  trackInteraction('click', 'cookies_policy_footer');
                   setIsCookiesOpen(true);
                 }}
-                onMouseEnter={() => trackInteraction('hover', 'cookies_policy_footer')}
+                onMouseEnter={() => {}}
                 className="hover:text-primary transition-all duration-200 underline font-medium text-base cursor-pointer hover:scale-105" 
                 style={{ color: '#001f3f' }}
               >
@@ -97,10 +95,9 @@ const LotessaFooter = () => {
               </button>
               <button 
                 onClick={() => {
-                  trackInteraction('click', 'privacy_policy_footer');
                   setIsPrivacyOpen(true);
                 }}
-                onMouseEnter={() => trackInteraction('hover', 'privacy_policy_footer')}
+                onMouseEnter={() => {}}
                 className="hover:text-primary transition-all duration-200 underline font-medium text-base cursor-pointer hover:scale-105" 
                 style={{ color: '#001f3f' }}
               >
