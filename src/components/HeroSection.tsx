@@ -15,8 +15,8 @@ const HeroSection = () => {
            {/* Left Content */}
            <div className="flex flex-col justify-center min-h-[650px]">
              <div className="space-y-7">
-               <h1 className="text-5xl lg:text-6xl leading-[1.1] text-left font-bold text-[#001f3f] xl:text-5xl">Your Health Companion
-for GLP1 Medication</h1>
+               <h2 className="text-4xl lg:text-4xl leading-[1.1] text-left font-bold text-[#001f3f] xl:text-4xl">Your Health Companion
+for GLP1 Medication</h2>
                
                <h2 className="text-[30px] text-foreground font-bold font-sans">
                  Track. Learn. Connect. All in one place.
@@ -45,11 +45,11 @@ for GLP1 Medication</h1>
                     }}
                     onMouseEnter={() => trackInteraction('hover', 'download_button_hero')}
                   >
-                    <img src="/lovable-uploads/e62ee210-e1fc-485b-9080-27c924643742.png" alt="Download the App" className="h-13 w-auto" />
+                    <img src="/lovable-uploads/e62ee210-e1fc-485b-9080-27c924643742.png" alt="Download the App" className="h-11 w-auto" />
                   </button>
                   
                   <button className="flex items-center justify-center" onClick={() => setDialogOpen(true)}>
-                    <img src="/lovable-uploads/a97005af-398c-4b31-af1a-d153e144ef44.png" alt="Join the Lotessa Community" className="h-13 w-auto" />
+                    <img src="/lovable-uploads/a97005af-398c-4b31-af1a-d153e144ef44.png" alt="Join the Lotessa Community" className="h-11 w-auto" />
                   </button>
                 </div>
              </div>

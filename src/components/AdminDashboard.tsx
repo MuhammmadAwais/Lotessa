@@ -4,6 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
+import { 
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { 
@@ -93,6 +103,8 @@ const AdminDashboard = () => {
   const [articleClicks, setArticleClicks] = useState<ArticleClick[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("overview");
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
     console.log('🚀 AdminDashboard component mounted');
@@ -256,6 +268,55 @@ const AdminDashboard = () => {
     });
   };
 
+  const handleDeleteAllData = async () => {
+    setIsDeleting(true);
+    try {
+      console.log('🗑️ Starting to delete all data...');
+      
+      // Delete all data from all tables
+      const tables = ['contacts', 'visitors', 'waitlist', 'interactions', 'article_clicks'];
+      
+      for (const table of tables) {
+        console.log(`🗑️ Deleting from ${table}...`);
+        const { error } = await supabase.from(table as any).delete().neq('id', '00000000-0000-0000-0000-000000000000');
+        
+        if (error) {
+          console.error(`❌ Error deleting from ${table}:`, error);
+          toast({
+            title: "Delete Error",
+            description: `Failed to delete data from ${table}: ${error.message}`,
+            variant: "destructive"
+          });
+          return;
+        }
+        console.log(`✅ Successfully deleted from ${table}`);
+      }
+
+      // Clear local state
+      setContacts([]);
+      setVisitors([]);
+      setWaitlist([]);
+      setInteractions([]);
+      setArticleClicks([]);
+
+      toast({
+        title: "Data Deleted",
+        description: "All data has been successfully cleared from the database.",
+      });
+
+      setShowDeleteDialog(false);
+    } catch (error) {
+      console.error('💥 Unexpected error during delete:', error);
+      toast({
+        title: "Delete Error",
+        description: "An unexpected error occurred while deleting data.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsDeleting(false);
+    }
+  };
+
   const getTopicCounts = () => {
     const counts: { [key: string]: number } = {};
     contacts.forEach(contact => {
@@ -371,6 +432,7 @@ const AdminDashboard = () => {
         onTabChange={setActiveTab}
         onRefresh={fetchAllData}
         onLogout={handleLogout}
+        onDelete={() => setShowDeleteDialog(true)}
         stats={{
           contacts: contacts.length,
           visitors: visitors.length,
@@ -380,70 +442,106 @@ const AdminDashboard = () => {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      {/* Delete Confirmation Dialog */}
+      <AlertDialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
+        <AlertDialogContent className="max-w-[95vw] sm:max-w-lg mx-4">
+          <AlertDialogHeader>
+            <AlertDialogTitle className="text-lg sm:text-xl text-destructive">⚠️ Clear All Data</AlertDialogTitle>
+            <AlertDialogDescription className="text-sm sm:text-base">
+              This action will permanently delete ALL data from the database including:
+              <br />• {contacts.length} contact submissions
+              <br />• {visitors.length} visitor records  
+              <br />• {waitlist.length} waitlist entries
+              <br />• {interactions.length} user interactions
+              <br />• {articleClicks.length} article click records
+              <br /><br />
+              <strong>This action cannot be undone!</strong> Are you absolutely sure you want to proceed?
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter className="flex-col sm:flex-row gap-2">
+            <AlertDialogCancel className="w-full sm:w-auto">Cancel</AlertDialogCancel>
+            <AlertDialogAction 
+              onClick={handleDeleteAllData}
+              disabled={isDeleting}
+              className="w-full sm:w-auto bg-destructive text-destructive-foreground hover:bg-destructive/90"
+            >
+              {isDeleting ? (
+                <>
+                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+                  Deleting...
+                </>
+              ) : (
+                "Yes, Delete All Data"
+              )}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
+          <Card className="p-4 sm:p-6">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 px-0 pt-0">
               <CardTitle className="text-sm font-medium">Total Contacts</CardTitle>
               <MessageSquare className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{contacts.length}</div>
+            <CardContent className="px-0 pb-0">
+              <div className="text-xl sm:text-2xl font-bold">{contacts.length}</div>
               <p className="text-xs text-muted-foreground">
                 Contact form submissions
               </p>
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <Card className="p-4 sm:p-6">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 px-0 pt-0">
               <CardTitle className="text-sm font-medium">Total Visitors</CardTitle>
               <Eye className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{visitors.length}</div>
+            <CardContent className="px-0 pb-0">
+              <div className="text-xl sm:text-2xl font-bold">{visitors.length}</div>
               <p className="text-xs text-muted-foreground">
                 Unique site visitors
               </p>
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <Card className="p-4 sm:p-6">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 px-0 pt-0">
               <CardTitle className="text-sm font-medium">Total Waitlist</CardTitle>
               <Users className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{waitlist.length}</div>
+            <CardContent className="px-0 pb-0">
+              <div className="text-xl sm:text-2xl font-bold">{waitlist.length}</div>
               <p className="text-xs text-muted-foreground">
                 App waitlist signups
               </p>
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <Card className="p-4 sm:p-6">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 px-0 pt-0">
               <CardTitle className="text-sm font-medium">Total Interactions</CardTitle>
               <Activity className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{interactions.length}</div>
+            <CardContent className="px-0 pb-0">
+              <div className="text-xl sm:text-2xl font-bold">{interactions.length}</div>
               <p className="text-xs text-muted-foreground">
                 User interactions tracked
               </p>
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <Card className="p-4 sm:p-6">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 px-0 pt-0">
               <CardTitle className="text-sm font-medium">Article Clicks</CardTitle>
               <svg className="h-4 w-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 5.477 5.754 5 7.5 5s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 19 16.5 19c-1.746 0-3.332-.523-4.5-1.253" />
               </svg>
             </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{articleClicks.length}</div>
+            <CardContent className="px-0 pb-0">
+              <div className="text-xl sm:text-2xl font-bold">{articleClicks.length}</div>
               <p className="text-xs text-muted-foreground">
                 Article views tracked
               </p>
@@ -457,7 +555,7 @@ const AdminDashboard = () => {
             <CardTitle className="text-sm text-gray-600">Debug Information</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
               <div>
                 <span className="font-medium">Contacts:</span> {contacts.length} records
                 {contacts.length > 0 && (

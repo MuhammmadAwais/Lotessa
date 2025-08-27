@@ -290,11 +290,11 @@ GLP-1 medications are valuable tools, backed by science, but they're not a one-s
               Lotessa Library
             </h3>
             
-            <h2 className="text-[52px] font-bold text-[#001F3F] leading-tight font-sans">
+            <h2 className="text-[38px] font-bold text-[#001F3F] leading-tight font-sans">
               Discover Expert Content, Anytime
             </h2>
             
-            <p className="text-[28px] text-foreground font-bold font-sans mx-auto text-center">
+            <p className="text-[24px] text-foreground font-bold font-sans mx-auto text-center">
               Bite-sized insights, real-world tips, and trustworthy health information
             </p>
           </div>

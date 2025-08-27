@@ -42,7 +42,7 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl w-[95vw] h-[90vh] p-0 bg-white border border-border shadow-lg">
+      <DialogContent className="max-w-7xl w-[95vw] h-[90vh] p-0 bg-white border border-border shadow-lg">
         {/* Header */}
         <DialogHeader className="px-6 pt-6 pb-4 border-b border-border bg-white sticky top-0 z-10">
           <div className="flex items-start justify-between gap-4">
@@ -56,107 +56,87 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
                   {article.subtitle}
                 </h2>
               )}
-
-             
-              {/* <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <span className="font-medium">By {article.author}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Calendar className="h-4 w-4" />
-                  <span>{article.date}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4" />
-                  <span>{article.readTime}</span>
-                </div>
-              </div> */}
             </div>
           </div>
         </DialogHeader>
 
         {/* Scrollable Content */}
-        <ScrollArea className="flex-1 px-6 pb-6">
-          <div className="space-y-4">
-            {/* Share Button */}
-            {/* <div className="pt-2">
-              <Button
-                onClick={handleShare}
-                variant="outline"
-                size="sm"
-                className="mb-6"
-              >
-                <Share2 className="mr-2 h-4 w-4" />
-                Share Article
-              </Button>
-            </div> */}
-
-            {/* Article Content */}
-            <div className="prose prose-lg max-w-none">
-              <div 
-                className="text-[#001F3F] leading-relaxed space-y-6"
-                style={{ 
-                  lineHeight: '1.7'
-                }}
-              >
-                {article.content.split('\n').map((paragraph, index) => {
-                  if (paragraph.startsWith('## ')) {
-                    return (
-                      <h2 key={index} className="text-xl md:text-2xl font-bold text-[#001F3F] mt-8 mb-4 first:mt-0">
-                        {paragraph.replace('## ', '')}
-                      </h2>
-                    );
-                  }
-                  if (paragraph.startsWith('### ')) {
-                    return (
-                      <h3 key={index} className="text-lg md:text-xl font-semibold text-[#001F3F] mt-6 mb-3">
-                        {paragraph.replace('### ', '')}
-                      </h3>
-                    );
-                  }
-                  if (paragraph.startsWith('- ')) {
-                    return (
-                      <li key={index} className="text-[#001F3F] ml-4 list-disc">
-                        {paragraph.replace('- ', '')}
-                      </li>
-                    );
-                  }
-                  if (paragraph.trim() === '') {
-                    return <div key={index} className="h-2" />;
-                  }
-                  return (
-                    <p key={index} className="text-[#001F3F] mb-4">
-                      {paragraph}
-                    </p>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Article Footer */}
-            <footer className="mt-12 pt-8 border-t border-border">
-              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                {/* <div>
-                  <p className="text-sm text-muted-foreground">
-                    Written by <span className="font-medium">{article.author}</span>
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Published on {article.date}
-                  </p>
-                </div>
-                 */}
-                {/* <Button
-                  onClick={handleShare}
-                  variant="outline"
-                  size="sm"
+        <div className="flex flex-col lg:flex-row gap-8 flex-1 min-h-0">
+          {/* Left Side (Content) - Scrollable */}
+          <div 
+            className="lg:w-2/3 min-h-0 overflow-y-auto"
+            style={{
+              scrollbarWidth: 'none', /* Firefox */
+              msOverflowStyle: 'none', /* Internet Explorer 10+ */
+            }}
+          >
+            <style jsx>{`
+              div::-webkit-scrollbar {
+                display: none; /* Chrome, Safari, Opera */
+              }
+            `}</style>
+            <div className="px-6 pb-6 space-y-4">
+              <div className="prose prose-lg max-w-none">
+                <div 
+                  className="text-[#001F3F] leading-relaxed space-y-6"
+                  style={{ 
+                    lineHeight: '1.7'
+                  }}
                 >
-                  <Share2 className="mr-2 h-4 w-4" />
-                  Share this article
-                </Button> */}
+                  {article.content.split('\n').map((paragraph, index) => {
+                    if (paragraph.startsWith('## ')) {
+                      return (
+                        <h2 key={index} className="text-xl md:text-2xl font-bold text-[#001F3F] mt-8 mb-4 first:mt-0">
+                          {paragraph.replace('## ', '')}
+                        </h2>
+                      );
+                    }
+                    if (paragraph.startsWith('### ')) {
+                      return (
+                        <h3 key={index} className="text-lg md:text-xl font-semibold text-[#001F3F] mt-6 mb-3">
+                          {paragraph.replace('### ', '')}
+                        </h3>
+                      );
+                    }
+                    if (paragraph.startsWith('- ')) {
+                      return (
+                        <li key={index} className="text-[#001F3F] ml-4 list-disc">
+                          {paragraph.replace('- ', '')}
+                        </li>
+                      );
+                    }
+                    if (paragraph.trim() === '') {
+                      return <div key={index} className="h-2" />;
+                    }
+                    return (
+                      <p key={index} className="text-[#001F3F] mb-4">
+                        {paragraph}
+                      </p>
+                    );
+                  })}
+                </div>
               </div>
-            </footer>
+
+              {/* Article Footer */}
+              <footer className="mt-12 pt-8 border-t border-border">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                  {/* Optional footer content */}
+                </div>
+              </footer>
+            </div>
           </div>
-        </ScrollArea>
+
+          {/* Right Side (Image) - Fixed/Sticky */}
+          <div className="lg:w-1/3 flex justify-center items-start sticky top-24">
+            <div className="w-full max-w-sm aspect-[2/3]">
+              <img
+                src="/lovable-uploads/ede3f8df-6167-46ea-8bcd-249fdd2c788a.png"
+                alt="Article Image"
+                className="rounded-lg  w-full h-auto object-contain"
+              />
+            </div>
+          </div>
+        </div>
       </DialogContent>
     </Dialog>
   );
