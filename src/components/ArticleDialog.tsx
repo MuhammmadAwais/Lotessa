@@ -73,7 +73,7 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
           `}</style>
           <div className="px-6 pb-6 space-y-6">
             {/* First Section - Text Left, Mockup Right */}
-            <div className="flex flex-col lg:flex-row gap-6 mb-8">
+            <div className="flex flex-col lg:flex-row gap-6 mb-4">
               {/* Left Side - First part of content */}
               <div className="lg:w-2/3">
                 <div className="prose prose-lg max-w-none">
