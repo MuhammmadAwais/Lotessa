@@ -73,12 +73,12 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
           `}</style>
           <div className="px-6 pb-6 space-y-6">
             {/* First Section - Text Left, Mockup Right */}
-            <div className="flex flex-col lg:flex-row gap-8 mb-12">
+            <div className="flex flex-col lg:flex-row gap-6 mb-8">
               {/* Left Side - First part of content */}
               <div className="lg:w-2/3">
                 <div className="prose prose-lg max-w-none">
                   <div 
-                    className="text-[#001F3F] leading-relaxed space-y-6"
+                    className="text-[#001F3F] leading-relaxed space-y-4"
                     style={{ 
                       lineHeight: '1.7'
                     }}
@@ -86,14 +86,14 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
                     {article.content.split('\n').slice(0, Math.ceil(article.content.split('\n').length / 2)).map((paragraph, index) => {
                       if (paragraph.startsWith('## ')) {
                         return (
-                          <h2 key={index} className="text-xl md:text-2xl font-bold text-[#001F3F] mt-8 mb-4 first:mt-0">
+                          <h2 key={index} className="text-xl md:text-2xl font-bold text-[#001F3F] mt-6 mb-3 first:mt-0">
                             {paragraph.replace('## ', '')}
                           </h2>
                         );
                       }
                       if (paragraph.startsWith('### ')) {
                         return (
-                          <h3 key={index} className="text-lg md:text-xl font-semibold text-[#001F3F] mt-6 mb-3">
+                          <h3 key={index} className="text-lg md:text-xl font-semibold text-[#001F3F] mt-4 mb-2">
                             {paragraph.replace('### ', '')}
                           </h3>
                         );
@@ -106,10 +106,10 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
                         );
                       }
                       if (paragraph.trim() === '') {
-                        return <div key={index} className="h-2" />;
+                        return <div key={index} className="h-1" />;
                       }
                       return (
-                        <p key={index} className="text-[#001F3F] mb-4">
+                        <p key={index} className="text-[#001F3F] mb-3">
                           {paragraph}
                         </p>
                       );
@@ -119,8 +119,8 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
               </div>
 
               {/* Right Side - Mobile Mockup */}
-              <div className="lg:w-1/3 flex justify-center items-start">
-                <div className="w-full max-w-sm aspect-[2/3]">
+              <div className="lg:w-1/3 flex justify-center items-start lg:sticky lg:top-6">
+                <div className="w-full max-w-xs">
                   <img
                     src="/lovable-uploads/257ea2ad-1c1a-4d20-832e-0a1f30850e51.png"
                     alt="Lotessa Mobile App Interface"
