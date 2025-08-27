@@ -131,12 +131,6 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
               />
             </div>
 
-            {/* Article Footer */}
-            <footer className="mt-12 pt-8 border-t border-border">
-              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                {/* Optional footer content */}
-              </div>
-            </footer>
           </div>
         </div>
       </DialogContent>
