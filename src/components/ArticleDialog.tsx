@@ -61,80 +61,75 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
         </DialogHeader>
 
         {/* Scrollable Content */}
-        <div className="flex flex-col lg:flex-row gap-8 flex-1 min-h-0">
-          {/* Left Side (Content) - Scrollable */}
-          <div 
-            className="lg:w-2/3 min-h-0 overflow-y-auto"
-            style={{
-              scrollbarWidth: 'none', /* Firefox */
-              msOverflowStyle: 'none', /* Internet Explorer 10+ */
-            }}
-          >
-            <style>{`
-              div::-webkit-scrollbar {
-                display: none; /* Chrome, Safari, Opera */
-              }
-            `}</style>
-            <div className="px-6 pb-6 space-y-4">
-              <div className="prose prose-lg max-w-none">
-                <div 
-                  className="text-[#001F3F] leading-relaxed space-y-6"
-                  style={{ 
-                    lineHeight: '1.7'
-                  }}
-                >
-                  {article.content.split('\n').map((paragraph, index) => {
-                    if (paragraph.startsWith('## ')) {
-                      return (
-                        <h2 key={index} className="text-xl md:text-2xl font-bold text-[#001F3F] mt-8 mb-4 first:mt-0">
-                          {paragraph.replace('## ', '')}
-                        </h2>
-                      );
-                    }
-                    if (paragraph.startsWith('### ')) {
-                      return (
-                        <h3 key={index} className="text-lg md:text-xl font-semibold text-[#001F3F] mt-6 mb-3">
-                          {paragraph.replace('### ', '')}
-                        </h3>
-                      );
-                    }
-                    if (paragraph.startsWith('- ')) {
-                      return (
-                        <li key={index} className="text-[#001F3F] ml-4 list-disc">
-                          {paragraph.replace('- ', '')}
-                        </li>
-                      );
-                    }
-                    if (paragraph.trim() === '') {
-                      return <div key={index} className="h-2" />;
-                    }
-                    return (
-                      <p key={index} className="text-[#001F3F] mb-4">
-                        {paragraph}
-                      </p>
-                    );
-                  })}
-                </div>
+        <div className="flex-1 min-h-0 overflow-y-auto" 
+             style={{
+               scrollbarWidth: 'none', /* Firefox */
+               msOverflowStyle: 'none', /* Internet Explorer 10+ */
+             }}>
+          <style>{`
+            div::-webkit-scrollbar {
+              display: none; /* Chrome, Safari, Opera */
+            }
+          `}</style>
+          <div className="px-6 pb-6 space-y-6">
+            {/* Mobile Image at Top */}
+            <div className="flex justify-center mb-8">
+              <div className="w-full max-w-sm aspect-[2/3]">
+                <img
+                  src="/lovable-uploads/257ea2ad-1c1a-4d20-832e-0a1f30850e51.png"
+                  alt="Lotessa Mobile App Interface"
+                  className="rounded-lg w-full h-auto object-contain"
+                />
               </div>
-
-              {/* Article Footer */}
-              <footer className="mt-12 pt-8 border-t border-border">
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                  {/* Optional footer content */}
-                </div>
-              </footer>
             </div>
-          </div>
-
-          {/* Right Side (Image) - Fixed/Sticky */}
-          <div className="lg:w-1/3 flex justify-center items-start sticky top-24">
-            <div className="w-full max-w-sm aspect-[2/3]">
-              <img
-                src="/lovable-uploads/257ea2ad-1c1a-4d20-832e-0a1f30850e51.png"
-                alt="Article Image"
-                className="rounded-lg  w-full h-auto object-contain"
-              />
+            
+            <div className="prose prose-lg max-w-none">
+              <div 
+                className="text-[#001F3F] leading-relaxed space-y-6"
+                style={{ 
+                  lineHeight: '1.7'
+                }}
+              >
+                {article.content.split('\n').map((paragraph, index) => {
+                  if (paragraph.startsWith('## ')) {
+                    return (
+                      <h2 key={index} className="text-xl md:text-2xl font-bold text-[#001F3F] mt-8 mb-4 first:mt-0">
+                        {paragraph.replace('## ', '')}
+                      </h2>
+                    );
+                  }
+                  if (paragraph.startsWith('### ')) {
+                    return (
+                      <h3 key={index} className="text-lg md:text-xl font-semibold text-[#001F3F] mt-6 mb-3">
+                        {paragraph.replace('### ', '')}
+                      </h3>
+                    );
+                  }
+                  if (paragraph.startsWith('- ')) {
+                    return (
+                      <li key={index} className="text-[#001F3F] ml-4 list-disc">
+                        {paragraph.replace('- ', '')}
+                      </li>
+                    );
+                  }
+                  if (paragraph.trim() === '') {
+                    return <div key={index} className="h-2" />;
+                  }
+                  return (
+                    <p key={index} className="text-[#001F3F] mb-4">
+                      {paragraph}
+                    </p>
+                  );
+                })}
+              </div>
             </div>
+
+            {/* Article Footer */}
+            <footer className="mt-12 pt-8 border-t border-border">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                {/* Optional footer content */}
+              </div>
+            </footer>
           </div>
         </div>
       </DialogContent>
