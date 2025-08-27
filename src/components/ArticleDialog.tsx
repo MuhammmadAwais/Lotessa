@@ -71,7 +71,7 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
               display: none; /* Chrome, Safari, Opera */
             }
           `}</style>
-          <div className="px-6 pb-6 space-y-6">
+          <div className="px-6 pb-6 space-y-2">
             {/* First Section - Text Left, Mockup Right */}
             <div className="flex flex-col lg:flex-row gap-6 mb-4">
               {/* Left Side - First part of content */}
