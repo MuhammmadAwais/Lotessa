@@ -72,9 +72,9 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
             }
           `}</style>
           <div className="px-6 pb-6 space-y-2">
-            {/* First Section - Text Left, Mockup Right */}
-            <div className="flex flex-col lg:flex-row gap-6 mb-4">
-              {/* Left Side - First part of content */}
+            {/* Content with Sticky Mockup */}
+            <div className="flex flex-col lg:flex-row gap-6">
+              {/* Left Side - All Article Content */}
               <div className="lg:w-2/3">
                 <div className="prose prose-lg max-w-none">
                   <div 
@@ -83,7 +83,7 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
                       lineHeight: '1.7'
                     }}
                   >
-                    {article.content.split('\n').slice(0, Math.ceil(article.content.split('\n').length / 2)).map((paragraph, index) => {
+                    {article.content.split('\n').map((paragraph, index) => {
                       if (paragraph.startsWith('## ')) {
                         return (
                           <h2 key={index} className="text-xl md:text-2xl font-bold text-[#001F3F] mt-6 mb-3 first:mt-0">
@@ -118,58 +118,15 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
                 </div>
               </div>
 
-              {/* Right Side - Mobile Mockup */}
-              <div className="lg:w-1/3 flex justify-center items-start lg:sticky lg:top-6">
-                <div className="w-full max-w-xs">
+              {/* Right Side - Sticky Mobile Mockup */}
+              <div className="lg:w-1/3 flex justify-center items-start">
+                <div className="sticky top-6 w-full max-w-xs">
                   <img
                     src="/lovable-uploads/257ea2ad-1c1a-4d20-832e-0a1f30850e51.png"
                     alt="Lotessa Mobile App Interface"
                     className="rounded-lg w-full h-auto object-contain"
                   />
                 </div>
-              </div>
-            </div>
-
-            {/* Second Section - Full Width Content */}
-            <div className="prose prose-lg max-w-none">
-              <div 
-                className="text-[#001F3F] leading-relaxed space-y-6"
-                style={{ 
-                  lineHeight: '1.7'
-                }}
-              >
-                {article.content.split('\n').slice(Math.ceil(article.content.split('\n').length / 2)).map((paragraph, index) => {
-                  const actualIndex = index + Math.ceil(article.content.split('\n').length / 2);
-                  if (paragraph.startsWith('## ')) {
-                    return (
-                      <h2 key={actualIndex} className="text-xl md:text-2xl font-bold text-[#001F3F] mt-8 mb-4 first:mt-0">
-                        {paragraph.replace('## ', '')}
-                      </h2>
-                    );
-                  }
-                  if (paragraph.startsWith('### ')) {
-                    return (
-                      <h3 key={actualIndex} className="text-lg md:text-xl font-semibold text-[#001F3F] mt-6 mb-3">
-                        {paragraph.replace('### ', '')}
-                      </h3>
-                    );
-                  }
-                  if (paragraph.startsWith('- ')) {
-                    return (
-                      <li key={actualIndex} className="text-[#001F3F] ml-4 list-disc">
-                        {paragraph.replace('- ', '')}
-                      </li>
-                    );
-                  }
-                  if (paragraph.trim() === '') {
-                    return <div key={actualIndex} className="h-2" />;
-                  }
-                  return (
-                    <p key={actualIndex} className="text-[#001F3F] mb-4">
-                      {paragraph}
-                    </p>
-                  );
-                })}
               </div>
             </div>
 
