@@ -123,7 +123,7 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
             </div>
             
             {/* Fixed Mobile Mockup - Centered on Right */}
-            <div className="fixed top-1/2 right-16 transform -translate-y-1/2 w-[300px] z-20 hidden lg:block">
+            <div className="fixed top-[55%] right-16 transform -translate-y-1/2 w-[300px] z-20 hidden lg:block">
               <img
                 src="/lovable-uploads/257ea2ad-1c1a-4d20-832e-0a1f30850e51.png"
                 alt="Lotessa Mobile App Interface"
