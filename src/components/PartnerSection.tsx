@@ -44,7 +44,7 @@ const PartnerSection = () => {
             {/* Right Column: Image */}
             <div className="flex-1 mt-10 lg:mt-0">
               <img
-                src="/lovable-uploads/ea2e0693-cec6-4d25-b547-1c704481b21a.png?v=2"
+                src="/lovable-uploads/b45b6fc1-b82e-4b7e-b6d1-d5131661ad5a.png"
                 alt="Lotessa Mobile App - Clean Logo Design"
                 className="w-64 h-auto max-h-full object-contain relative z-10 scale-105"
                 />
