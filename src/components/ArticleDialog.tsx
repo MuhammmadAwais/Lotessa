@@ -122,8 +122,8 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
               <div className="lg:w-1/3 hidden lg:flex justify-center items-start pt-8">
                 <div className="w-[300px] sticky top-8">
                   <img
-                    src="/lovable-uploads/257ea2ad-1c1a-4d20-832e-0a1f30850e51.png"
-                    alt="Lotessa Mobile App Interface"
+                    src="/lovable-uploads/7dc40bd7-caa6-47a8-8ff0-a647d67addf5.png"
+                    alt="Lotessa Progress Tracking Interface"
                     className="rounded-lg w-full h-auto object-contain"
                   />
                 </div>
