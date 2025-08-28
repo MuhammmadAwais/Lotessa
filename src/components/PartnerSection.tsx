@@ -45,8 +45,8 @@ const PartnerSection = () => {
             <div className="flex-1 mt-10 lg:mt-0">
               <img
               
-                src="/lovable-uploads/spl2.png" // Replace with your actual path
-                alt="Mobile app mockup"
+                src="/lovable-uploads/ea2e0693-cec6-4d25-b547-1c704481b21a.png"
+                alt="Lotessa Mobile App"
                 className="w-64 h-auto max-h-full object-contain relative z-10 scale-105"
                 />
             </div>
