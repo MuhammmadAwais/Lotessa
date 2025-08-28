@@ -42,7 +42,7 @@ const PartnerSection = () => {
             </div>
 
             {/* Right Column: Image */}
-            <div className="flex-1 mt-10 lg:mt-0">
+            <div className="flex-1 mt-6 lg:-mt-4">
               <img
                 src="/lovable-uploads/226ae739-ec0c-41d9-8a02-8d3fc53060b3.png"
                 alt="Lotessa Progress Tracking Interface"
