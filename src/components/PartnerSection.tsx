@@ -11,7 +11,7 @@ const PartnerSection = () => {
             <h2 className="text-[42px] font-bold text-[#001F3F] leading-tight font-sans">
               Shape the Future of GLP-1 Health Support
             </h2>
-            <p className="text-[24px] text-foreground font-sans text-left leading-relaxed max-w-4xl">
+            <p className="text-[18px] text-foreground font-sans text-left leading-relaxed max-w-4xl">
               Lotessa connects brands, clinicians, researchers, and writers with one of the UK's fastest-growing GLP-1 communities. Backed by the University of Bradford and trusted by thousands of users, we're building a platform where evidence-based knowledge, safe communities, and innovative health tech meet.
             </p>
           </div>
