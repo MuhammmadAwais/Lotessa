@@ -1,8 +1,8 @@
 const TermsContent = () => {
   return (
-    <div className="space-y-6 text-gray-700 leading-relaxed">
+    <div className="space-y-6 text-muted-foreground leading-relaxed">
       <div>
-        <h3 className="text-xl font-semibold text-gray-900 mb-3">Introduction</h3>
+        <h3 className="text-xl font-semibold text-foreground mb-3">Introduction</h3>
         <p className="text-sm leading-relaxed">
           This is the privacy and cookies policy for this website, run by Lotessa (our "Website"). This policy applies to your use of the Website and the services we offer.
         </p>
@@ -24,7 +24,7 @@ const TermsContent = () => {
       </div>
 
       <div>
-        <h3 className="text-xl font-semibold text-gray-900 mb-3">About Lotessa</h3>
+        <h3 className="text-xl font-semibold text-foreground mb-3">About Lotessa</h3>
         <p className="text-sm leading-relaxed">
           This Website is operated by Lotessa Digital Health Ltd, of Bright Building, Richmond Road, Bradford BD7 1DB ("we", "our" or "us").
         </p>
@@ -34,7 +34,7 @@ const TermsContent = () => {
       </div>
 
       <div>
-        <h3 className="text-xl font-semibold text-gray-900 mb-3">The Personal Data We Collect</h3>
+        <h3 className="text-xl font-semibold text-foreground mb-3">The Personal Data We Collect</h3>
         <p className="text-sm leading-relaxed">
           We consider personal data to be any data which can identify you as an individual person. We do not consider that data where your identity has been irretrievably removed or anonymous data does not constitute personal data.
         </p>
@@ -51,7 +51,7 @@ const TermsContent = () => {
       </div>
 
       <div>
-        <h3 className="text-xl font-semibold text-gray-900 mb-3">How We Use Your Data</h3>
+        <h3 className="text-xl font-semibold text-foreground mb-3">How We Use Your Data</h3>
         <p className="text-sm leading-relaxed">
           We will not use your data in any way that breaches UK law.
         </p>
@@ -69,7 +69,7 @@ const TermsContent = () => {
       </div>
 
       <div>
-        <h3 className="text-xl font-semibold text-gray-900 mb-3">Cookies</h3>
+        <h3 className="text-xl font-semibold text-foreground mb-3">Cookies</h3>
         <p className="text-sm leading-relaxed">
           Our Website uses cookies to function. Cookies are small data files that are placed on your device and which help us differentiate you from other web users. This allows us, for example, to allow you to log in and to provide you with a good web experience.
         </p>
@@ -88,7 +88,7 @@ const TermsContent = () => {
       </div>
 
       <div>
-        <h3 className="text-xl font-semibold text-gray-900 mb-3">Your Legal Rights</h3>
+        <h3 className="text-xl font-semibold text-foreground mb-3">Your Legal Rights</h3>
         <p className="text-sm leading-relaxed mb-3">
           In specific situations, you are entitled to exercise the following legal rights regarding the data we hold about you:
         </p>
@@ -101,13 +101,13 @@ const TermsContent = () => {
       </div>
 
       <div>
-        <h3 className="text-xl font-semibold text-gray-900 mb-3">Contact Us</h3>
+        <h3 className="text-xl font-semibold text-foreground mb-3">Contact Us</h3>
         <p className="text-sm leading-relaxed">
           If you wish to exercise any of your data protection rights, please contact us at support@lotessa.app. For complaints, you may also contact the Information Commissioner's Office (ICO) at www.ico.org.uk.
         </p>
       </div>
 
-      <div className="text-center text-sm text-gray-500 pt-4">
+      <div className="text-center text-sm text-muted-foreground pt-4">
         <p>This policy was created on https://legalfoundations.org.uk</p>
         <p>For questions about this policy, please contact us at support@lotessa.app</p>
       </div>

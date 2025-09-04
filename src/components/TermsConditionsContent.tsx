@@ -194,7 +194,7 @@ const TermsConditionsContent = () => {
 
         <section className="border-t pt-6">
           <h3 className="text-xl font-semibold text-[#001F3F] mb-4">Model Cancellation Form for Consumers</h3>
-          <p className="mb-3 text-sm text-gray-600">
+          <p className="mb-3 text-sm text-muted-foreground">
             (Complete and return this form only if you wish to withdraw from the contract – you can also contact us to discuss a return via our website or by emailing us at support@lotessa.app)
           </p>
           
