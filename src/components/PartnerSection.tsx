@@ -25,7 +25,7 @@ const PartnerSection = () => {
                 <h3 className="text-[28px] font-bold text-[#001F3F] font-sans">
                   Write for Lotessa
                 </h3>
-                <p className="text-slate-600 text-[18px] font-sans font-normal leading-relaxed">
+                <p className="text-slate-600 text-[18px] font-sans font-medium leading-relaxed">
                   Are you a medical writer, clinician, or researcher?
                 </p>
                 <ul className="space-y-2 text-slate-600 text-[18px] font-sans font-normal leading-relaxed">
