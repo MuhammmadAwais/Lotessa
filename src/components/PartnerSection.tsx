@@ -9,7 +9,7 @@ const PartnerSection = () => {
               Partner With Lotessa
             </h3>
             <h2 className="text-[42px] font-bold text-[#001F3F] leading-tight font-sans">
-              Support a Growing GLP1 Community
+              Shape the Future of GLP-1 Health Support
             </h2>
             <p className="text-[24px] text-foreground font-bold font-sans mx-auto whitespace-nowrap text-center">
               Are you a health brand, medical<br></br>professional, or researcher?<br></br> Let's collaborate
