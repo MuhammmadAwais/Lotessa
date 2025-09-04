@@ -91,10 +91,35 @@ const ContactSection = () => {
 
       console.log('Successfully inserted data:', data);
 
-      toast({
-        title: "Success!",
-        description: "Your message has been sent successfully. We'll get back to you soon!",
-      });
+      // Send email notification via edge function
+      try {
+        console.log('Sending email notification...');
+        const emailResponse = await supabase.functions.invoke('send-contact-email', {
+          body: formData
+        });
+
+        if (emailResponse.error) {
+          console.error('Email sending error:', emailResponse.error);
+          // Still show success for form submission, but mention email issue
+          toast({
+            title: "Message Saved!",
+            description: "Your message has been saved successfully. We'll get back to you soon! (Email confirmation may be delayed)",
+          });
+        } else {
+          console.log('Email sent successfully:', emailResponse.data);
+          toast({
+            title: "Success!",
+            description: "Your message has been sent and you should receive a confirmation email shortly!",
+          });
+        }
+      } catch (emailError) {
+        console.error('Error sending email:', emailError);
+        // Still show success for form submission
+        toast({
+          title: "Message Saved!",
+          description: "Your message has been saved successfully. We'll get back to you soon! (Email confirmation may be delayed)",
+        });
+      }
 
       // Reset form
       setFormData({
