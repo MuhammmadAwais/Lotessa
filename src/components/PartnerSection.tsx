@@ -41,7 +41,7 @@ const PartnerSection = () => {
                 <h3 className="text-[28px] font-bold text-[#001F3F] font-sans">
                   Sponsor & Partner
                 </h3>
-                <p className="text-slate-600 text-[18px] font-sans font-normal leading-relaxed">
+                <p className="text-slate-600 text-[18px] font-sans font-medium leading-relaxed">
                   Are you a health and wellness brand?
                 </p>
                 <ul className="space-y-2 text-slate-600 text-[18px] font-sans font-normal leading-relaxed">
@@ -57,7 +57,7 @@ const PartnerSection = () => {
                 <h3 className="text-[28px] font-bold text-[#001F3F] font-sans">
                   Advise and Invest
                 </h3>
-                <p className="text-slate-600 text-[18px] font-sans font-normal leading-relaxed">
+                <p className="text-slate-600 text-[18px] font-sans font-medium leading-relaxed">
                   Are you an investor, advisor, or strategic leader?
                 </p>
                 <ul className="space-y-2 text-slate-600 text-[18px] font-sans font-normal leading-relaxed">
