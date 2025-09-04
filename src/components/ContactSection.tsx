@@ -162,7 +162,7 @@ const ContactSection = () => {
         <div className="rounded-2xl px-[16px] py-6 lg:px-[24px] lg:py-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-[30px] font-normal text-[#001F3F] font-sans mb-8">
+          <h2 className="text-display-md text-foreground font-sans mb-8">
             Contact Us
           </h2>
         </div>
@@ -174,7 +174,7 @@ const ContactSection = () => {
               We'd Love to Hear from You
             </h3>
             
-            <p className="text-[28px] font-semibold font-sans text-left text-[#001F3F] leading-relaxed">
+            <p className="text-heading-lg font-semibold font-sans text-left text-foreground leading-relaxed">
               Questions about the app? Curious about a partnership? Just want to say 
               hello? Drop us a message and the Lotessa team will be in touch.
             </p>
@@ -185,18 +185,18 @@ const ContactSection = () => {
             {isCheckingTable ? (
               <div className="text-center py-8">
                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-                <p className="text-gray-600">Checking database connection...</p>
+                <p className="text-muted-foreground">Checking database connection...</p>
               </div>
             ) : !tableExists ? (
               <div className="space-y-6">
                 <div className="text-center py-8">
                   <div className="text-red-500 text-6xl mb-4">⚠️</div>
                   <h3 className="text-xl font-semibold text-red-700 mb-2">Database Setup Required</h3>
-                  <p className="text-gray-600 mb-6">The contacts table doesn't exist yet. Please set up the database first.</p>
+                  <p className="text-muted-foreground mb-6">The contacts table doesn't exist yet. Please set up the database first.</p>
                   
-                  <div className="bg-gray-50 p-4 rounded-lg text-left">
+                  <div className="bg-muted p-4 rounded-lg text-left">
                     <h4 className="font-semibold mb-2">Quick Setup Instructions:</h4>
-                    <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700">
+                    <ol className="list-decimal list-inside space-y-1 text-sm text-muted-foreground">
                       <li>Go to your <a href="https://supabase.com/dashboard" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Supabase Dashboard</a></li>
                       <li>Select your project</li>
                       <li>Go to <strong>SQL Editor</strong> in the left sidebar</li>

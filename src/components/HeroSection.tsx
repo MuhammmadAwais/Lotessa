@@ -10,25 +10,25 @@ const HeroSection = () => {
   return <>
       <section id="download" className="py-3 lg:py-5 bg-white">
       <div className="container mx-auto px-3 max-w-7xl">
-        <div className="rounded-2xl px-[16px] py-6 lg:px-[24px] lg:py-8 bg-white font-sans font-normal text-[18px]">
+        <div className="rounded-2xl px-[16px] py-6 lg:px-[24px] lg:py-8 bg-white font-sans font-normal text-body-lg">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center lg:min-h-[650px]">
            {/* Left Content */}
            <div className="flex flex-col justify-center min-h-[650px]">
              <div className="space-y-7">
-               <h2 className="text-4xl lg:text-4xl leading-[1.1] text-left font-bold text-[#001f3f] xl:text-4xl">Your Health Companion
+               <h2 className="text-4xl lg:text-4xl leading-[1.1] text-left font-bold text-foreground xl:text-4xl">Your Health Companion
 for GLP1 Medication</h2>
                
-               <h2 className="text-[30px] text-foreground font-bold font-sans">
+               <h2 className="text-display-md text-foreground font-bold font-sans">
                  Track. Learn. Connect. All in one place.
                </h2>
                
                <div className="space-y-7 text-lg lg:text-xl text-muted-foreground leading-relaxed">
-                 <p className="text-slate-600 text-[19px] font-sans font-normal -mt-2">
+                 <p className="text-muted-foreground text-body-lg font-sans font-normal -mt-2">
                    Navigate the changing GLP-1 landscape with confidence. Track your progress, 
                    manage side effects, and stay informed about medication access and alternatives.
                  </p>
                  
-                 <p className="text-slate-600 text-[17px] -my-2">
+                 <p className="text-muted-foreground text-body-md -my-2">
                    Whether you're on Ozempic, Mounjaro, Wegovy, or considering alternatives, 
                    Lotessa helps you maintain continuity in your health journey. Get expert insights, 
                    track your progress, and connect with a community navigating similar challenges.

@@ -5,13 +5,13 @@ const PartnerSection = () => {
         <div className="rounded-2xl px-[16px] py-6 lg:px-[24px] lg:py-8 bg-white">
           {/* Section Header */}
           <div className="text-center mb-16 space-y-4">
-            <h3 className="text-[30px] font-normal text-[#001F3F] font-sans">
+            <h3 className="text-display-md text-foreground font-sans">
               Partner With Lotessa
             </h3>
-            <h2 className="text-[42px] font-bold text-[#001F3F] leading-tight font-sans">
+            <h2 className="text-display-lg text-foreground font-sans leading-tight">
               Shape the Future of GLP-1 Health Support
             </h2>
-            <p className="text-[18px] text-foreground font-sans text-left leading-relaxed max-w-4xl">
+            <p className="text-body-lg text-muted-foreground font-sans text-left leading-relaxed max-w-4xl">
               Lotessa connects brands, clinicians, researchers, and writers with one of the UK's fastest-growing GLP-1 communities. Backed by the University of Bradford and trusted by thousands of users, we're building a platform where evidence-based knowledge, safe communities, and innovative health tech meet.
             </p>
           </div>
@@ -22,13 +22,13 @@ const PartnerSection = () => {
             <div className="flex-1 space-y-8 lg:space-y-12">
               {/* Write for Lotessa */}
               <div className="space-y-4">
-                <h3 className="text-[28px] font-bold text-[#001F3F] font-sans">
+                <h3 className="text-heading-lg text-foreground font-sans">
                   Write for Lotessa
                 </h3>
-                <p className="text-slate-600 text-[18px] font-sans font-medium leading-relaxed">
+                <p className="text-muted-foreground text-body-lg font-sans font-medium leading-relaxed">
                   Are you a medical writer, clinician, or researcher?
                 </p>
-                <ul className="space-y-2 text-slate-600 text-[18px] font-sans font-normal leading-relaxed">
+                <ul className="space-y-2 text-muted-foreground text-body-lg font-sans font-normal leading-relaxed">
                   <li>• Share your expertise with 10,000+ engaged GLP-1 users.</li>
                   <li>• Publish credited, evidence-based articles in our Knowledge Library.</li>
                   <li>• Help people living with obesity, diabetes, and other metabolic conditions.</li>
@@ -38,13 +38,13 @@ const PartnerSection = () => {
 
               {/* Sponsor & Partner */}
               <div className="space-y-4">
-                <h3 className="text-[28px] font-bold text-[#001F3F] font-sans">
+                <h3 className="text-heading-lg text-foreground font-sans">
                   Sponsor & Partner
                 </h3>
-                <p className="text-slate-600 text-[18px] font-sans font-medium leading-relaxed">
+                <p className="text-muted-foreground text-body-lg font-sans font-medium leading-relaxed">
                   Are you a health and wellness brand?
                 </p>
-                <ul className="space-y-2 text-slate-600 text-[18px] font-sans font-normal leading-relaxed">
+                <ul className="space-y-2 text-muted-foreground text-body-lg font-sans font-normal leading-relaxed">
                   <li>• Reach a targeted, motivated audience through meaningful partnerships.</li>
                   <li>• Sponsor community groups aligned with your values.</li>
                   <li>• Support knowledge content that resonates with our members.</li>
@@ -54,13 +54,13 @@ const PartnerSection = () => {
 
               {/* Advise and Invest */}
               <div className="space-y-4">
-                <h3 className="text-[28px] font-bold text-[#001F3F] font-sans">
+                <h3 className="text-heading-lg text-foreground font-sans">
                   Advise and Invest
                 </h3>
-                <p className="text-slate-600 text-[18px] font-sans font-medium leading-relaxed">
+                <p className="text-muted-foreground text-body-lg font-sans font-medium leading-relaxed">
                   Are you an investor, advisor, or strategic leader?
                 </p>
-                <ul className="space-y-2 text-slate-600 text-[18px] font-sans font-normal leading-relaxed">
+                <ul className="space-y-2 text-muted-foreground text-body-lg font-sans font-normal leading-relaxed">
                   <li>• Help us scale Lotessa into a leading UK digital health platform.</li>
                   <li>• Join our advisory board or serve as a non-executive director.</li>
                   <li>• Back a mission-driven, University-supported health innovation.</li>

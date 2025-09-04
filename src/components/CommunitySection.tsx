@@ -10,7 +10,7 @@ const CommunitySection = () => {
         <div className="rounded-2xl px-[16px] py-6 lg:px-[24px] lg:py-8 bg-white">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h3 className="text-[30px] font-normal text-[#001F3F] font-sans mb-4">
+          <h3 className="text-display-md text-foreground font-sans mb-4">
             Join the Community
           </h3>
         </div>
@@ -26,11 +26,11 @@ const CommunitySection = () => {
 
           {/* Right - Content */}
           <div className="space-y-6 lg:space-y-8 order-1 lg:order-2">
-            <h2 className="text-[42px] font-bold text-[#001F3F] leading-tight font-sans">
+            <h2 className="text-display-lg text-foreground font-sans leading-tight">
               You're Not Alone
             </h2>
             
-            <p className="text-slate-600 text-[18px] font-sans font-normal leading-relaxed">
+            <p className="text-muted-foreground text-body-lg font-sans font-normal leading-relaxed">
               Join a supportive, judgement-free community where you can ask questions, 
               share progress, and connect with others who understand your journey. 
               Whether you're just starting or deep into your transformation, there's a 
