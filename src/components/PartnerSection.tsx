@@ -17,7 +17,7 @@ const PartnerSection = () => {
           </div>
 
           {/* Main Content: Two-column layout */}
-          <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-48">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-48">
             {/* Left Column: Partnership Options */}
             <div className="flex-1 space-y-8 lg:space-y-12">
               {/* Write for Lotessa */}
