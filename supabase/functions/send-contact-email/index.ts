@@ -63,7 +63,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send notification email to admin
     const adminEmail = await resend.emails.send({
       from: "Lotessa Contact Form <onboarding@resend.dev>",
-      to: ["hello@lotessadigitalhealth.co.uk"],
+      to: ["danishusman305@gmail.com"],
       subject: `New Contact Form Submission: ${topic}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
