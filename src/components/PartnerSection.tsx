@@ -74,7 +74,7 @@ const PartnerSection = () => {
               <img
                 src="/lovable-uploads/226ae739-ec0c-41d9-8a02-8d3fc53060b3.png"
                 alt="Lotessa Progress Tracking Interface"
-                className="w-80 lg:w-96 h-auto max-h-full object-contain relative z-10"
+                className="w-80 lg:w-96 h-auto max-h-full object-contain relative z-10 mx-auto"
                 />
             </div>
           </div>
