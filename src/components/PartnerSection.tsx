@@ -70,11 +70,11 @@ const PartnerSection = () => {
             </div>
 
             {/* Right Column: Image */}
-            <div className="flex-1 mt-4 lg:-mt-4">
+            <div className="flex-1 flex items-center justify-center">
               <img
                 src="/lovable-uploads/226ae739-ec0c-41d9-8a02-8d3fc53060b3.png"
                 alt="Lotessa Progress Tracking Interface"
-                className="w-80 lg:w-96 h-auto max-h-full object-contain relative z-10 mx-auto"
+                className="w-80 lg:w-96 h-auto max-h-full object-contain"
                 />
             </div>
           </div>
