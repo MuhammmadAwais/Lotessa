@@ -47,12 +47,12 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
         <DialogHeader className="px-6 pt-6 pb-4 border-b border-border bg-white sticky top-0 z-10">
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1 min-w-0">
-              <DialogTitle className="text-2xl md:text-3xl font-bold text-[#001F3F] leading-tight mb-2 pr-8">
+              <DialogTitle className="text-2xl md:text-3xl font-bold text-foreground leading-tight mb-2 pr-8">
                 {article.title}
               </DialogTitle>
               
               {article.subtitle && (
-                <h2 className="text-lg md:text-xl text-[#001F3F] font-medium mb-4 leading-relaxed">
+                <h2 className="text-lg md:text-xl text-foreground font-medium mb-4 leading-relaxed">
                   {article.subtitle}
                 </h2>
               )}
@@ -78,7 +78,7 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
               <div className="lg:w-2/3">
                 <div className="prose prose-lg max-w-none">
                   <div 
-                    className="text-[#001F3F] leading-relaxed space-y-4"
+                    className="text-muted-foreground leading-relaxed space-y-4"
                     style={{ 
                       lineHeight: '1.7'
                     }}
@@ -86,21 +86,21 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
                     {article.content.split('\n').map((paragraph, index) => {
                       if (paragraph.startsWith('## ')) {
                         return (
-                          <h2 key={index} className="text-xl md:text-2xl font-bold text-[#001F3F] mt-6 mb-3 first:mt-0">
+                          <h2 key={index} className="text-xl md:text-2xl font-bold text-foreground mt-6 mb-3 first:mt-0">
                             {paragraph.replace('## ', '')}
                           </h2>
                         );
                       }
                       if (paragraph.startsWith('### ')) {
                         return (
-                          <h3 key={index} className="text-lg md:text-xl font-semibold text-[#001F3F] mt-4 mb-2">
+                          <h3 key={index} className="text-lg md:text-xl font-semibold text-foreground mt-4 mb-2">
                             {paragraph.replace('### ', '')}
                           </h3>
                         );
                       }
                       if (paragraph.startsWith('- ')) {
                         return (
-                          <li key={index} className="text-[#001F3F] ml-4 list-disc">
+                          <li key={index} className="text-muted-foreground ml-4 list-disc">
                             {paragraph.replace('- ', '')}
                           </li>
                         );
@@ -109,7 +109,7 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
                         return <div key={index} className="h-1" />;
                       }
                       return (
-                        <p key={index} className="text-[#001F3F] mb-3">
+                        <p key={index} className="text-muted-foreground mb-3">
                           {paragraph}
                         </p>
                       );
