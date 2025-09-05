@@ -53,14 +53,14 @@
   :root {
     /* Core Colors - Medical/Health Theme */
     --background: 0 0% 98%;
-    --foreground: 213 84% 20%;
+    --foreground: 213 84% 15%;
 
     /* Cards & Surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 213 84% 20%;
+    --card-foreground: 213 84% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 213 84% 20%;
+    --popover-foreground: 213 84% 15%;
 
     /* Brand Colors - Navy Blue Primary */
     --primary: 210 100% 12.5%;
@@ -68,10 +68,10 @@
 
     /* Light backgrounds */
     --secondary: 210 17% 95%;
-    --secondary-foreground: 213 84% 20%;
+    --secondary-foreground: 213 84% 15%;
 
     --muted: 210 17% 95%;
-    --muted-foreground: 213 40% 50%;
+    --muted-foreground: 213 60% 20%;
 
     /* Accent - Teal/Blue */
     --accent: 195 100% 45%;

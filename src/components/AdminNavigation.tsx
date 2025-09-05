@@ -54,7 +54,7 @@ const AdminNavigation = ({
         {/* Desktop Navigation */}
         <div className="hidden lg:flex justify-between items-center h-16">
           <div className="flex items-center space-x-8">
-            <h1 className="text-2xl font-bold text-gray-900">Lotessa Admin</h1>
+            <h1 className="text-2xl font-bold text-foreground">Lotessa Admin</h1>
             
             <nav className="flex space-x-1">
               {navItems.map((item) => {
@@ -99,7 +99,7 @@ const AdminNavigation = ({
         {/* Mobile Navigation */}
         <div className="lg:hidden">
           <div className="flex justify-between items-center h-16">
-            <h1 className="text-xl font-bold text-gray-900">Lotessa Admin</h1>
+            <h1 className="text-xl font-bold text-foreground">Lotessa Admin</h1>
             
             <div className="flex items-center space-x-2">
               <Button onClick={onRefresh} variant="outline" size="sm">

@@ -21,6 +21,14 @@ export default {
 			sans: ['Inter', 'sans-serif'],
 		},
 		extend: {
+			fontSize: {
+				'display-lg': ['42px', { lineHeight: '1.2', fontWeight: '700' }],
+				'display-md': ['30px', { lineHeight: '1.3', fontWeight: '400' }],
+				'heading-lg': ['28px', { lineHeight: '1.4', fontWeight: '700' }],
+				'heading-md': ['24px', { lineHeight: '1.5', fontWeight: '600' }],
+				'body-lg': ['18px', { lineHeight: '1.6', fontWeight: '400' }],
+				'body-md': ['16px', { lineHeight: '1.6', fontWeight: '400' }],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

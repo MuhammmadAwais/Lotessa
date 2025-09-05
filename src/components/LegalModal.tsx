@@ -14,7 +14,7 @@ const LegalModal = ({ isOpen, onClose, title, content }: LegalModalProps) => {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
         <DialogHeader className="flex flex-row items-center justify-between">
-          <DialogTitle className="text-2xl font-bold text-gray-900">{title}</DialogTitle>
+          <DialogTitle className="text-2xl font-bold text-foreground">{title}</DialogTitle>
           <Button
             variant="ghost"
             size="sm"

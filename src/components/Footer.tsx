@@ -15,7 +15,7 @@ const Footer = () => {
           {/* Logo & Tagline */}
           <div>
             <div className="text-3xl font-bold mb-4">Lotessa</div>
-            <p className="text-primary-foreground/80 max-w-sm">
+            <p className="text-muted-foreground max-w-sm">
               Crafting meaningful visual experiences that bridge cultures and tell powerful stories.
             </p>
           </div>
@@ -51,7 +51,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/20 mt-12 pt-8 text-center">
-          <p className="text-primary-foreground/60">
+          <p className="text-muted-foreground">
             © 2024 Lotessa. All rights reserved. Designed with passion in South Africa.
           </p>
         </div>

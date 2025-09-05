@@ -911,12 +911,12 @@ const Article = () => {
 
         {/* Article Header */}
         <header className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#001F3F] leading-tight mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight mb-4">
             {article.title}
           </h1>
           
           {article.subtitle && (
-            <h2 className="text-xl md:text-2xl text-[#001F3F] font-medium mb-6 leading-relaxed">
+            <h2 className="text-xl md:text-2xl text-foreground font-medium mb-6 leading-relaxed">
               {article.subtitle}
             </h2>
           )}
@@ -951,7 +951,7 @@ const Article = () => {
         {/* Article Content */}
         <div className="prose prose-lg max-w-none">
           <div 
-            className="text-[#001F3F] leading-relaxed space-y-6"
+            className="text-muted-foreground leading-relaxed space-y-6"
             style={{ 
               whiteSpace: 'pre-line',
               lineHeight: '1.7'
@@ -960,21 +960,21 @@ const Article = () => {
             {article.content.split('\n').map((paragraph, index) => {
               if (paragraph.startsWith('## ')) {
                 return (
-                  <h2 key={index} className="text-2xl font-bold text-[#001F3F] mt-8 mb-4">
+                  <h2 key={index} className="text-2xl font-bold text-foreground mt-8 mb-4">
                     {paragraph.replace('## ', '')}
                   </h2>
                 );
               }
               if (paragraph.startsWith('### ')) {
                 return (
-                  <h3 key={index} className="text-xl font-semibold text-[#001F3F] mt-6 mb-3">
+                  <h3 key={index} className="text-xl font-semibold text-foreground mt-6 mb-3">
                     {paragraph.replace('### ', '')}
                   </h3>
                 );
               }
               if (paragraph.startsWith('- ')) {
                 return (
-                  <li key={index} className="text-[#001F3F] ml-4">
+                  <li key={index} className="text-muted-foreground ml-4">
                     {paragraph.replace('- ', '')}
                   </li>
                 );
@@ -983,7 +983,7 @@ const Article = () => {
                 return <br key={index} />;
               }
               return (
-                <p key={index} className="text-[#001F3F] mb-4">
+                <p key={index} className="text-muted-foreground mb-4">
                   {paragraph}
                 </p>
               );

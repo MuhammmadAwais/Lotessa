@@ -418,7 +418,7 @@ const AdminDashboard = () => {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading admin dashboard...</p>
+          <p className="text-muted-foreground">Loading admin dashboard...</p>
         </div>
       </div>
     );
@@ -552,14 +552,14 @@ const AdminDashboard = () => {
         {/* Debug Info (remove in production) */}
         <Card className="mb-6">
           <CardHeader>
-            <CardTitle className="text-sm text-gray-600">Debug Information</CardTitle>
+            <CardTitle className="text-sm text-muted-foreground">Debug Information</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
               <div>
                 <span className="font-medium">Contacts:</span> {contacts.length} records
                 {contacts.length > 0 && (
-                  <div className="text-xs text-gray-500 mt-1">
+                  <div className="text-xs text-muted-foreground mt-1">
                     Latest: {contacts[0]?.name} - {contacts[0]?.topic}
                   </div>
                 )}
@@ -567,7 +567,7 @@ const AdminDashboard = () => {
               <div>
                 <span className="font-medium">Visitors:</span> {visitors.length} records
                 {visitors.length > 0 && (
-                  <div className="text-xs text-gray-500 mt-1">
+                  <div className="text-xs text-muted-foreground mt-1">
                     Latest: {visitors[0]?.browser_id?.slice(0, 8)}...
                   </div>
                 )}
@@ -575,7 +575,7 @@ const AdminDashboard = () => {
               <div>
                 <span className="font-medium">Waitlist:</span> {waitlist.length} records
                 {waitlist.length > 0 && (
-                  <div className="text-xs text-gray-500 mt-1">
+                  <div className="text-xs text-muted-foreground mt-1">
                     Latest: {waitlist[0]?.name} - {waitlist[0]?.journey_stage}
                   </div>
                 )}
@@ -583,7 +583,7 @@ const AdminDashboard = () => {
               <div>
                 <span className="font-medium">Interactions:</span> {interactions.length} records
                 {interactions.length > 0 && (
-                  <div className="text-xs text-gray-500 mt-1">
+                  <div className="text-xs text-muted-foreground mt-1">
                     Latest: {interactions[0]?.event_type} on {interactions[0]?.element_name}
                   </div>
                 )}
@@ -591,13 +591,13 @@ const AdminDashboard = () => {
               <div>
                 <span className="font-medium">Article Clicks:</span> {articleClicks.length} records
                 {articleClicks.length > 0 && (
-                  <div className="text-xs text-gray-500 mt-1">
+                  <div className="text-xs text-muted-foreground mt-1">
                     Latest: {articleClicks[0]?.article_title?.slice(0, 30)}...
                   </div>
                 )}
               </div>
             </div>
-            <div className="mt-2 text-xs text-gray-500">
+            <div className="mt-2 text-xs text-muted-foreground">
               Last updated: {new Date().toLocaleTimeString()}
             </div>
             <div className="mt-2">
@@ -1092,14 +1092,14 @@ const AdminDashboard = () => {
                               </TableCell>
                               <TableCell>
                                 <div className="text-2xl font-bold text-blue-600">{article.value}</div>
-                                <div className="text-xs text-gray-500">clicks</div>
+                                <div className="text-xs text-muted-foreground">clicks</div>
                               </TableCell>
                               <TableCell className="text-sm">
                                 {lastClick ? new Date(lastClick.clicked_at).toLocaleDateString() : 'N/A'}
                               </TableCell>
                               <TableCell>
                                 <div className="text-lg font-semibold text-green-600">{uniqueVisitors}</div>
-                                <div className="text-xs text-gray-500">visitors</div>
+                                <div className="text-xs text-muted-foreground">visitors</div>
                               </TableCell>
                             </TableRow>
                           );

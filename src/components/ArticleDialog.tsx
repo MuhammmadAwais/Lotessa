@@ -47,12 +47,12 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
         <DialogHeader className="px-6 pt-6 pb-4 border-b border-border bg-white sticky top-0 z-10">
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1 min-w-0">
-              <DialogTitle className="text-2xl md:text-3xl font-bold text-[#001F3F] leading-tight mb-2 pr-8">
+              <DialogTitle className="text-2xl md:text-3xl font-bold text-foreground leading-tight mb-2 pr-8">
                 {article.title}
               </DialogTitle>
               
               {article.subtitle && (
-                <h2 className="text-lg md:text-xl text-[#001F3F] font-medium mb-4 leading-relaxed">
+                <h2 className="text-lg md:text-xl text-foreground font-medium mb-4 leading-relaxed">
                   {article.subtitle}
                 </h2>
               )}
@@ -71,36 +71,36 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
               display: none; /* Chrome, Safari, Opera */
             }
           `}</style>
-          <div className="px-6 pb-6 space-y-6">
-            {/* First Section - Text Left, Mockup Right */}
-            <div className="flex flex-col lg:flex-row gap-6 mb-8">
-              {/* Left Side - First part of content */}
+          <div className="px-6 pb-6 space-y-2">
+            {/* Content with Sticky Mockup */}
+            <div className="flex flex-col lg:flex-row gap-6">
+              {/* Left Side - All Article Content */}
               <div className="lg:w-2/3">
                 <div className="prose prose-lg max-w-none">
                   <div 
-                    className="text-[#001F3F] leading-relaxed space-y-4"
+                    className="text-muted-foreground leading-relaxed space-y-4"
                     style={{ 
                       lineHeight: '1.7'
                     }}
                   >
-                    {article.content.split('\n').slice(0, Math.ceil(article.content.split('\n').length / 2)).map((paragraph, index) => {
+                    {article.content.split('\n').map((paragraph, index) => {
                       if (paragraph.startsWith('## ')) {
                         return (
-                          <h2 key={index} className="text-xl md:text-2xl font-bold text-[#001F3F] mt-6 mb-3 first:mt-0">
+                          <h2 key={index} className="text-xl md:text-2xl font-bold text-foreground mt-6 mb-3 first:mt-0">
                             {paragraph.replace('## ', '')}
                           </h2>
                         );
                       }
                       if (paragraph.startsWith('### ')) {
                         return (
-                          <h3 key={index} className="text-lg md:text-xl font-semibold text-[#001F3F] mt-4 mb-2">
+                          <h3 key={index} className="text-lg md:text-xl font-semibold text-foreground mt-4 mb-2">
                             {paragraph.replace('### ', '')}
                           </h3>
                         );
                       }
                       if (paragraph.startsWith('- ')) {
                         return (
-                          <li key={index} className="text-[#001F3F] ml-4 list-disc">
+                          <li key={index} className="text-muted-foreground ml-4 list-disc">
                             {paragraph.replace('- ', '')}
                           </li>
                         );
@@ -109,7 +109,7 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
                         return <div key={index} className="h-1" />;
                       }
                       return (
-                        <p key={index} className="text-[#001F3F] mb-3">
+                        <p key={index} className="text-muted-foreground mb-3">
                           {paragraph}
                         </p>
                       );
@@ -119,66 +119,17 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
               </div>
 
               {/* Right Side - Mobile Mockup */}
-              <div className="lg:w-1/3 flex justify-center items-start lg:sticky lg:top-6">
-                <div className="w-full max-w-xs">
+              <div className="lg:w-1/3 hidden lg:flex justify-center items-start pt-8">
+                <div className="w-[300px] sticky top-8">
                   <img
-                    src="/lovable-uploads/257ea2ad-1c1a-4d20-832e-0a1f30850e51.png"
-                    alt="Lotessa Mobile App Interface"
+                    src="/lovable-uploads/7dc40bd7-caa6-47a8-8ff0-a647d67addf5.png"
+                    alt="Lotessa Progress Tracking Interface"
                     className="rounded-lg w-full h-auto object-contain"
                   />
                 </div>
               </div>
             </div>
 
-            {/* Second Section - Full Width Content */}
-            <div className="prose prose-lg max-w-none">
-              <div 
-                className="text-[#001F3F] leading-relaxed space-y-6"
-                style={{ 
-                  lineHeight: '1.7'
-                }}
-              >
-                {article.content.split('\n').slice(Math.ceil(article.content.split('\n').length / 2)).map((paragraph, index) => {
-                  const actualIndex = index + Math.ceil(article.content.split('\n').length / 2);
-                  if (paragraph.startsWith('## ')) {
-                    return (
-                      <h2 key={actualIndex} className="text-xl md:text-2xl font-bold text-[#001F3F] mt-8 mb-4 first:mt-0">
-                        {paragraph.replace('## ', '')}
-                      </h2>
-                    );
-                  }
-                  if (paragraph.startsWith('### ')) {
-                    return (
-                      <h3 key={actualIndex} className="text-lg md:text-xl font-semibold text-[#001F3F] mt-6 mb-3">
-                        {paragraph.replace('### ', '')}
-                      </h3>
-                    );
-                  }
-                  if (paragraph.startsWith('- ')) {
-                    return (
-                      <li key={actualIndex} className="text-[#001F3F] ml-4 list-disc">
-                        {paragraph.replace('- ', '')}
-                      </li>
-                    );
-                  }
-                  if (paragraph.trim() === '') {
-                    return <div key={actualIndex} className="h-2" />;
-                  }
-                  return (
-                    <p key={actualIndex} className="text-[#001F3F] mb-4">
-                      {paragraph}
-                    </p>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Article Footer */}
-            <footer className="mt-12 pt-8 border-t border-border">
-              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                {/* Optional footer content */}
-              </div>
-            </footer>
           </div>
         </div>
       </DialogContent>

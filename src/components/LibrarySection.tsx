@@ -286,15 +286,15 @@ GLP-1 medications are valuable tools, backed by science, but they're not a one-s
         <div className="rounded-2xl px-[16px] py-6 lg:px-[24px] lg:py-8" style={{background: '#EFEEE7'}}>
           {/* Section Header */}
           <div className="text-center mb-16 space-y-4">
-            <h3 className="text-[30px] font-normal text-[#001F3F] font-sans">
+            <h3 className="text-display-md text-foreground font-sans">
               Lotessa Library
             </h3>
             
-            <h2 className="text-[38px] font-bold text-[#001F3F] leading-tight font-sans">
+            <h2 className="text-display-lg text-foreground font-sans leading-tight">
               Discover Expert Content, Anytime
             </h2>
             
-            <p className="text-[24px] text-foreground font-bold font-sans mx-auto text-center">
+            <p className="text-heading-md text-foreground font-sans mx-auto text-center">
               Bite-sized insights, real-world tips, and trustworthy health information
             </p>
           </div>
@@ -308,25 +308,25 @@ GLP-1 medications are valuable tools, backed by science, but they're not a one-s
                 className="article-card group cursor-pointer bg-white rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-[350px] sm:h-[400px] px-4 sm:px-6 pt-6 pb-6 flex flex-col border border-gray-100"
               >
                 <div className="flex justify-end mb-4">
-                  <div className="w-10 h-10 rounded-full border-2 border-[#001f3f] flex items-center justify-center group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                    <ArrowRight className="text-[#001f3f] group-hover:text-white transition-colors" size={20} />
+                  <div className="w-10 h-10 rounded-full border-2 border-foreground flex items-center justify-center group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                    <ArrowRight className="text-foreground group-hover:text-white transition-colors" size={20} />
                   </div>
                 </div>
                 
                 <div className="flex-1 flex flex-col overflow-hidden">
-                  <h3 className="font-bold text-[16px] sm:text-[18px] text-[#001F3F] leading-tight font-sans line-clamp-3 overflow-hidden mb-3 min-h-[3.5rem] sm:min-h-[4.5rem]">
+                  <h3 className="font-bold text-body-md sm:text-body-lg text-foreground leading-tight font-sans line-clamp-3 overflow-hidden mb-3 min-h-[3.5rem] sm:min-h-[4.5rem]">
                     {article.title}
                   </h3>
                   
                   {article.subtitle ? (
-                    <h4 className="font-bold text-[13px] sm:text-[14px] text-[#001F3F] leading-tight font-sans line-clamp-2 overflow-hidden mb-3 min-h-[2rem] sm:min-h-[2.5rem]">
+                    <h4 className="font-bold text-sm sm:text-body-md text-foreground leading-tight font-sans line-clamp-2 overflow-hidden mb-3 min-h-[2rem] sm:min-h-[2.5rem]">
                       {article.subtitle}
                     </h4>
                   ) : (
                     <div className="mb-3 min-h-[2rem] sm:min-h-[2.5rem]"></div>
                   )}
                   
-                  <p className="text-[#001F3F] text-[16px] leading-relaxed font-sans font-normal overflow-hidden flex-1">
+                  <p className="text-foreground text-body-md leading-relaxed font-sans font-normal overflow-hidden flex-1">
                     <span className="line-clamp-5">
                       {article.description}
                     </span>
