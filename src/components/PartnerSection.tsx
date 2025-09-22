@@ -17,9 +17,9 @@ const PartnerSection = () => {
           </div>
 
           {/* Main Content: Two-column layout */}
-          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-48">
             {/* Left Column: Partnership Options */}
-            <div className="flex-[8] space-y-8 lg:space-y-12">
+            <div className="flex-1 space-y-8 lg:space-y-12">
               {/* Write for Lotessa */}
               <div className="space-y-4">
                 <h3 className="text-heading-lg text-foreground font-sans">
@@ -70,11 +70,11 @@ const PartnerSection = () => {
             </div>
 
             {/* Right Column: Image */}
-            <div className="flex-[2] flex items-center justify-center">
+            <div className="flex-1 flex items-center justify-center">
               <img
-                src="/lovable-uploads/new_mockup.png"
+                src="/lovable-uploads/226ae739-ec0c-41d9-8a02-8d3fc53060b3.png"
                 alt="Lotessa Progress Tracking Interface"
-                className="w-96 lg:w-[450px] h-[800px] lg:h-[1200px] object-contain"
+                className="w-96 lg:w-[28rem] h-auto max-h-full object-contain"
                 />
             </div>
           </div>
