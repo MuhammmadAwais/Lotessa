@@ -80,3 +80,66 @@ npx supabase db push
 - Make sure you're in the correct project
 
 Your contact form will work perfectly once this table is created! 🎉
+
+---
+
+## Optional: Dynamic Content Tables (Hero, Content, Articles)
+
+Paste this SQL to add tables for dynamic content management used by the site and admin:
+
+```sql
+-- Key-value content table (used for various sections)
+create table if not exists public.content (
+  key text primary key,
+  value text not null,
+  updated_at timestamptz default now()
+);
+
+alter table public.content enable row level security;
+create policy if not exists "Content read for all" on public.content for select using (true);
+create policy if not exists "Content write open" on public.content for all using (true) with check (true);
+
+-- Articles table (used by Lotessa Library)
+create table if not exists public.articles (
+  id uuid primary key default gen_random_uuid(),
+  title text not null,
+  subtitle text,
+  description text,
+  content text not null,
+  author text,
+  read_time text,
+  published_at timestamptz,
+  created_at timestamptz default now()
+);
+
+alter table public.articles enable row level security;
+create policy if not exists "Articles read for all" on public.articles for select using (true);
+create policy if not exists "Articles write open" on public.articles for all using (true) with check (true);
+
+-- Hero section content table
+create table if not exists public.hero_content (
+  id uuid primary key default gen_random_uuid(),
+  title text not null,
+  subtitle text,
+  p1 text,
+  p2 text,
+  updated_at timestamptz default now()
+);
+
+alter table public.hero_content enable row level security;
+create policy if not exists "Hero read for all" on public.hero_content for select using (true);
+create policy if not exists "Hero write open" on public.hero_content for all using (true) with check (true);
+
+-- Join Community section content table
+create table if not exists public.community_content (
+  id uuid primary key default gen_random_uuid(),
+  heading text not null,
+  title text,
+  paragraph text,
+  updated_at timestamptz default now()
+);
+
+alter table public.community_content enable row level security;
+create policy if not exists "Community read for all" on public.community_content for select using (true);
+create policy if not exists "Community write open" on public.community_content for all using (true) with check (true);
+```

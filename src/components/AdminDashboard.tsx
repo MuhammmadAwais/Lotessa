@@ -41,6 +41,41 @@ import {
   Calendar
 } from "lucide-react";
 import AdminNavigation from "./AdminNavigation";
+import { useEffect as ReactUseEffect } from "react";
+
+function ArticleEditorList() {
+  const [rows, setRows] = useState<any[]>([]);
+  useEffect(() => {
+    const load = async () => {
+      const { data } = await (supabase as any).from('articles').select('id,title,subtitle,description,read_time').order('updated_at', { ascending: false }).limit(50);
+      setRows(data || []);
+    };
+    load();
+  }, []);
+  return (
+    <div className="space-y-3">
+      {rows.map((a) => (
+        <div key={a.id} className="border rounded p-3 space-y-2">
+          <input className="w-full border rounded p-2" value={a.title || ''} onChange={(e) => setRows(prev => prev.map(x => x.id === a.id ? { ...x, title: e.target.value } : x))} />
+          <input className="w-full border rounded p-2" value={a.subtitle || ''} onChange={(e) => setRows(prev => prev.map(x => x.id === a.id ? { ...x, subtitle: e.target.value } : x))} />
+          <textarea className="w-full border rounded p-2" rows={8} value={a.description || ''} onChange={(e) => setRows(prev => prev.map(x => x.id === a.id ? { ...x, description: e.target.value } : x))} />
+          <div className="flex gap-2">
+            <button className="px-3 py-2 border rounded" onClick={async () => {
+              const { error } = await (supabase as any).from('articles').update({ title: a.title, subtitle: a.subtitle, description: a.description }).eq('id', a.id);
+              if (error) toast({ title: 'Error', description: error.message, variant: 'destructive' });
+              else toast({ title: 'Saved', description: 'Article updated' });
+            }}>Save</button>
+            <button className="px-3 py-2 border rounded" onClick={async () => {
+              const { error } = await (supabase as any).from('articles').delete().eq('id', a.id);
+              if (error) toast({ title: 'Error', description: error.message, variant: 'destructive' });
+              else setRows(prev => prev.filter(x => x.id !== a.id));
+            }}>Delete</button>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 interface Contact {
   id: string;
@@ -94,6 +129,20 @@ interface ArticleClick {
   ip_address: unknown | null;
 }
 
+interface ReportIssue {
+  id: number;
+  name: string;
+  email: string;
+  phone: string | null;
+  title: string;
+  description: string;
+  issue_type: string;
+  status: string;
+  priority: string;
+  created_at: string;
+  updated_at: string;
+}
+
 const AdminDashboard = () => {
   const navigate = useNavigate();
   const [contacts, setContacts] = useState<Contact[]>([]);
@@ -101,10 +150,36 @@ const AdminDashboard = () => {
   const [waitlist, setWaitlist] = useState<Waitlist[]>([]);
   const [interactions, setInteractions] = useState<Interaction[]>([]);
   const [articleClicks, setArticleClicks] = useState<ArticleClick[]>([]);
+  const [reportIssues, setReportIssues] = useState<ReportIssue[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("overview");
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [heroForm, setHeroForm] = useState({ title: '', subtitle: '', p1: '', p2: '' });
+  const [communityForm, setCommunityForm] = useState({ heading: '', title: '', paragraph: '' });
+  const [partnerForm, setPartnerForm] = useState({
+    section_title: '',
+    main_title: '',
+    main_description: '',
+    write_title: '',
+    write_question: '',
+    write_bullet1: '',
+    write_bullet2: '',
+    write_bullet3: '',
+    write_bullet4: '',
+    sponsor_title: '',
+    sponsor_question: '',
+    sponsor_bullet1: '',
+    sponsor_bullet2: '',
+    sponsor_bullet3: '',
+    sponsor_bullet4: '',
+    advise_title: '',
+    advise_question: '',
+    advise_bullet1: '',
+    advise_bullet2: '',
+    advise_bullet3: '',
+    advise_bullet4: ''
+  });
 
   useEffect(() => {
     console.log('🚀 AdminDashboard component mounted');
@@ -242,6 +317,76 @@ const AdminDashboard = () => {
       } else {
         console.log('✅ Article clicks fetched successfully:', articleClicksData?.length || 0, 'records');
         setArticleClicks(articleClicksData || []);
+      }
+
+      // Fetch report issues
+      console.log('🐛 Fetching report issues...');
+      const { data: reportIssuesData, error: reportIssuesError } = await supabase
+        .from('report_issues')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (reportIssuesError) {
+        console.error('❌ Error fetching report issues:', reportIssuesError);
+        toast({
+          title: "Report Issues Error",
+          description: `Failed to fetch report issues: ${reportIssuesError.message}`,
+          variant: "destructive"
+        });
+      } else {
+        console.log('✅ Report issues fetched successfully:', reportIssuesData?.length || 0, 'records');
+        setReportIssues(reportIssuesData || []);
+      }
+
+      // Load latest hero content
+      const { data: hero } = await (supabase as any)
+        .from('hero_content')
+        .select('*')
+        .order('updated_at', { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      if (hero) setHeroForm({ title: hero.title || '', subtitle: hero.subtitle || '', p1: hero.p1 || '', p2: hero.p2 || '' });
+
+      // Load latest community content
+      const { data: community } = await (supabase as any)
+        .from('community_content')
+        .select('*')
+        .order('updated_at', { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      if (community) setCommunityForm({ heading: community.heading || '', title: community.title || '', paragraph: community.paragraph || '' });
+
+      // Load latest partner content
+      const { data: partner } = await (supabase as any)
+        .from('partnerwithlotessa')
+        .select('*')
+        .order('updated_at', { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      if (partner) {
+        setPartnerForm({
+          section_title: partner.section_title || '',
+          main_title: partner.main_title || '',
+          main_description: partner.main_description || '',
+          write_title: partner.write_title || '',
+          write_question: partner.write_question || '',
+          write_bullet1: partner.write_bullet1 || '',
+          write_bullet2: partner.write_bullet2 || '',
+          write_bullet3: partner.write_bullet3 || '',
+          write_bullet4: partner.write_bullet4 || '',
+          sponsor_title: partner.sponsor_title || '',
+          sponsor_question: partner.sponsor_question || '',
+          sponsor_bullet1: partner.sponsor_bullet1 || '',
+          sponsor_bullet2: partner.sponsor_bullet2 || '',
+          sponsor_bullet3: partner.sponsor_bullet3 || '',
+          sponsor_bullet4: partner.sponsor_bullet4 || '',
+          advise_title: partner.advise_title || '',
+          advise_question: partner.advise_question || '',
+          advise_bullet1: partner.advise_bullet1 || '',
+          advise_bullet2: partner.advise_bullet2 || '',
+          advise_bullet3: partner.advise_bullet3 || '',
+          advise_bullet4: partner.advise_bullet4 || ''
+        });
       }
 
       console.log('🎯 All data fetch operations completed');
@@ -438,11 +583,285 @@ const AdminDashboard = () => {
           visitors: visitors.length,
           waitlist: waitlist.length,
           interactions: interactions.length,
-          articleClicks: articleClicks.length
+          articleClicks: articleClicks.length,
+          reportIssues: reportIssues.length
         }}
       />
 
-      {/* Delete Confirmation Dialog */}
+      {/* Side Drawer */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+        <div className="flex gap-6">
+          <aside className="hidden lg:block w-64 shrink-0">
+            <div className="sticky top-4 bg-white border rounded-lg p-3 space-y-1">
+              
+              <div className="pt-2 border-t mt-2"></div>
+              <button className={`w-full text-left px-3 py-2 rounded ${activeTab === 'hero' ? 'bg-primary text-primary-foreground' : 'hover:bg-muted'}`} onClick={() => setActiveTab('hero')}>Hero Content</button>
+              <button className={`w-full text-left px-3 py-2 rounded ${activeTab === 'community' ? 'bg-primary text-primary-foreground' : 'hover:bg-muted'}`} onClick={() => setActiveTab('community')}>Community Content</button>
+              <button className={`w-full text-left px-3 py-2 rounded ${activeTab === 'partner' ? 'bg-primary text-primary-foreground' : 'hover:bg-muted'}`} onClick={() => setActiveTab('partner')}>Partner Content</button>
+              <button className={`w-full text-left px-3 py-2 rounded ${activeTab === 'articles' ? 'bg-primary text-primary-foreground' : 'hover:bg-muted'}`} onClick={() => setActiveTab('articles')}>Articles</button>
+              <button className={`w-full text-left px-3 py-2 rounded ${activeTab === 'reports' ? 'bg-primary text-primary-foreground' : 'hover:bg-muted'}`} onClick={() => setActiveTab('reports')}>Reported Issues</button>
+            </div>
+          </aside>
+          <div className="flex-1">
+
+      {/* Hero Content Management */}
+      {activeTab === 'hero' && (
+        <div className="p-0">
+          <h2 className="text-xl font-semibold mb-4">Hero Content</h2>
+          <div className="space-y-3">
+            <label className="block text-sm font-medium">Title</label>
+            <textarea className="w-full border rounded p-2" rows={2} value={heroForm.title} onChange={(e) => setHeroForm({ ...heroForm, title: e.target.value })} />
+            <label className="block text-sm font-medium">Subtitle</label>
+            <textarea className="w-full border rounded p-2" rows={2} value={heroForm.subtitle} onChange={(e) => setHeroForm({ ...heroForm, subtitle: e.target.value })} />
+            <label className="block text-sm font-medium">Paragraph 1</label>
+            <textarea className="w-full border rounded p-2" rows={4} value={heroForm.p1} onChange={(e) => setHeroForm({ ...heroForm, p1: e.target.value })} />
+            <label className="block text-sm font-medium">Paragraph 2</label>
+            <textarea className="w-full border rounded p-2" rows={4} value={heroForm.p2} onChange={(e) => setHeroForm({ ...heroForm, p2: e.target.value })} />
+            <div>
+              <button className="px-3 py-2 border rounded" onClick={async () => {
+                const { error } = await (supabase as any).from('hero_content').insert({
+                  title: heroForm.title,
+                  subtitle: heroForm.subtitle,
+                  p1: heroForm.p1,
+                  p2: heroForm.p2,
+                });
+                if (error) toast({ title: 'Error', description: error.message, variant: 'destructive' });
+                else toast({ title: 'Saved', description: 'Hero content saved' });
+              }}>Save</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'articles' && (
+        <div className="p-0">
+          <h2 className="text-xl font-semibold mb-4">Articles</h2>
+          <div className="space-y-4">
+            <button className="px-3 py-2 border rounded" onClick={async () => {
+              const { data, error } = await (supabase as any).from('articles').insert({ title: 'Untitled', content: '' }).select('*').single();
+              if (error) toast({ title: 'Error', description: error.message, variant: 'destructive' });
+              else toast({ title: 'Created', description: 'New article added' });
+            }}>Add Article</button>
+            <div className="grid gap-3">
+              {/* Simple list of recent articles with inline editing */}
+              {/* For performance: fetch minimal fields */}
+              <ArticleEditorList />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'reports' && (
+        <div className="p-0">
+          <h2 className="text-xl font-semibold mb-4">Report Issues ({reportIssues.length})</h2>
+          <div className="space-y-4">
+            {reportIssues.length === 0 ? (
+              <div className="text-center py-8 text-muted-foreground">
+                No issues reported yet.
+              </div>
+            ) : (
+              <div className="space-y-4">
+                {reportIssues.map((issue) => (
+                  <div key={issue.id} className="border rounded-lg p-4 space-y-3">
+                    <div className="flex justify-between items-start">
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-lg">{issue.title}</h3>
+                        <p className="text-sm text-muted-foreground">
+                          by {issue.name} ({issue.email}) • {new Date(issue.created_at).toLocaleDateString()}
+                        </p>
+                        <p className="text-xs text-blue-600 font-medium mt-1">
+                          Type: {issue.issue_type}
+                        </p>
+                      </div>
+                      <div className="flex gap-2">
+                        <span className={`px-2 py-1 rounded text-xs font-medium ${
+                          issue.status === 'open' ? 'bg-red-100 text-red-800' :
+                          issue.status === 'in_progress' ? 'bg-yellow-100 text-yellow-800' :
+                          issue.status === 'resolved' ? 'bg-green-100 text-green-800' :
+                          'bg-gray-100 text-gray-800'
+                        }`}>
+                          {issue.status.replace('_', ' ')}
+                        </span>
+                        <span className={`px-2 py-1 rounded text-xs font-medium ${
+                          issue.priority === 'urgent' ? 'bg-red-100 text-red-800' :
+                          issue.priority === 'high' ? 'bg-orange-100 text-orange-800' :
+                          issue.priority === 'medium' ? 'bg-yellow-100 text-yellow-800' :
+                          'bg-green-100 text-green-800'
+                        }`}>
+                          {issue.priority}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gray-50 rounded p-3">
+                      <p className="text-sm whitespace-pre-wrap">{issue.description}</p>
+                    </div>
+                    
+                    {issue.phone && (
+                      <p className="text-sm text-muted-foreground">
+                        Phone: {issue.phone}
+                      </p>
+                    )}
+                    
+                    <div className="flex gap-2">
+                      <button 
+                        className="px-3 py-1 text-xs border rounded hover:bg-gray-50"
+                        onClick={async () => {
+                          const newStatus = issue.status === 'open' ? 'in_progress' : 
+                                          issue.status === 'in_progress' ? 'resolved' : 'open';
+                          const { error } = await supabase
+                            .from('report_issues')
+                            .update({ status: newStatus })
+                            .eq('id', issue.id);
+                          if (error) {
+                            toast({ title: 'Error', description: error.message, variant: 'destructive' });
+                          } else {
+                            toast({ title: 'Updated', description: `Status changed to ${newStatus}` });
+                            fetchAllData();
+                          }
+                        }}
+                      >
+                        {issue.status === 'open' ? 'Start Progress' : 
+                         issue.status === 'in_progress' ? 'Mark Resolved' : 'Reopen'}
+                      </button>
+                      
+                      <button 
+                        className="px-3 py-1 text-xs border rounded hover:bg-gray-50"
+                        onClick={async () => {
+                          const newPriority = issue.priority === 'low' ? 'medium' :
+                                            issue.priority === 'medium' ? 'high' :
+                                            issue.priority === 'high' ? 'urgent' : 'low';
+                          const { error } = await supabase
+                            .from('report_issues')
+                            .update({ priority: newPriority })
+                            .eq('id', issue.id);
+                          if (error) {
+                            toast({ title: 'Error', description: error.message, variant: 'destructive' });
+                          } else {
+                            toast({ title: 'Updated', description: `Priority changed to ${newPriority}` });
+                            fetchAllData();
+                          }
+                        }}
+                      >
+                        Priority: {issue.priority === 'low' ? 'Medium' :
+                                 issue.priority === 'medium' ? 'High' :
+                                 issue.priority === 'high' ? 'Urgent' : 'Low'}
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+      {activeTab === 'community' && (
+        <div className="p-0">
+          <h2 className="text-xl font-semibold mb-4">Community Content</h2>
+          <div className="space-y-3">
+            <label className="block text-sm font-medium">Heading</label>
+            <textarea className="w-full border rounded p-2" rows={2} value={communityForm.heading} onChange={(e) => setCommunityForm({ ...communityForm, heading: e.target.value })} />
+            <label className="block text-sm font-medium">Title</label>
+            <textarea className="w-full border rounded p-2" rows={2} value={communityForm.title} onChange={(e) => setCommunityForm({ ...communityForm, title: e.target.value })} />
+            <label className="block text-sm font-medium">Paragraph</label>
+            <textarea className="w-full border rounded p-2" rows={4} value={communityForm.paragraph} onChange={(e) => setCommunityForm({ ...communityForm, paragraph: e.target.value })} />
+            <div>
+              <button className="px-3 py-2 border rounded" onClick={async () => {
+                const { error } = await (supabase as any).from('community_content').insert(communityForm);
+                if (error) toast({ title: 'Error', description: error.message, variant: 'destructive' });
+                else toast({ title: 'Saved', description: 'Community content saved' });
+              }}>Save</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'partner' && (
+        <div className="p-0">
+          <h2 className="text-xl font-semibold mb-4">Partner Content</h2>
+          <div className="space-y-4">
+            {/* Main Section */}
+            <div className="border rounded p-4">
+              <h3 className="text-lg font-medium mb-3">Main Section</h3>
+              <div className="space-y-3">
+                <label className="block text-sm font-medium">Section Title</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.section_title} onChange={(e) => setPartnerForm({ ...partnerForm, section_title: e.target.value })} />
+                <label className="block text-sm font-medium">Main Title</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.main_title} onChange={(e) => setPartnerForm({ ...partnerForm, main_title: e.target.value })} />
+                <label className="block text-sm font-medium">Main Description</label>
+                <textarea className="w-full border rounded p-2" rows={4} value={partnerForm.main_description} onChange={(e) => setPartnerForm({ ...partnerForm, main_description: e.target.value })} />
+              </div>
+            </div>
+
+            {/* Write for Lotessa Section */}
+            <div className="border rounded p-4">
+              <h3 className="text-lg font-medium mb-3">Write for Lotessa</h3>
+              <div className="space-y-3">
+                <label className="block text-sm font-medium">Title</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.write_title} onChange={(e) => setPartnerForm({ ...partnerForm, write_title: e.target.value })} />
+                <label className="block text-sm font-medium">Question</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.write_question} onChange={(e) => setPartnerForm({ ...partnerForm, write_question: e.target.value })} />
+                <label className="block text-sm font-medium">Bullet Point 1</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.write_bullet1} onChange={(e) => setPartnerForm({ ...partnerForm, write_bullet1: e.target.value })} />
+                <label className="block text-sm font-medium">Bullet Point 2</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.write_bullet2} onChange={(e) => setPartnerForm({ ...partnerForm, write_bullet2: e.target.value })} />
+                <label className="block text-sm font-medium">Bullet Point 3</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.write_bullet3} onChange={(e) => setPartnerForm({ ...partnerForm, write_bullet3: e.target.value })} />
+                <label className="block text-sm font-medium">Bullet Point 4</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.write_bullet4} onChange={(e) => setPartnerForm({ ...partnerForm, write_bullet4: e.target.value })} />
+              </div>
+            </div>
+
+            {/* Sponsor & Partner Section */}
+            <div className="border rounded p-4">
+              <h3 className="text-lg font-medium mb-3">Sponsor & Partner</h3>
+              <div className="space-y-3">
+                <label className="block text-sm font-medium">Title</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.sponsor_title} onChange={(e) => setPartnerForm({ ...partnerForm, sponsor_title: e.target.value })} />
+                <label className="block text-sm font-medium">Question</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.sponsor_question} onChange={(e) => setPartnerForm({ ...partnerForm, sponsor_question: e.target.value })} />
+                <label className="block text-sm font-medium">Bullet Point 1</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.sponsor_bullet1} onChange={(e) => setPartnerForm({ ...partnerForm, sponsor_bullet1: e.target.value })} />
+                <label className="block text-sm font-medium">Bullet Point 2</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.sponsor_bullet2} onChange={(e) => setPartnerForm({ ...partnerForm, sponsor_bullet2: e.target.value })} />
+                <label className="block text-sm font-medium">Bullet Point 3</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.sponsor_bullet3} onChange={(e) => setPartnerForm({ ...partnerForm, sponsor_bullet3: e.target.value })} />
+                <label className="block text-sm font-medium">Bullet Point 4</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.sponsor_bullet4} onChange={(e) => setPartnerForm({ ...partnerForm, sponsor_bullet4: e.target.value })} />
+              </div>
+            </div>
+
+            {/* Advise and Invest Section */}
+            <div className="border rounded p-4">
+              <h3 className="text-lg font-medium mb-3">Advise and Invest</h3>
+              <div className="space-y-3">
+                <label className="block text-sm font-medium">Title</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.advise_title} onChange={(e) => setPartnerForm({ ...partnerForm, advise_title: e.target.value })} />
+                <label className="block text-sm font-medium">Question</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.advise_question} onChange={(e) => setPartnerForm({ ...partnerForm, advise_question: e.target.value })} />
+                <label className="block text-sm font-medium">Bullet Point 1</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.advise_bullet1} onChange={(e) => setPartnerForm({ ...partnerForm, advise_bullet1: e.target.value })} />
+                <label className="block text-sm font-medium">Bullet Point 2</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.advise_bullet2} onChange={(e) => setPartnerForm({ ...partnerForm, advise_bullet2: e.target.value })} />
+                <label className="block text-sm font-medium">Bullet Point 3</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.advise_bullet3} onChange={(e) => setPartnerForm({ ...partnerForm, advise_bullet3: e.target.value })} />
+                <label className="block text-sm font-medium">Bullet Point 4</label>
+                <textarea className="w-full border rounded p-2" rows={2} value={partnerForm.advise_bullet4} onChange={(e) => setPartnerForm({ ...partnerForm, advise_bullet4: e.target.value })} />
+              </div>
+            </div>
+
+            <div>
+              <button className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90" onClick={async () => {
+                const { error } = await (supabase as any).from('partnerwithlotessa').insert(partnerForm);
+                if (error) toast({ title: 'Error', description: error.message, variant: 'destructive' });
+                else toast({ title: 'Saved', description: 'Partner content saved' });
+              }}>Save Partner Content</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+            {/* Main content wrapper continues below */}
       <AlertDialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
         <AlertDialogContent className="max-w-[95vw] sm:max-w-lg mx-4">
           <AlertDialogHeader>
@@ -478,7 +897,7 @@ const AdminDashboard = () => {
         </AlertDialogContent>
       </AlertDialog>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+            <div className="max-w-7xl mx-auto px-0 sm:px-0 lg:px-0 py-4 sm:py-6 lg:py-8">
         {/* Stats Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
           <Card className="p-4 sm:p-6">
@@ -1169,6 +1588,9 @@ const AdminDashboard = () => {
               </Card>
             </div>
           )}
+          </div>
+        </div>
+      </div>
         </div>
       </div>
     </div>

@@ -34,13 +34,21 @@ const Header = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Auth Buttons */}
+          <div className="hidden md:flex items-center space-x-3">
+            <Button 
+              variant="outline" 
+              className="border-border hover:bg-muted transition-colors"
+              onClick={() => window.open('https://app.lotessa.app/login', '_blank')}
+            >
+              Sign In
+            </Button>
             <Button 
               variant="default" 
               className="bg-gradient-hero hover:opacity-90 transition-opacity"
+              onClick={() => window.open('https://app.lotessa.app/register', '_blank')}
             >
-              Let's Work Together
+              Create Account
             </Button>
           </div>
 
@@ -68,12 +76,28 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
-              <Button 
-                variant="default" 
-                className="bg-gradient-hero hover:opacity-90 transition-opacity mt-4 w-full"
-              >
-                Let's Work Together
-              </Button>
+              <div className="flex flex-col space-y-3 mt-4">
+                <Button 
+                  variant="outline" 
+                  className="border-border hover:bg-muted transition-colors w-full"
+                  onClick={() => {
+                    window.open('https://app.lotessa.app/login', '_blank');
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  Sign In
+                </Button>
+                <Button 
+                  variant="default" 
+                  className="bg-gradient-hero hover:opacity-90 transition-opacity w-full"
+                  onClick={() => {
+                    window.open('https://app.lotessa.app/register', '_blank');
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  Create Account
+                </Button>
+              </div>
             </div>
           </div>
         )}

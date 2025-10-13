@@ -1,7 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import WaitlistDialog from "./WaitlistDialog";
+import { supabase } from "@/integrations/supabase/client";
 const CommunitySection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [heading, setHeading] = useState("Join the Community");
+  const [title, setTitle] = useState("You're Not Alone");
+  const [paragraph, setParagraph] = useState("Join a supportive, judgement-free community where you can ask questions, share progress, and connect with others who understand your journey. Whether you're just starting or deep into your transformation, there's a space for you here.");
+
+  useEffect(() => {
+    const load = async () => {
+      const { data } = await (supabase as any)
+        .from('community_content')
+        .select('*')
+        .order('updated_at', { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      if (data) {
+        setHeading(data.heading || heading);
+        setTitle(data.title || title);
+        setParagraph(data.paragraph || paragraph);
+      } else {
+        await (supabase as any).from('community_content').insert({
+          heading,
+          title,
+          paragraph,
+        });
+      }
+    };
+    load();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
@@ -11,7 +39,7 @@ const CommunitySection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h3 className="text-display-md text-foreground font-sans mb-4">
-            Join the Community
+            {heading}
           </h3>
         </div>
 
@@ -27,20 +55,17 @@ const CommunitySection = () => {
           {/* Right - Content */}
           <div className="space-y-6 lg:space-y-8 order-1 lg:order-2">
             <h2 className="text-display-lg text-foreground font-sans leading-tight">
-              You're Not Alone
+              {title}
             </h2>
             
             <p className="text-muted-foreground text-body-lg font-sans font-normal leading-relaxed">
-              Join a supportive, judgement-free community where you can ask questions, 
-              share progress, and connect with others who understand your journey. 
-              Whether you're just starting or deep into your transformation, there's a 
-              space for you here.
+              {paragraph}
             </p>
 
             <div className="pt-4">
               <button 
                 className="inline-block"
-                onClick={() => setDialogOpen(true)}
+                onClick={() => window.open('https://app.lotessa.app/register', '_blank')}
               >
                 <img src="/lovable-uploads/92fcb71d-e582-4fbf-8e5f-7b92cb752d2a.png" alt="Join the Lotessa Community" className="h-12" />
               </button>
