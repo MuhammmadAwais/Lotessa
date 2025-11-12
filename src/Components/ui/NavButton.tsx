@@ -1,34 +1,34 @@
 import React from "react";
 import styled from "styled-components";
 
-const NavButton: React.FC = () => {
+interface Props {
+  oneClick?: () => void;
+  isOpen: boolean;
+}
+
+
+const NavButton: React.FC<Props> = ({ oneClick, isOpen }) => {
   return (
-    <StyledWrapper>
-      <label className="burger" htmlFor="burger">
-        <input title="_" type="checkbox" id="burger" />
-        <span />
-        <span />
-        <span />
-      </label>
+    <StyledWrapper onClick={oneClick} $isOpen={isOpen}>
+      <span />
+      <span />
+      <span />
     </StyledWrapper>
   );
 };
 
-const StyledWrapper = styled.div`
-  .burger {
-    position: relative;
-    width: 40px;
-    height: 30px;
-    background: transparent;
-    cursor: pointer;
-    display: block;
-  }
 
-  .burger input {
-    display: none;
-  }
+const StyledWrapper = styled.div<{ $isOpen: boolean }>`
+  /* These were the .burger styles */
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
 
-  .burger span {
+  /* These are the .burger span styles */
+  span {
     display: block;
     position: absolute;
     height: 4px;
@@ -41,38 +41,44 @@ const StyledWrapper = styled.div`
     transition: 0.25s ease-in-out;
   }
 
-  .burger span:nth-of-type(1) {
+ 
+
+  span:nth-of-type(1) {
     top: 0px;
     transform-origin: left center;
+    /* Apply styles only if $isOpen is true */
+    ${(props) =>
+      props.$isOpen &&
+      `
+      transform: rotate(45deg);
+      top: 0px;
+      left: 5px;
+    `}
   }
 
-  .burger span:nth-of-type(2) {
+  span:nth-of-type(2) {
     top: 50%;
     transform: translateY(-50%);
     transform-origin: left center;
+    ${(props) =>
+      props.$isOpen &&
+      `
+      width: 0%;
+      opacity: 0;
+    `}
   }
 
-  .burger span:nth-of-type(3) {
+  span:nth-of-type(3) {
     top: 100%;
     transform-origin: left center;
     transform: translateY(-100%);
-  }
-
-  .burger input:checked ~ span:nth-of-type(1) {
-    transform: rotate(45deg);
-    top: 0px;
-    left: 5px;
-  }
-
-  .burger input:checked ~ span:nth-of-type(2) {
-    width: 0%;
-    opacity: 0;
-  }
-
-  .burger input:checked ~ span:nth-of-type(3) {
-    transform: rotate(-45deg);
-    top: 28px;
-    left: 5px;
+    ${(props) =>
+      props.$isOpen &&
+      `
+      transform: rotate(-45deg);
+      top: 28px;
+      left: 5px;
+    `}
   }
 `;
 

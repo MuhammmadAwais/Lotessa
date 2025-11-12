@@ -10,6 +10,7 @@ interface ButtonProps {
   classNames?: string;
   rest?: Record<string, unknown>;
   removeDefaultStyles?: boolean;
+  
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -23,7 +24,7 @@ const Button: React.FC<ButtonProps> = ({
   ...rest
 }) => {
   const baseStyles =
-    "px-4 py-2 rounded font-medium focus:outline-none cursor-pointer";
+    "px-4 py-2 rounded  font-medium focus:outline-none cursor-pointer";
   const variantStyles = {
     primary: "bg-blue-500 text-white hover:bg-blue-600",
     secondary: "bg-gray-500 text-white hover:bg-gray-600",

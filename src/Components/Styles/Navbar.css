@@ -3,3 +3,12 @@
       display: none;
     }
   }
+  
+  @media (min-width: 1024px) {
+    .Smaller-Screen-Nav {
+      display: none;
+    }
+    .Mobile-Nav-Menu {
+      display: none;
+    }
+  }
