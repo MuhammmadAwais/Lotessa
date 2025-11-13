@@ -4,8 +4,47 @@ import HeroSection from '../HeroSection';
 import Community from '../Community';
 import Library from '../Library';
 import Contact from '../Contact';
+import Footer from '../Footer';
+import {
+  ButtonHeartIcon,
+  UsersIcon,
+  LinkedInIcon,
+  FacebookIcon,
+  InstagramIcon,
+  ExampleLogo,
+} from "../Icons/Icons";
+
 
 const Landing : React.FC = () => {
+    const primaryButtonProps = {
+      text: "Download the App",
+      icon: <ButtonHeartIcon />,
+      href: "/",
+    };
+
+    const secondaryButtonProps = {
+      text: "Join the Lotessa Community",
+      icon: <UsersIcon />,
+      href: "/",
+    };
+
+    const socialIconsProps = [
+      {
+        icon: <InstagramIcon />,
+        href: "/",
+        alt: "Instagram",
+      },
+      {
+        icon: <LinkedInIcon />,
+        href: "/",
+        alt: "LinkedIn",
+      },
+      {
+        icon: <FacebookIcon />,
+        href: "/",
+        alt: "Facebook",
+      },
+    ];
   return (
     <div className="Landing-Page">
       <div className="Navigation">
@@ -38,11 +77,60 @@ const Landing : React.FC = () => {
           imageAlt="illustration"
         />
       </div>
-      <div className='Library-Section'>
+      <div className="Library-Section">
         <Library />
       </div>
-      <div className='Contact-Section'>
+      <div className="Contact-Section">
         <Contact />
+      </div>
+      
+      <div className="Footer-Section">
+        <div className="flex flex-col justify-end">
+          <Footer
+            logo={<ExampleLogo />}
+            primaryButton={primaryButtonProps}
+            secondaryButton={secondaryButtonProps}
+            socialIcons={socialIconsProps}
+          >
+            <p>
+              Lotessa is{" "}
+              <strong className="font-semibold text-[#0A2540]">
+                not a medical device
+              </strong>{" "}
+              and does not provide medical advice. Always consult a qualified
+              healthcare professional regarding your health condition and
+              treatment.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+              <a
+                href="#terms"
+                className="font-semibold text-[#0A2540] underline decoration-gray-400 decoration-1 underline-offset-2 transition-colors hover:text-gray-900"
+              >
+                Terms and Conditions
+              </a>
+              <a
+                href="#cookies"
+                className="font-semibold text-[#0A2540] underline decoration-gray-400 decoration-1 underline-offset-2 transition-colors hover:text-gray-900"
+              >
+                Cookies Policy
+              </a>
+              <a
+                href="#privacy"
+                className="font-semibold text-[#0A2540] underline decoration-gray-400 decoration-1 underline-offset-2 transition-colors hover:text-gray-900"
+              >
+                Privacy Policy
+              </a>
+            </div>
+            <div className="mt-6">
+              <a
+                href="#report"
+                className="font-semibold text-[#0A2540] underline decoration-gray-400 decoration-1 underline-offset-2 transition-colors hover:text-gray-900"
+              >
+                Report an issue
+              </a>
+            </div>
+          </Footer>
+        </div>
       </div>
     </div>
   );
