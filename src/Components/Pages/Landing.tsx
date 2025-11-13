@@ -3,6 +3,7 @@ import Navbar from '../Navbar'
 import HeroSection from '../HeroSection';
 import Community from '../Community';
 import Library from '../Library';
+import Contact from '../Contact';
 
 const Landing : React.FC = () => {
   return (
@@ -39,6 +40,9 @@ const Landing : React.FC = () => {
       </div>
       <div className='Library-Section'>
         <Library />
+      </div>
+      <div className='Contact-Section'>
+        <Contact />
       </div>
     </div>
   );
