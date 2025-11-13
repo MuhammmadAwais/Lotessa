@@ -83,9 +83,9 @@ const Landing : React.FC = () => {
       <div className="Contact-Section">
         <Contact />
       </div>
-      
-      <div className="Footer-Section">
-        <div className="flex flex-col justify-end">
+
+      <div className="Footer-Section mt-20">
+        <div className="flex flex-col justify-end ">
           <Footer
             logo={<ExampleLogo />}
             primaryButton={primaryButtonProps}

@@ -1,6 +1,5 @@
 import React from "react";
-
-
+// USING COMPONENT WHICH I MADE IN THSI FILE SO THAT IT CANT BE USED SOMEWHERE ELSE
 interface FooterButtonProps {
   text: string;
   icon: React.ReactNode;
@@ -54,13 +53,13 @@ const Footer: React.FC<FooterProps> = ({
   children,
 }) => {
   return (
-    <footer className="w-full bg-[#F8F7F4] font-sans text-[#0A2540]">
+    <footer className="w-full bg-[#e5e5e5] font-sans text-[#0A2540]">
       <div className="container mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           {/* Left Column: Logo, Buttons, Socials */}
           <div className="flex flex-col gap-8 md:col-span-1">
             {/* Logo */}
-            <div className="flex-shrink-0">{logo}</div>
+            <div className="shrink-0">{logo}</div>
 
             {/* Buttons */}
             <div className="flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
