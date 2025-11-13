@@ -13,6 +13,7 @@ import {
   InstagramIcon,
   ExampleLogo,
 } from "../Icons/Icons";
+import PartnerSection from '../PartnerSection';
 
 
 const Landing : React.FC = () => {
@@ -80,6 +81,9 @@ const Landing : React.FC = () => {
       <div className="Library-Section">
         <Library />
       </div>
+      <div className='Partner-Section'>
+        <PartnerSection />
+      </div>
       <div className="Contact-Section">
         <Contact />
       </div>
@@ -132,6 +136,7 @@ const Landing : React.FC = () => {
           </Footer>
         </div>
       </div>
+      
     </div>
   );
 }
