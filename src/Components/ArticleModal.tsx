@@ -58,14 +58,16 @@ const ModalBackdrop = styled.div`
 const ModalContent = styled.div`
   position: relative;
   width: 100%;
-  max-width: 1100px; // Large modal width
-  max-height: 90vh; // Limit height
-  background-color: #101828; // Very dark blue/charcoal from image
+  max-width: 1100px; 
+  max-height: 90vh; 
+  background-color: #101828; 
   border-radius: 16px;
   padding: 3rem 4rem;
   color: #f2f4f7; // Light text color
   overflow-y: auto; // Make content scrollable
   font-family: Arial, Helvetica, sans-serif;
+  scrollbar-width: none; /* Hide the scrollbar */
+  -ms-overflow-style: none; 
 
   @media (max-width: 768px) {
     padding: 3rem 2rem;
