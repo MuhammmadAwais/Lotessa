@@ -14,7 +14,7 @@ const FooterButton: React.FC<FooterButtonProps> = ({
 }) => (
   <a
     href={href}
-    className={`flex items-center justify-center gap-2 rounded-lg bg-[#2A2A2A] px-4 py-3 text-sm font-medium text-white shadow-sm transition-opacity hover:opacity-80 ${className}`}
+    className={`flex items-center justify-center gap-2 rounded-lg bg-[#2A2A2A] px-4 py-1 w-40px text-sm font-medium text-white shadow-sm transition-opacity hover:opacity-80 ${className}`}
   >
     {icon}
     <span>{text}</span>
