@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../Navbar'
 import HeroSection from '../HeroSection';
 import Community from '../Community';
+import Library from '../Library';
 
 const Landing : React.FC = () => {
   return (
@@ -24,7 +25,7 @@ const Landing : React.FC = () => {
         />
       </div>
       <div className="Community-Section m-14">
-        <h1 className="flex justify-center items-centertext-2xl sm:text-2xl lg:text-4xl font-semibold tracking-tight text-gray-900 ">
+        <h1 className="flex justify-center items-center text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-gray-900 ">
           Join the Community
         </h1>
         <Community
@@ -35,6 +36,9 @@ const Landing : React.FC = () => {
           imageSrc="./public/assets/CommunityImage.png"
           imageAlt="illustration"
         />
+      </div>
+      <div className='Library-Section'>
+        <Library />
       </div>
     </div>
   );
