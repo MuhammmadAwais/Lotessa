@@ -19,7 +19,7 @@ const Card: React.FC<CardProps> = ({ title, subtitle, snippet, onClick }) => {
         </div>
         <p className="card-title">{title}</p>
         <p className="card-subtitle">{subtitle}</p>
-        <p className="card-snippet">{snippet}</p>
+        <p className="card-snippet ">{snippet}</p>
       </div>
     </StyledWrapper>
   );
@@ -30,8 +30,9 @@ const Card: React.FC<CardProps> = ({ title, subtitle, snippet, onClick }) => {
 const StyledWrapper = styled.div`
   .card {
     position: relative;
+    height: 420px;
     max-width: 400px;
-    background-color: #f9f7f5; 
+    background-color: #f9f7f5;
     border-radius: 24px; // Larger border radius
     padding: 2.5rem 2rem;
     margin: 1rem;
@@ -70,7 +71,6 @@ const StyledWrapper = styled.div`
     font-size: 1rem; // ~16px
     font-weight: 400;
     line-height: 1.6;
-
     /* This hides overflow and adds the "..." */
     display: -webkit-box;
     -webkit-line-clamp: 3; // Show 3 lines before truncating
@@ -94,12 +94,12 @@ const StyledWrapper = styled.div`
   }
 
   .card:hover .arrow-button {
-    border-color: #344054;
-    background-color: #f2f4f7;
+    border-color: #3d4457;
+    background-color: #1a202c;
   }
 
   .arrow {
-    color: #344054; 
+    color: #344054;
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 1;
@@ -108,6 +108,7 @@ const StyledWrapper = styled.div`
 
   .card:hover .arrow {
     transform: translateX(3px); /* Small arrow movement on hover */
+    color: #ffffff;
   }
 `;
 
