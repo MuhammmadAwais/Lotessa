@@ -372,50 +372,21 @@ const CardContent: CardContentInterface[] = [
     description: "A period of change, but not the end of your journey",
     extended: (
       <>
-        <p>
-          The recent Mounjaro price hike has caused worry for many UK users,
-          especially those paying privately. While NHS patients will see no
-          immediate change, the private market is experiencing significant
-          shifts. This is part of a wider realignment in global drug pricing,
-          with manufacturers bringing UK costs in line with other countries.
-        </p>
+       <p>The recent Mounjaro price hike has caused worry for many UK users, especially those paying privately. While NHS patients will see no immediate change, the private market is experiencing significant shifts. This is part of a wider realignment in global drug pricing, with manufacturers bringing UK costs in line with other countries.</p>
 
-        <p>What this means for you</p>
+<p>What this means for you</p>
 
-        <p>
-          Firstly, the good news: the UK remains a priority market for GLP-1
-          treatments. NHS access is secure for those eligible, and several
-          alternative medications, including Wegovy and Ozempic, remain
-          available both privately and on prescription. New GLP-1 and
-          dual-action therapies are also in late-stage trials and may enter the
-          UK market in the next 1–3 years, adding competition and potentially
-          stabilising prices.
-        </p>
+<p>Firstly, the good news: the UK remains a priority market for GLP-1 treatments. NHS access is secure for those eligible, and several alternative medications, including Wegovy and Ozempic, remain available both privately and on prescription. New GLP-1 and dual-action therapies are also in late-stage trials and may enter the UK market in the next 1–3 years, adding competition and potentially stabilising prices.</p>
 
-        <p>Staying ahead through information and planning</p>
+<p>Staying ahead through information and planning</p>
 
-        <p>
-          Times of change can be unsettling, but they're also a chance to take
-          control. Staying informed about medication availability, alternative
-          options, and policy updates means you can adapt quickly. Informed
-          patients are better positioned to work with their GP or pharmacist to
-          find the right treatment plan — and continuity is key to lasting
-          results.
-        </p>
+<p>Times of change can be unsettling, but they're also a chance to take control. Staying informed about medication availability, alternative options, and policy updates means you can adapt quickly. Informed patients are better positioned to work with their GP or pharmacist to find the right treatment plan — and continuity is key to lasting results.</p>
 
-        <p>Lotessa: your companion in a shifting landscape</p>
+<p>Lotessa: your companion in a shifting landscape</p>
 
-        <p>
-          Lotessa keeps your health data organised, your doses tracked, and your
-          progress visible. So, whether you stay on your current medication,
-          switch, or pause, you'll have the insights to make confident decisions
-          with your healthcare provider.
-        </p>
+<p>Lotessa keeps your health data organised, your doses tracked, and your progress visible. So, whether you stay on your current medication, switch, or pause, you'll have the insights to make confident decisions with your healthcare provider.</p>
 
-        <p>
-          Your health journey isn't ending, it's evolving. Let Lotessa help you
-          navigate it with clarity and confidence.
-        </p>
+<p>Your health journey isn't ending, it's evolving. Let Lotessa help you navigate it with clarity and confidence.</p>
       </>
     ),
   },
@@ -441,7 +412,7 @@ const ArticlePage: React.FC = () => {
           title={article.heading}
           subtitle={article.description}
 
-          snippet={article.description}
+          snippet={article.extended}
           onClick={() => setSelectedArticleId(article.id)}
         />
       ))}

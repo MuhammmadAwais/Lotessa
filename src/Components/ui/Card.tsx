@@ -5,7 +5,7 @@ import styled from "styled-components";
 interface CardProps {
   title: string;
   subtitle: string;
-  snippet: string;
+  snippet: React.ReactNode | string;
   onClick: () => void; 
 }
 
