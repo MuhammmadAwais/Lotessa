@@ -51,7 +51,8 @@ const Landing : React.FC = () => {
       <div className="Navigation">
         <Navbar />
       </div>
-      <div className="Hero-Section">
+      {/* IDS ARE GIVEN BASED ON NAVBAR */}
+      <div id="download" className="Hero-Section">
         <HeroSection
           title="Your Health Companion for GLP-1 Medications"
           subtitle="Track. Learn. Connect. All in one place."
@@ -65,7 +66,7 @@ const Landing : React.FC = () => {
           imageAlt="illustration"
         />
       </div>
-      <div className="Community-Section m-14">
+      <div id="community" className="Community-Section m-14">
         <h1 className="flex justify-center items-center text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-gray-900 ">
           Join the Community
         </h1>
@@ -78,13 +79,13 @@ const Landing : React.FC = () => {
           imageAlt="illustration"
         />
       </div>
-      <div className="Library-Section">
+      <div id="library" className="Library-Section">
         <Library />
       </div>
-      <div className='Partner-Section'>
+      <div id="partner" className="Partner-Section">
         <PartnerSection />
       </div>
-      <div className="Contact-Section">
+      <div id="contact" className="Contact-Section">
         <Contact />
       </div>
 
@@ -136,7 +137,6 @@ const Landing : React.FC = () => {
           </Footer>
         </div>
       </div>
-      
     </div>
   );
 }

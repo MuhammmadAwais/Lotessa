@@ -11,6 +11,7 @@ const Contact: React.FC = () => {
  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    //FOR DEV ONLY IF YOU CAN REMOVE IT AT TIME OF DEPLOY
     console.log("Form submitted with:", { name, email, topic, message });
   };
 

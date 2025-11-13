@@ -23,19 +23,23 @@ const Navbar: React.FC = () => {
         </NavIcons>
         <div className="flex justify-between gap-8 pt-2 mx-4">
           <NavIcons className="font-medium transition-transform duration-300 hover:scale-115">
-            <a href="/">Download the App</a>
+            <a href="#download">Download the App</a>
           </NavIcons>
           <NavIcons className="font-medium transition-transform duration-300 hover:scale-115">
-            <a href="/">Join the Community</a>
+
+            <a href="#community">Join the Community</a>
           </NavIcons>
           <NavIcons className="font-medium transition-transform duration-300 hover:scale-115">
-            <a href="/">Lotessa Library</a>
+
+            <a href="#library">Lotessa Library</a>
           </NavIcons>
           <NavIcons className="font-medium transition-transform duration-300 hover:scale-115">
-            <a href="/">Partner With Lotessa</a>
+    
+            <a href="#partner">Partner With Lotessa</a>
           </NavIcons>
           <NavIcons className="font-medium transition-transform duration-300 hover:scale-115">
-            <a href="/">Contact Us</a>
+         
+            <a href="#contact">Contact Us</a>
           </NavIcons>
         </div>
         <div className="flex justify-between gap-3 ">
@@ -69,16 +73,20 @@ const Navbar: React.FC = () => {
               <a href="/">Download the App</a>
             </NavIcons>
             <NavIcons className="font-medium pl-4 transition-transform duration-300 hover:text-blue-500">
-              <a href="/">Join the Community</a>
+              {/* --- UPDATED href --- */}
+              <a href="#community">Join the Community</a>
             </NavIcons>
             <NavIcons className="font-medium pl-4 transition-transform duration-300 hover:text-blue-500">
-              <a href="/">Lotessa Library</a>
+              {/* --- UPDATED href --- */}
+              <a href="#library">Lotessa Library</a>
             </NavIcons>
             <NavIcons className="font-medium pl-4 transition-transform duration-300 hover:text-blue-500">
-              <a href="/">Partner With Lotessa</a>
+              {/* --- UPDATED href --- */}
+              <a href="#partner">Partner With Lotessa</a>
             </NavIcons>
             <NavIcons className="font-medium pl-4 transition-transform duration-300 hover:text-blue-500">
-              <a href="/">Contact Us</a>
+              {/* --- UPDATED href --- */}
+              <a href="#contact">Contact Us</a>
             </NavIcons>
           </div>
           <div className="flex flex-col justify-center items-center ">
