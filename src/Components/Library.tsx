@@ -17,7 +17,7 @@ const Library : React.FC = () => {
     <div className="Library ">
       <PageWrapper>
         <div className="Headers flex flex-col justify-between items-center mx-4">
-          <h2 className="mt-6 text-2xl lg:text-3xl font-medium text-black flex justify-between items-center mx-4">
+          <h2 className="mt-6 pt-6 text-2xl lg:text-3xl font-medium text-black flex justify-between items-center mx-4">
             Lotessa Library
           </h2>
           <h1 className="flex justify-between items-center mt-8 text-2xl sm:text-2xl lg:text-5xl font-extrabold tracking-tight text-gray-900 mx-4">
