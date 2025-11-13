@@ -28,11 +28,11 @@ const Community: React.FC<HeroSectionProps> = ({
   return (
     <section className="bg-white ">
       <div className="container mx-auto px-4 py-24 sm:py-22 flex flex-col-reverse lg:flex-row items-center lg:gap-16">
-        {/* Left Side - Text Content */}
+        {/* Right Side - Text Content */}
         <div className="flex-1 flex justify-center">
           <img src={imageSrc} alt={imageAlt} className="max-w-full h-auto" />
         </div>
-        {/* Right Side - Image */}
+        {/* Left Side - Image */}
         <div className="flex-1 text-center lg:text-left mt-12 lg:mt-0">
           {/* Main Title: "Your Health Companion..." */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 ">
