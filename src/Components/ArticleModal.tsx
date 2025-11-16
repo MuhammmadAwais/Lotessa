@@ -35,7 +35,7 @@ const ArticleModal: React.FC<ModalProps> = ({
           </TextSection>
           <ImageSection>
 
-            <img src="../../public/assets/CardImage.png" alt="App Progress" />
+            <img src="/assets/CardImage.png" alt="App Progress" />
           </ImageSection>
         </ContentWrapper>
       </ModalContent>

@@ -62,7 +62,7 @@ const Landing : React.FC = () => {
           buttonTextTwo="Join the Lotessa Community"
           buttonLinkOne="/"
           buttonLinkTwo="/"
-          imageSrc="./public/assets/HeroImage.png"
+          imageSrc="/assets/HeroImage.png"
           imageAlt="illustration"
         />
       </div>
@@ -75,7 +75,7 @@ const Landing : React.FC = () => {
           description="Join a supportive, judgement-free community where you can ask questions, share progress, and connect with others who understand your journey. Whether you're just starting or deep into your transformation, there's a space for you here."
           buttonTextOne="Join the Lotessa Community"
           buttonLinkOne="/"
-          imageSrc="./public/assets/CommunityImage.png"
+          imageSrc="/assets/CommunityImage.png"
           imageAlt="illustration"
         />
       </div>

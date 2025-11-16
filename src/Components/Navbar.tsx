@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
       <div className="Navbar flex justify-between mt-4 mx-10 :hidden ">
         <NavIcons className="w-44 flex items-center pr-4 ">
           <a href="/">
-            <img title="Logo" src="./public/assets/Logo.png" />
+            <img title="Logo" src="/assets/Logo.png" />
           </a>
         </NavIcons>
         <div className="flex justify-between gap-8 pt-2 mx-4">
@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
       <div className="Smaller-Screen-Nav flex justify-between mt-4 ml-8 mr-10 ">
         <NavIcons className="w-44 flex items-center pr-4 ">
           <a href="/">
-            <img title="Logo" src="./public/assets/Logo.png" />
+            <img title="Logo" src="/assets/Logo.png" />
           </a>
         </NavIcons>
 

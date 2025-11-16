@@ -72,7 +72,7 @@ const PartnerSection : React.FC = () => {
                 aria-hidden="true"
               >
                 <span className="text-gray-400 font-medium">
-                  <img src="../../public/assets/PartnerImage.png" />
+                  <img src="/assets/PartnerImage.png" />
                 </span>
               </div>
             </div>
