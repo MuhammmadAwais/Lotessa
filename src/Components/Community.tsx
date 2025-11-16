@@ -25,7 +25,10 @@ const Community: React.FC<HeroSectionProps> = ({
   imageSrc,
   imageAlt = "Hero image",
 }) => {
+  subDescription = subDescription || ""; // TO AVOID VERCEL CONFLICTS AS TS ERRORS Later will be fixed
+  subtitle = subtitle || "";
   return (
+
     <section className="bg-white ">
       <div className="container mx-auto px-4 py-24 sm:py-22 flex flex-col-reverse lg:flex-row items-center lg:gap-16">
         {/* Left Side - Image  */}

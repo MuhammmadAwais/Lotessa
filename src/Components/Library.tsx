@@ -1,14 +1,6 @@
 import React from 'react'
-import Card from './ui/Card';
 import ArticlePage from './ArticlePage';
 import styled from "styled-components";
-
-interface CardContentInterface {
-    id: number;
-    heading: string;
-    description: string;
-    extended?: string | null;
-}
 const Library : React.FC = () => {
   const PageWrapper = styled.div`
     background-color: #e5e5e5;

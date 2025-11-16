@@ -1,6 +1,5 @@
 import React from "react";
-
-const Button = () => {
+const Button : React.FC = () => {
   return (
     <button
       className="cursor-pointer duration-200 hover:scale-125 active:scale-100"
