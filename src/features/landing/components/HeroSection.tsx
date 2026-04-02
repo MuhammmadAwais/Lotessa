@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { useHeroContent } from "@/features/landing/hooks/useHeroContent";
-import { TrackingButton } from "@/features/telemetry/components/TrackingButton";
+import { TrackingButton, AppleIcon } from "@/features/telemetry/components/TrackingButton";
 import WaitlistDialog from "@/components/WaitlistDialog";
+import { ArrowRight } from "lucide-react";
 import gsap from "gsap";
 
 const HeroSection = () => {
@@ -72,6 +73,7 @@ const HeroSection = () => {
                       id="download_button_hero"
                       variant="black"
                       onClick={() => setDialogOpen(true)}
+                      icon={<AppleIcon />}
                     >
                       Download the App
                     </TrackingButton>
@@ -80,6 +82,7 @@ const HeroSection = () => {
                       id="join_community_hero"
                       variant="coral"
                       onClick={() => setDialogOpen(true)}
+                      icon={<ArrowRight className="w-5 h-5" />}
                     >
                       Join the Community
                     </TrackingButton>

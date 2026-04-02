@@ -9,6 +9,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
+    line-clamp: 1;
   }
   
   .line-clamp-2 {
@@ -16,6 +17,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
   }
   
   .line-clamp-3 {
@@ -23,6 +25,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
   }
   
   .line-clamp-4 {
@@ -30,6 +33,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
+    line-clamp: 4;
   }
   
   .line-clamp-5 {
@@ -37,6 +41,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 5;
+    line-clamp: 5;
   }
   
   .line-clamp-6 {
@@ -44,6 +49,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 6;
+    line-clamp: 6;
   }
 }
 
@@ -167,6 +173,35 @@
     font-family: 'Antonio', sans-serif;
     font-weight: 700;
     color: #000000;
+  }
+
+  /* === ADVANCED CUSTOM SCROLLBAR (SHARP & MINIMAL) === */
+  
+  /* WebKit (Chrome, Safari, Edge, Opera) */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #F6F8F7;
+    border-left: 1px solid rgba(47, 180, 165, 0.1);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2FB4A5;
+    border-radius: 0px; /* Sharp corners */
+    transition: background 0.3s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #26968a;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #2FB4A5 #F6F8F7;
   }
 }
 

@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import { useSectionReveal, useParaReveal } from '@/hooks/useKineticReveal';
 
 interface PartnerContent {
   id: number;
@@ -28,6 +29,10 @@ interface PartnerContent {
 
 const PartnerSection = () => {
   const [partnerContent, setPartnerContent] = useState<PartnerContent | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const bodyRef    = useRef<HTMLDivElement>(null);
+  useSectionReveal(sectionRef, "left");
+  useParaReveal(bodyRef);
 
   useEffect(() => {
     const fetchPartnerContent = async () => {
@@ -111,7 +116,7 @@ const PartnerSection = () => {
   };
 
   return (
-    <section id="partner" className="py-3 lg:py-5" style={{ background: '#FFFFFF' }}>
+    <section ref={sectionRef} id="partner" className="py-3 lg:py-5" style={{ background: '#FFFFFF' }}>
       <div className="container mx-auto px-3 max-w-7xl">
         <div className="rounded-2xl px-[16px] py-8 lg:px-[24px] lg:py-12" style={{ background: '#FFFFFF' }}>
           {/* Section Header */}

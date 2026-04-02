@@ -1,13 +1,18 @@
 import { ArrowRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import ArticleDialog from "@/components/ArticleDialog";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { useArticlesContent } from "@/features/landing/hooks/useArticlesContent";
+import { useCardReveal, useSectionReveal } from "@/hooks/useKineticReveal";
 
 const LibrarySection = () => {
   const [selectedArticle, setSelectedArticle] = useState<any>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const gridRef    = useRef<HTMLDivElement>(null);
+  useSectionReveal(sectionRef, "left");
+  useCardReveal(gridRef, ".gsap-card");
 
   const fallbackArticles = [
     {
@@ -284,7 +289,7 @@ GLP-1 medications are valuable tools, backed by science, but they're not a one-s
   };
 
   return (
-    <section id="library" className="py-3 lg:py-5" style={{ background: '#F6F8F7' }}>
+    <section ref={sectionRef} id="library" className="py-3 lg:py-5" style={{ background: '#F6F8F7' }}>
       <div className="container mx-auto px-3 max-w-7xl">
         <div className="rounded-2xl px-[16px] py-8 lg:px-[24px] lg:py-12" style={{ background: '#F6F8F7' }}>
           {/* Section Header */}
@@ -309,12 +314,12 @@ GLP-1 medications are valuable tools, backed by science, but they're not a one-s
           </div>
 
           {/* Articles Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {articles.map(article => (
               <div
                 key={article.id}
                 onClick={() => handleArticleClick(article)}
-                className="group cursor-pointer rounded-2xl transition-all duration-300 h-[350px] sm:h-[400px] px-4 sm:px-6 pt-6 pb-6 flex flex-col hover:-translate-y-1"
+                className="gsap-card group cursor-pointer rounded-2xl transition-all duration-300 h-[350px] sm:h-[400px] px-4 sm:px-6 pt-6 pb-6 flex flex-col hover:-translate-y-1"
                 style={{
                   background: '#F6F8F7',
                   border: '2px solid #2FB4A5',

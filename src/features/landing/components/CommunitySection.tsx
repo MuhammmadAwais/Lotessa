@@ -1,14 +1,21 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import WaitlistDialog from "@/components/WaitlistDialog";
 import { useCommunityContent } from "@/features/landing/hooks/useCommunityContent";
 import { TrackingButton } from "@/features/telemetry/components/TrackingButton";
+import { useSectionReveal, useParaReveal } from "@/hooks/useKineticReveal";
+import { ArrowRight } from "lucide-react";
+
 const CommunitySection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const { heading, title, paragraph } = useCommunityContent();
+  const sectionRef = useRef<HTMLElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  useSectionReveal(sectionRef, "right");
+  useParaReveal(contentRef);
 
   return (
     <>
-      <section id="community" className="py-3 lg:py-5" style={{ background: '#F6F8F7' }}>
+      <section ref={sectionRef} id="community" className="py-3 lg:py-5" style={{ background: '#F6F8F7' }}>
       <div className="container mx-auto px-3 max-w-7xl">
         <div className="rounded-2xl px-[16px] py-6 lg:px-[24px] lg:py-8 bg-white">
         {/* Section Header */}
@@ -48,6 +55,7 @@ const CommunitySection = () => {
                 id="join_community_community"
                 variant="coral"
                 onClick={() => setDialogOpen(true)}
+                icon={<ArrowRight className="w-5 h-5" />}
               >
                 Join the Community
               </TrackingButton>

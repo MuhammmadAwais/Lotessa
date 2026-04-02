@@ -1,5 +1,5 @@
-import { Heart, Download, Users, Instagram, Linkedin, Facebook } from "lucide-react";
-import { TrackingButton } from "@/features/telemetry/components/TrackingButton";
+import { Heart, Instagram, Linkedin, Facebook, ArrowRight } from "lucide-react";
+import { TrackingButton, AppleIcon } from "@/features/telemetry/components/TrackingButton";
 import { useState } from "react";
 import LegalModal from "@/components/LegalModal";
 import TermsContent from "@/components/TermsContent";
@@ -50,6 +50,7 @@ const LotessaFooter = () => {
                  id="download_button_footer"
                  variant="teal"
                  onClick={() => setWaitlistDialogOpen(true)}
+                 icon={<AppleIcon />}
                >
                  Download the App
                </TrackingButton>
@@ -58,6 +59,7 @@ const LotessaFooter = () => {
                  id="join_community_footer"
                  variant="coral"
                  onClick={() => setWaitlistDialogOpen(true)}
+                 icon={<ArrowRight className="w-5 h-5" />}
                >
                  Join the Community
                </TrackingButton>

@@ -85,12 +85,25 @@ const WaitlistDialog = ({
     }
   };
   return <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-xl bg-white p-8 px-[50px] py-[50px]">
+      <DialogContent
+        className="sm:max-w-xl p-8 px-[50px] py-[50px] max-h-[90vh] overflow-y-auto"
+        style={{
+          background: '#000000',
+          border: '2px solid #2FB4A5',
+          boxShadow: '0 0 60px rgba(47,180,165,0.25)',
+        }}
+      >
         <DialogHeader>
-          <DialogTitle className="text-3xl font-bold text-center mb-2" style={{ color: '#001f3f' }}>
+          <DialogTitle
+            className="text-3xl font-bold text-center mb-2"
+            style={{ fontFamily: "'Antonio', sans-serif", color: '#2FB4A5' }}
+          >
             Be First in Line
           </DialogTitle>
-          <p className="text-center text-lg font-medium leading-relaxed" style={{ color: '#001f3f' }}>
+          <p
+            className="font-sora text-center text-lg font-medium leading-relaxed"
+            style={{ color: '#F6F8F7', opacity: 0.85 }}
+          >
             Leave your details and we'll notify you the moment<br />
             Lotessa is ready to download.
           </p>
@@ -98,27 +111,27 @@ const WaitlistDialog = ({
 
         <form onSubmit={handleSubmit} className="space-y-6 mt-6">
           <div className="space-y-2">
-            <Label htmlFor="name" className="text-sm font-medium text-foreground">
+            <Label htmlFor="name" className="font-sora text-sm font-semibold" style={{ color: '#F6F8F7' }}>
               Name
             </Label>
             <Input id="name" type="text" placeholder="Enter your full name" value={formData.name} onChange={e => setFormData({
             ...formData,
             name: e.target.value
-          })} className="bg-muted border-0 h-12" required />
+          })} className="h-12 font-sora focus-visible:ring-[#2FB4A5] focus-visible:border-[#2FB4A5]" style={{ background: '#111', border: '1px solid #2FB4A5', color: '#F6F8F7' }} required />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-sm font-medium text-foreground">
+            <Label htmlFor="email" className="font-sora text-sm font-semibold" style={{ color: '#F6F8F7' }}>
               Email
             </Label>
             <Input id="email" type="email" placeholder="Enter your email address" value={formData.email} onChange={e => setFormData({
             ...formData,
             email: e.target.value
-          })} className="bg-muted border-0 h-12" required />
+          })} className="h-12 font-sora focus-visible:ring-[#2FB4A5] focus-visible:border-[#2FB4A5]" style={{ background: '#111', border: '1px solid #2FB4A5', color: '#F6F8F7' }} required />
           </div>
 
           <div className="space-y-3">
-            <Label className="text-sm font-medium text-foreground">
+            <Label className="font-sora text-sm font-semibold" style={{ color: '#F6F8F7' }}>
               Are you currently using a GLP-1 medication?
             </Label>
             <RadioGroup value={formData.usingMedication} onValueChange={value => setFormData({
@@ -126,22 +139,22 @@ const WaitlistDialog = ({
             usingMedication: value
           })} className="flex gap-6">
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="yes" id="med-yes" />
-                <Label htmlFor="med-yes" className="text-sm text-foreground">Yes</Label>
+                <RadioGroupItem value="yes" id="med-yes" className="border-[#2FB4A5] text-[#2FB4A5]" />
+                <Label htmlFor="med-yes" className="font-sora text-sm" style={{ color: '#F6F8F7' }}>Yes</Label>
               </div>
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="no" id="med-no" />
-                <Label htmlFor="med-no" className="text-sm text-foreground">No</Label>
+                <RadioGroupItem value="no" id="med-no" className="border-[#2FB4A5] text-[#2FB4A5]" />
+                <Label htmlFor="med-no" className="font-sora text-sm" style={{ color: '#F6F8F7' }}>No</Label>
               </div>
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="thinking" id="med-thinking" />
-                <Label htmlFor="med-thinking" className="text-sm text-foreground">Thinking about it</Label>
+                <RadioGroupItem value="thinking" id="med-thinking" className="border-[#2FB4A5] text-[#2FB4A5]" />
+                <Label htmlFor="med-thinking" className="font-sora text-sm" style={{ color: '#F6F8F7' }}>Thinking about it</Label>
               </div>
             </RadioGroup>
           </div>
 
           <div className="space-y-3">
-            <Label className="text-sm font-medium text-foreground">
+            <Label className="font-sora text-sm font-semibold" style={{ color: '#F6F8F7' }}>
               Stage of Journey
             </Label>
             <RadioGroup value={formData.journeyStage} onValueChange={value => setFormData({
@@ -149,25 +162,31 @@ const WaitlistDialog = ({
             journeyStage: value
           })} className="flex gap-6">
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="beginner" id="stage-beginner" />
-                <Label htmlFor="stage-beginner" className="text-sm text-foreground">Beginner</Label>
+                <RadioGroupItem value="beginner" id="stage-beginner" className="border-[#2FB4A5] text-[#2FB4A5]" />
+                <Label htmlFor="stage-beginner" className="font-sora text-sm" style={{ color: '#F6F8F7' }}>Beginner</Label>
               </div>
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="journey" id="stage-journey" />
-                <Label htmlFor="stage-journey" className="text-sm text-foreground">On the journey</Label>
+                <RadioGroupItem value="journey" id="stage-journey" className="border-[#2FB4A5] text-[#2FB4A5]" />
+                <Label htmlFor="stage-journey" className="font-sora text-sm" style={{ color: '#F6F8F7' }}>On the journey</Label>
               </div>
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="maintenance" id="stage-maintenance" />
-                <Label htmlFor="stage-maintenance" className="text-sm text-foreground">Maintenance</Label>
+                <RadioGroupItem value="maintenance" id="stage-maintenance" className="border-[#2FB4A5] text-[#2FB4A5]" />
+                <Label htmlFor="stage-maintenance" className="font-sora text-sm" style={{ color: '#F6F8F7' }}>Maintenance</Label>
               </div>
             </RadioGroup>
           </div>
 
-          <Button type="submit" disabled={isSubmitting} className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold mt-8">
+          {/* Coral CTA */}
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full h-12 font-sora font-bold text-sm uppercase tracking-wide rounded-xl transition-all duration-300 active:scale-95 mt-8"
+            style={{ background: '#FF8A73', color: '#ffffff', border: 'none', cursor: isSubmitting ? 'not-allowed' : 'pointer', opacity: isSubmitting ? 0.7 : 1 }}
+          >
             {isSubmitting ? "Joining..." : "Join the Waiting List"}
-          </Button>
+          </button>
 
-          <p className="text-xs text-center mt-4 leading-relaxed" style={{ color: '#001f3f' }}>
+          <p className="font-sora text-xs text-center mt-4 leading-relaxed" style={{ color: '#F6F8F7', opacity: 0.55 }}>
             Your details are safe with us. We promise not to share or sell your personal data.
             <br />
             <br />
