@@ -18,7 +18,11 @@ export default {
 			}
 		},
 		fontFamily: {
-			sans: ['Inter', 'sans-serif'],
+			sans: ['Sora', 'sans-serif'],
+			antonio: ['Antonio', 'sans-serif'],
+			sora: ['Sora', 'sans-serif'],
+			comfortaa: ['Comfortaa', 'sans-serif'],
+			grotesk: ['Space Grotesk', 'sans-serif'],
 		},
 		extend: {
 			fontSize: {
@@ -68,6 +72,15 @@ export default {
 					teal: 'hsl(var(--health-teal))',
 					light: 'hsl(var(--health-light))',
 					gray: 'hsl(var(--health-gray))'
+				},
+				/* Lotessa brand palette */
+				brand: {
+					teal: '#2FB4A5',
+					'teal-dark': '#26968a',
+					coral: '#FF8A73',
+					'coral-dark': '#e8705a',
+					neutral: '#F6F8F7',
+					dark: '#000000',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

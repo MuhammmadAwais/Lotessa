@@ -48,22 +48,18 @@ const LotessaFooter = () => {
             <div className="flex flex-col sm:flex-row gap-6">
                              <TrackingButton 
                  id="download_button_footer"
-                 className="p-0 border-none bg-transparent hover:bg-transparent h-auto flex items-center justify-center"
-                 onClick={() => {
-                   setWaitlistDialogOpen(true);
-                 }}
+                 variant="teal"
+                 onClick={() => setWaitlistDialogOpen(true)}
                >
-                 <img src="/lovable-uploads/Group 52.png" alt="Download the App" className="h-12 w-auto" />
+                 Download the App
                </TrackingButton>
               
                              <TrackingButton 
                  id="join_community_footer"
-                 className="p-0 border-none bg-transparent hover:bg-transparent h-auto flex items-center justify-center"
-                 onClick={() => {
-                   setWaitlistDialogOpen(true);
-                 }}
+                 variant="coral"
+                 onClick={() => setWaitlistDialogOpen(true)}
                >
-                 <img src="/lovable-uploads/a97005af-398c-4b31-af1a-d153e144ef44.png" alt="Join the Lotessa Community" className="h-12 w-auto" />
+                 Join the Community
                </TrackingButton>
             </div>
 

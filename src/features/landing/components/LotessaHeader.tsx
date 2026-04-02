@@ -44,7 +44,7 @@ const LotessaHeader = () => {
   };
 
   return (
-    <header className="w-full bg-white py-4">
+    <header className="w-full bg-white py-4 shadow-sm border-b border-[#2FB4A5]/10">
       <nav className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -64,7 +64,7 @@ const LotessaHeader = () => {
                     trackInteraction('hover', 'download_button_header');
                   }
                 }}
-                className="text-foreground hover:scale-105 transition-transform duration-200 font-medium cursor-pointer"
+                className="font-sora font-medium text-sm text-foreground transition-all duration-200 cursor-pointer hover:text-[#2FB4A5] hover:scale-105 relative after:content-[''] after:absolute after:bottom-[-3px] after:left-0 after:w-0 after:h-[2px] after:bg-[#2FB4A5] after:transition-all after:duration-300 hover:after:w-full"
               >
                 {item.name}
               </a>
@@ -75,15 +75,15 @@ const LotessaHeader = () => {
           <div className="hidden lg:flex items-center space-x-3">
             <Button 
               variant="outline" 
-              className="border-border hover:bg-muted transition-colors"
+              className="border-[#2FB4A5] text-[#2FB4A5] hover:bg-[#2FB4A5] hover:text-white transition-colors font-sora font-semibold"
               onClick={() => window.open('https://app.lotessa.app/login', '_blank')}
             >
               Sign In
             </Button>
             <Button 
               variant="default" 
-              className="bg-primary hover:bg-primary/90 transition-opacity"
-              onClick={() => window.open('https://app.lotessa.app/register', '_blank')}
+              className="bg-[#2FB4A5] hover:bg-[#26968a] text-white transition-colors font-sora font-semibold"
+              onClick={() => setDialogOpen(true)}
             >
               Create Account
             </Button>
@@ -92,7 +92,7 @@ const LotessaHeader = () => {
           {/* Mobile Menu Button */}
           <Button 
             variant="default" 
-            className="lg:hidden p-2 bg-primary hover:bg-primary/90 text-primary-foreground"
+            className="lg:hidden p-2 bg-[#2FB4A5] hover:bg-[#26968a] text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -119,7 +119,7 @@ const LotessaHeader = () => {
                       trackInteraction('hover', 'download_button_mobile');
                     }
                   }}
-                  className="text-foreground hover:text-accent transition-colors duration-200 font-medium cursor-pointer py-2"
+                  className="font-sora font-medium text-foreground hover:text-[#2FB4A5] transition-colors duration-200 cursor-pointer py-2"
                 >
                   {item.name}
                 </a>
@@ -129,7 +129,7 @@ const LotessaHeader = () => {
               <div className="flex flex-col space-y-3 pt-4 border-t border-border">
                 <Button 
                   variant="outline" 
-                  className="w-full"
+                  className="w-full border-[#2FB4A5] text-[#2FB4A5] hover:bg-[#2FB4A5] hover:text-white font-sora font-semibold"
                   onClick={() => {
                     window.open('https://app.lotessa.app/login', '_blank');
                     setIsMobileMenuOpen(false);
@@ -139,9 +139,9 @@ const LotessaHeader = () => {
                 </Button>
                 <Button 
                   variant="default" 
-                  className="w-full"
+                  className="w-full bg-[#2FB4A5] hover:bg-[#26968a] font-sora font-semibold"
                   onClick={() => {
-                    window.open('https://app.lotessa.app/register', '_blank');
+                    setDialogOpen(true);
                     setIsMobileMenuOpen(false);
                   }}
                 >

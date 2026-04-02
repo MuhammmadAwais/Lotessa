@@ -8,12 +8,15 @@ const CommunitySection = () => {
 
   return (
     <>
-      <section id="community" className="py-3 lg:py-5 bg-white">
+      <section id="community" className="py-3 lg:py-5" style={{ background: '#F6F8F7' }}>
       <div className="container mx-auto px-3 max-w-7xl">
         <div className="rounded-2xl px-[16px] py-6 lg:px-[24px] lg:py-8 bg-white">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h3 className="text-display-md text-foreground font-sans mb-4">
+          <h3
+            className="text-display-md text-foreground font-bold mb-4"
+            style={{ fontFamily: "'Antonio', sans-serif", color: '#2FB4A5' }}
+          >
             {heading}
           </h3>
         </div>
@@ -29,21 +32,24 @@ const CommunitySection = () => {
 
           {/* Right - Content */}
           <div className="space-y-6 lg:space-y-8 order-1 lg:order-2">
-            <h2 className="text-display-lg text-foreground font-sans leading-tight">
+            <h2
+              className="text-display-lg text-foreground leading-tight"
+              style={{ fontFamily: "'Antonio', sans-serif", color: '#000000' }}
+            >
               {title}
             </h2>
             
-            <p className="text-muted-foreground text-body-lg font-sans font-normal leading-relaxed">
+            <p className="font-sora text-muted-foreground text-body-lg leading-relaxed">
               {paragraph}
             </p>
 
             <div className="pt-4">
               <TrackingButton 
                 id="join_community_community"
-                className="p-0 border-none bg-transparent hover:bg-transparent h-auto inline-block"
+                variant="coral"
                 onClick={() => setDialogOpen(true)}
               >
-                <img src="/lovable-uploads/92fcb71d-e582-4fbf-8e5f-7b92cb752d2a.png" alt="Join the Lotessa Community" className="h-12" />
+                Join the Community
               </TrackingButton>
             </div>
           </div>
