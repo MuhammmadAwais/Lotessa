@@ -111,18 +111,24 @@ const PartnerSection = () => {
   };
 
   return (
-    <section id="partner" className="py-3 lg:py-5 bg-white">
+    <section id="partner" className="py-3 lg:py-5" style={{ background: '#FFFFFF' }}>
       <div className="container mx-auto px-3 max-w-7xl">
-        <div className="rounded-2xl px-[16px] py-6 lg:px-[24px] lg:py-8 bg-white">
+        <div className="rounded-2xl px-[16px] py-8 lg:px-[24px] lg:py-12" style={{ background: '#FFFFFF' }}>
           {/* Section Header */}
-          <div className="text-center mb-16 space-y-4">
-            <h3 className="text-display-md text-foreground font-sans">
+          <div className="text-center mb-12 space-y-4">
+            <h3
+              className="text-display-md font-bold"
+              style={{ fontFamily: "'Antonio', sans-serif", color: '#2FB4A5' }}
+            >
               {content.section_title}
             </h3>
-            <h2 className="text-display-lg text-foreground font-sans leading-tight">
+            <h2
+              className="text-display-lg leading-tight"
+              style={{ fontFamily: "'Antonio', sans-serif", color: '#000000' }}
+            >
               {content.main_title}
             </h2>
-            <p className="text-body-lg text-muted-foreground font-sans text-left leading-relaxed max-w-4xl">
+            <p className="font-sora text-body-lg text-muted-foreground text-left leading-relaxed max-w-4xl">
               {content.main_description}
             </p>
           </div>
@@ -131,51 +137,72 @@ const PartnerSection = () => {
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-48">
             {/* Left Column: Partnership Options */}
             <div className="lg:w-[70%] space-y-8 lg:space-y-12">
-              {/* Write for Lotessa */}
-              <div className="space-y-4">
-                <h3 className="text-heading-lg text-foreground font-sans">
+            {/* Write for Lotessa */}
+              <div className="space-y-4 py-8">
+                <h3
+                  className="text-heading-lg font-bold"
+                  style={{ fontFamily: "'Antonio', sans-serif", color: '#2FB4A5' }}
+                >
                   {content.write_title}
                 </h3>
-                <p className="text-muted-foreground text-body-lg font-sans font-medium leading-relaxed">
+                <p className="font-sora text-muted-foreground text-body-lg font-medium leading-relaxed">
                   {content.write_question}
                 </p>
-                <ul className="space-y-2 text-muted-foreground text-body-lg font-sans font-normal leading-relaxed">
-                  <li>• {content.write_bullet1}</li>
-                  <li>• {content.write_bullet2}</li>
-                  <li>• {content.write_bullet3}</li>
-                  <li>• {content.write_bullet4}</li>
+                <ul className="space-y-2 font-sora text-muted-foreground text-body-lg leading-relaxed">
+                  {[content.write_bullet1, content.write_bullet2, content.write_bullet3, content.write_bullet4].map((b, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="mt-1 shrink-0" style={{ color: '#2FB4A5' }}>▸</span>
+                      {b}
+                    </li>
+                  ))}
                 </ul>
               </div>
+
+              {/* Teal divider */}
+              <div style={{ height: '1px', background: '#2FB4A5', opacity: 0.3 }} />
 
               {/* Sponsor & Partner */}
-              <div className="space-y-4">
-                <h3 className="text-heading-lg text-foreground font-sans">
+              <div className="space-y-4 py-8">
+                <h3
+                  className="text-heading-lg font-bold"
+                  style={{ fontFamily: "'Antonio', sans-serif", color: '#2FB4A5' }}
+                >
                   {content.sponsor_title}
                 </h3>
-                <p className="text-muted-foreground text-body-lg font-sans font-medium leading-relaxed">
+                <p className="font-sora text-muted-foreground text-body-lg font-medium leading-relaxed">
                   {content.sponsor_question}
                 </p>
-                <ul className="space-y-2 text-muted-foreground text-body-lg font-sans font-normal leading-relaxed">
-                  <li>• {content.sponsor_bullet1}</li>
-                  <li>• {content.sponsor_bullet2}</li>
-                  <li>• {content.sponsor_bullet3}</li>
-                  <li>• {content.sponsor_bullet4}</li>
+                <ul className="space-y-2 font-sora text-muted-foreground text-body-lg leading-relaxed">
+                  {[content.sponsor_bullet1, content.sponsor_bullet2, content.sponsor_bullet3, content.sponsor_bullet4].map((b, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="mt-1 shrink-0" style={{ color: '#2FB4A5' }}>▸</span>
+                      {b}
+                    </li>
+                  ))}
                 </ul>
               </div>
 
+              {/* Teal divider */}
+              <div style={{ height: '1px', background: '#2FB4A5', opacity: 0.3 }} />
+
               {/* Advise and Invest */}
-              <div className="space-y-4">
-                <h3 className="text-heading-lg text-foreground font-sans">
+              <div className="space-y-4 py-8">
+                <h3
+                  className="text-heading-lg font-bold"
+                  style={{ fontFamily: "'Antonio', sans-serif", color: '#2FB4A5' }}
+                >
                   {content.advise_title}
                 </h3>
-                <p className="text-muted-foreground text-body-lg font-sans font-medium leading-relaxed">
+                <p className="font-sora text-muted-foreground text-body-lg font-medium leading-relaxed">
                   {content.advise_question}
                 </p>
-                <ul className="space-y-2 text-muted-foreground text-body-lg font-sans font-normal leading-relaxed">
-                  <li>• {content.advise_bullet1}</li>
-                  <li>• {content.advise_bullet2}</li>
-                  <li>• {content.advise_bullet3}</li>
-                  <li>• {content.advise_bullet4}</li>
+                <ul className="space-y-2 font-sora text-muted-foreground text-body-lg leading-relaxed">
+                  {[content.advise_bullet1, content.advise_bullet2, content.advise_bullet3, content.advise_bullet4].map((b, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="mt-1 shrink-0" style={{ color: '#2FB4A5' }}>▸</span>
+                      {b}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

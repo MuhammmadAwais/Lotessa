@@ -157,12 +157,15 @@ const ContactSection = () => {
       setIsSubmitting(false);
     }
   };
-  return <section id="contact" className="py-3 lg:py-5 bg-[#EFEEE7]">
+  return <section id="contact" className="py-3 lg:py-5" style={{ background: '#EFEEE7' }}>
       <div className="container mx-auto px-3 max-w-7xl">
-        <div className="rounded-2xl px-[16px] py-6 lg:px-[24px] lg:py-8">
+        <div className="rounded-2xl px-[16px] py-8 lg:px-[24px] lg:py-12">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-display-md text-foreground font-sans mb-8">
+        <div className="text-center mb-12">
+          <h2
+            className="text-display-md font-bold mb-6"
+            style={{ fontFamily: "'Antonio', sans-serif", color: '#2FB4A5' }}
+          >
             Contact Us
           </h2>
         </div>
@@ -170,18 +173,27 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
           <div className="flex flex-col justify-center space-y-6 lg:space-y-8">
-            <h3 className="text-3xl lg:text-4xl font-bold text-primary leading-tight">
+            <h3
+              className="text-3xl lg:text-4xl font-bold leading-tight"
+              style={{ fontFamily: "'Antonio', sans-serif", color: '#2FB4A5' }}
+            >
               We'd Love to Hear from You
             </h3>
-            
-            <p className="text-heading-lg font-semibold font-sans text-left text-foreground leading-relaxed">
-              Questions about the app? Curious about a partnership? Just want to say 
+
+            <p className="font-sora text-heading-lg font-semibold text-foreground leading-relaxed">
+              Questions about the app? Curious about a partnership? Just want to say
               hello? Drop us a message and the Lotessa team will be in touch.
             </p>
           </div>
 
-          {/* Right - Contact Form */}
-          <div className="rounded-lg p-6 lg:p-8">
+          {/* Right - Contact Form: teal left-accent + outer glow */}
+          <div
+            className="rounded-xl p-6 lg:p-8 bg-white"
+            style={{
+              borderLeft: '4px solid #2FB4A5',
+              boxShadow: '0 0 0 1px rgba(47,180,165,0.15), 0 8px 32px rgba(47,180,165,0.10)',
+            }}
+          >
             {isCheckingTable ? (
               <div className="text-center py-8">
                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
@@ -218,13 +230,13 @@ const ContactSection = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="name" className="block font-sora text-sm font-semibold text-foreground mb-2">
                   Name
                 </label>
-                <Input 
-                  id="name" 
-                  placeholder="Enter your full name" 
-                  className="w-full h-12 text-base"
+                <Input
+                  id="name"
+                  placeholder="Enter your full name"
+                  className="w-full h-12 text-base bg-white focus:ring-2 focus-visible:ring-[#2FB4A5] focus-visible:border-[#2FB4A5]"
                   value={formData.name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
                   required
@@ -232,14 +244,14 @@ const ContactSection = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="email" className="block font-sora text-sm font-semibold text-foreground mb-2">
                   Email
                 </label>
-                <Input 
-                  id="email" 
-                  type="email" 
-                  placeholder="Enter your email address" 
-                  className="w-full h-12 text-base"
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="w-full h-12 text-base bg-white focus-visible:ring-[#2FB4A5] focus-visible:border-[#2FB4A5]"
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
                   required
@@ -247,11 +259,11 @@ const ContactSection = () => {
               </div>
 
               <div>
-                <label htmlFor="topic" className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="topic" className="block font-sora text-sm font-semibold text-foreground mb-2">
                   Topic
                 </label>
                 <Select value={formData.topic} onValueChange={(value) => handleInputChange('topic', value)}>
-                  <SelectTrigger className="w-full h-12 text-base">
+                  <SelectTrigger className="w-full h-12 text-base focus:ring-[#2FB4A5] focus:border-[#2FB4A5]">
                     <SelectValue placeholder="Select a topic" />
                   </SelectTrigger>
                   <SelectContent>
@@ -264,24 +276,28 @@ const ContactSection = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="message" className="block font-sora text-sm font-semibold text-foreground mb-2">
                   Message
                 </label>
-                <Textarea 
-                  id="message" 
-                  rows={6} 
-                  placeholder="Tell us how we can help you..." 
-                  className="w-full resize-none text-base"
+                <Textarea
+                  id="message"
+                  rows={6}
+                  placeholder="Tell us how we can help you..."
+                  className="w-full resize-none text-base bg-white focus-visible:ring-[#2FB4A5] focus-visible:border-[#2FB4A5]"
                   value={formData.message}
                   onChange={(e) => handleInputChange('message', e.target.value)}
                   required
                 />
               </div>
 
-              <Button 
-                type="submit" 
-                className="w-full community-btn text-center justify-center h-12 text-base font-semibold"
+              {/* Coral 'Send Message' button with black text */}
+              <Button
+                type="submit"
+                className="w-full h-14 text-base font-sora font-bold uppercase tracking-wide transition-all duration-300 active:scale-95"
+                style={{ background: '#FF8A73', color: '#000000', border: 'none' }}
                 disabled={isSubmitting}
+                onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = '#e8705a'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = '#FF8A73'; }}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
