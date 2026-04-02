@@ -47,8 +47,36 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
     }
   };
 
-  const renderContent = (raw: string) =>
-    raw.split("\n").map((line, i) => {
+  const renderContent = (raw: string) => {
+    const importantKeywords = [
+      "GLP-1", "Lotessa", "Mounjaro", "Wegovy", "Ozempic", 
+      "Metabolic", "Weight loss", "NHS", "UK", "Insulin",
+      "Lifestyle", "Health journey", "Habits"
+    ];
+
+    const boldText = (text: string) => {
+      let processed = text;
+      
+      // 1. Handle markdown-style **bold**
+      processed = processed.replace(/\*\*(.*?)\*\*/g, '___BOLD___$1___ENDBOLD___');
+
+      // 2. Handle auto-bolding important keywords
+      importantKeywords.forEach(keyword => {
+        const regex = new RegExp(`(${keyword})`, 'gi');
+        processed = processed.replace(regex, '___BOLD___$1___ENDBOLD___');
+      });
+
+      // 3. Convert placeholders to JSX
+      const parts = processed.split(/___BOLD___|___ENDBOLD___/);
+      return parts.map((part, index) => {
+        if (processed.includes(`___BOLD___${part}___ENDBOLD___`)) {
+          return <span key={index} className="font-bold text-black">{part}</span>;
+        }
+        return part;
+      });
+    };
+
+    return raw.split("\n").map((line, i) => {
       if (line.startsWith("## "))
         return (
           <h2
@@ -72,16 +100,17 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
       if (line.startsWith("- "))
         return (
           <li key={i} className="ml-5 list-disc font-sora text-lotessaGray-text">
-            {line.replace("- ", "")}
+            {boldText(line.replace("- ", ""))}
           </li>
         );
       if (line.trim() === "") return <div key={i} className="h-3" />;
       return (
         <p key={i} className="font-sora leading-relaxed mb-3 text-lotessaGray-text">
-          {line}
+          {boldText(line)}
         </p>
       );
     });
+  };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
