@@ -123,13 +123,13 @@ const PartnerSection = () => {
           <div className="text-center mb-12 space-y-4">
             <h3
               className="text-display-md font-bold"
-              style={{ fontFamily: "'Antonio', sans-serif", color: '#FFFFFF' }}
+              style={{ fontFamily: "'Antonio', sans-serif", color: '#FF8A73' }}
             >
               {content.section_title}
             </h3>
             <h2
               className="text-display-lg leading-tight"
-              style={{ fontFamily: "'Antonio', sans-serif", color: '#FFFFFF' }}
+              style={{ fontFamily: "'Antonio', sans-serif", color: '#000000' }}
             >
               {content.main_title}
             </h2>
@@ -146,11 +146,11 @@ const PartnerSection = () => {
               <div className="space-y-4 py-8">
                 <h3
                   className="text-heading-lg font-bold"
-                  style={{ fontFamily: "'Antonio', sans-serif", color: '#FFFFFF' }}
+                  style={{ fontFamily: "'Antonio', sans-serif", color: '#000000' }}
                 >
                   {content.write_title}
                 </h3>
-                <p className="font-sora text-white text-body-lg font-medium leading-relaxed">
+                <p className="font-sora text-[#FF8A73] text-body-lg font-medium leading-relaxed">
                   {content.write_question}
                 </p>
                 <ul className="space-y-2 font-sora text-white/90 text-body-lg leading-relaxed">
@@ -170,11 +170,11 @@ const PartnerSection = () => {
               <div className="space-y-4 py-8">
                 <h3
                   className="text-heading-lg font-bold"
-                  style={{ fontFamily: "'Antonio', sans-serif", color: '#FFFFFF' }}
+                  style={{ fontFamily: "'Antonio', sans-serif", color: '#000000' }}
                 >
                   {content.sponsor_title}
                 </h3>
-                <p className="font-sora text-white text-body-lg font-medium leading-relaxed">
+                <p className="font-sora text-[#FF8A73] text-body-lg font-medium leading-relaxed">
                   {content.sponsor_question}
                 </p>
                 <ul className="space-y-2 font-sora text-white/90 text-body-lg leading-relaxed">
@@ -194,11 +194,11 @@ const PartnerSection = () => {
               <div className="space-y-4 py-8">
                 <h3
                   className="text-heading-lg font-bold"
-                  style={{ fontFamily: "'Antonio', sans-serif", color: '#FFFFFF' }}
+                  style={{ fontFamily: "'Antonio', sans-serif", color: '#000000' }}
                 >
                   {content.advise_title}
                 </h3>
-                <p className="font-sora text-white text-body-lg font-medium leading-relaxed">
+                <p className="font-sora text-[#FF8A73] text-body-lg font-medium leading-relaxed">
                   {content.advise_question}
                 </p>
                 <ul className="space-y-2 font-sora text-white/90 text-body-lg leading-relaxed">
