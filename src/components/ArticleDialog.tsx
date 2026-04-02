@@ -64,20 +64,20 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
           <h3
             key={i}
             className="text-lg md:text-xl font-semibold mt-5 mb-2"
-            style={{ fontFamily: "'Antonio', sans-serif", color: "#2FB4A5" }}
+            style={{ fontFamily: "'Antonio', sans-serif", color: "#000000" }}
           >
             {line.replace("### ", "")}
           </h3>
         );
       if (line.startsWith("- "))
         return (
-          <li key={i} className="ml-5 list-disc font-sora" style={{ color: "#F6F8F7" }}>
+          <li key={i} className="ml-5 list-disc font-sora text-lotessaGray-text">
             {line.replace("- ", "")}
           </li>
         );
       if (line.trim() === "") return <div key={i} className="h-3" />;
       return (
-        <p key={i} className="font-sora leading-relaxed mb-3" style={{ color: "#F6F8F7" }}>
+        <p key={i} className="font-sora leading-relaxed mb-3 text-lotessaGray-text">
           {line}
         </p>
       );
@@ -87,11 +87,11 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
     <Dialog open={open} onOpenChange={onOpenChange}>
       {/* Onyx backdrop overlay */}
       <DialogContent
-        className="max-w-7xl w-[95vw] h-[90vh] p-0 flex flex-col overflow-hidden"
+        className="max-w-7xl w-[95vw] h-[90vh] p-0 flex flex-col overflow-hidden rounded-none"
         style={{
-          background: "#000000",
-          border: "2px solid #2FB4A5",
-          boxShadow: "0 0 60px rgba(47,180,165,0.25)",
+          background: "#F6F8F7",
+          border: "2px solid #1A2D2B",
+          boxShadow: "none",
         }}
         /* Hide the default X button — we render our own */
         onInteractOutside={() => onOpenChange(false)}
@@ -101,12 +101,12 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
           <div
             ref={headerRef}
             className="px-6 pt-6 pb-4 sticky top-0 z-10 flex items-start justify-between gap-4 shrink-0"
-            style={{ background: "#000000", borderBottom: "1px solid #2FB4A5" }}
+            style={{ background: "#F6F8F7", borderBottom: "1px solid #1A2D2B" }}
           >
             <div className="flex-1 min-w-0 pr-12">
               <h1
                 className="text-2xl md:text-3xl font-bold leading-tight mb-2"
-                style={{ fontFamily: "'Antonio', sans-serif", color: "#2FB4A5" }}
+                style={{ fontFamily: "'Antonio', sans-serif", color: "#1A2D2B" }}
               >
                 {article.title}
               </h1>
@@ -114,7 +114,7 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
               {article.subtitle && (
                 <p
                   className="font-sora text-base md:text-lg font-medium leading-relaxed"
-                  style={{ color: "#F6F8F7", opacity: 0.8 }}
+                  style={{ color: "#1A2D2B", opacity: 0.8 }}
                 >
                   {article.subtitle}
                 </p>
@@ -123,17 +123,17 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
               {/* Meta row */}
               <div className="flex items-center gap-4 mt-3 flex-wrap">
                 {article.author && (
-                  <span className="font-sora text-sm font-semibold" style={{ color: "#2FB4A5" }}>
+                  <span className="font-sora text-sm font-semibold" style={{ color: "#1A2D2B" }}>
                     {article.author}
                   </span>
                 )}
                 {article.date && (
-                  <span className="flex items-center gap-1 font-sora text-xs" style={{ color: "#F6F8F7", opacity: 0.6 }}>
+                  <span className="flex items-center gap-1 font-sora text-xs text-lotessaGray-slate">
                     <Calendar size={12} /> {article.date}
                   </span>
                 )}
                 {article.readTime && (
-                  <span className="flex items-center gap-1 font-sora text-xs" style={{ color: "#F6F8F7", opacity: 0.6 }}>
+                  <span className="flex items-center gap-1 font-sora text-xs text-lotessaGray-slate">
                     <Clock size={12} /> {article.readTime}
                   </span>
                 )}
@@ -146,10 +146,10 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
               <button
                 onClick={handleShare}
                 className="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
-                style={{ background: "rgba(47,180,165,0.15)", border: "1px solid #2FB4A5" }}
+                style={{ background: "#FFFFFF", border: "1px solid #1A2D2B" }}
                 aria-label="Share article"
               >
-                <Share2 size={16} style={{ color: "#2FB4A5" }} />
+                <Share2 size={16} className="text-lotessaGray-text" />
               </button>
 
               {/* Coral close button */}
@@ -164,11 +164,11 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
             </div>
           </div>
 
-          {/* ── Onyx Scrollable Content ── */}
+          {/* ── Light Scrollable Content ── */}
           <div
             className="flex-1 overflow-y-auto min-h-0"
             style={{
-              background: "#000000",
+              background: "#F6F8F7",
             }}
           >
             <div className="px-6 pb-10">
