@@ -116,14 +116,14 @@ const PartnerSection = () => {
   };
 
   return (
-    <section ref={sectionRef} id="partner" className="py-3 lg:py-5 section-teal">
+    <section ref={sectionRef} id="partner" className="py-3 lg:py-5 section-neutral">
       <div className="container mx-auto px-3 max-w-7xl">
         <div className="rounded-2xl px-[16px] py-8 lg:px-[24px] lg:py-12 bg-transparent">
           {/* Section Header */}
           <div className="text-center mb-12 space-y-4">
             <h3
               className="text-display-md font-bold"
-              style={{ fontFamily: "'Antonio', sans-serif", color: '#FF8A73' }}
+              style={{ fontFamily: "'Antonio', sans-serif", color: '#2FB4A5' }}
             >
               {content.section_title}
             </h3>
@@ -133,15 +133,15 @@ const PartnerSection = () => {
             >
               {content.main_title}
             </h2>
-            <p className="font-sora text-body-lg text-white/90 text-left leading-relaxed max-w-4xl">
+            <p className="font-sora text-body-lg text-black text-left leading-relaxed max-w-4xl opacity-90">
               {content.main_description}
             </p>
           </div>
 
           {/* Main Content: Two-column layout */}
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-48">
-            {/* Left Column: Partnership Options */}
-            <div className="lg:w-[70%] space-y-8 lg:space-y-12">
+            {/* Left Column: Partnership Options with Teal Accent */}
+            <div className="lg:w-[70%] space-y-8 lg:space-y-12 border-l-4 border-[#2FB4A5] pl-6 lg:pl-10">
             {/* Write for Lotessa */}
               <div className="space-y-4 py-8">
                 <h3
@@ -150,10 +150,10 @@ const PartnerSection = () => {
                 >
                   {content.write_title}
                 </h3>
-                <p className="font-sora text-[#FF8A73] text-body-lg font-medium leading-relaxed">
+                <p className="font-sora text-black text-body-lg font-medium leading-relaxed">
                   {content.write_question}
                 </p>
-                <ul className="space-y-2 font-sora text-white/90 text-body-lg leading-relaxed">
+                <ul className="space-y-2 font-sora text-black text-body-lg leading-relaxed opacity-80">
                   {[content.write_bullet1, content.write_bullet2, content.write_bullet3, content.write_bullet4].map((b, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <span className="mt-1 shrink-0" style={{ color: '#FF8A73' }}>▸</span>
@@ -163,8 +163,8 @@ const PartnerSection = () => {
                 </ul>
               </div>
 
-              {/* White divider */}
-              <div style={{ height: '1px', background: '#FFFFFF', opacity: 0.3 }} />
+              {/* Teal divider */}
+              <div style={{ height: '1px', background: '#2FB4A5', opacity: 0.2 }} />
 
               {/* Sponsor & Partner */}
               <div className="space-y-4 py-8">
@@ -174,10 +174,10 @@ const PartnerSection = () => {
                 >
                   {content.sponsor_title}
                 </h3>
-                <p className="font-sora text-[#FF8A73] text-body-lg font-medium leading-relaxed">
+                <p className="font-sora text-black text-body-lg font-medium leading-relaxed">
                   {content.sponsor_question}
                 </p>
-                <ul className="space-y-2 font-sora text-white/90 text-body-lg leading-relaxed">
+                <ul className="space-y-2 font-sora text-black text-body-lg leading-relaxed opacity-80">
                   {[content.sponsor_bullet1, content.sponsor_bullet2, content.sponsor_bullet3, content.sponsor_bullet4].map((b, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <span className="mt-1 shrink-0" style={{ color: '#FF8A73' }}>▸</span>
@@ -187,8 +187,8 @@ const PartnerSection = () => {
                 </ul>
               </div>
 
-              {/* White divider */}
-              <div style={{ height: '1px', background: '#FFFFFF', opacity: 0.3 }} />
+              {/* Teal divider */}
+              <div style={{ height: '1px', background: '#2FB4A5', opacity: 0.2 }} />
 
               {/* Advise and Invest */}
               <div className="space-y-4 py-8">
@@ -198,10 +198,10 @@ const PartnerSection = () => {
                 >
                   {content.advise_title}
                 </h3>
-                <p className="font-sora text-[#FF8A73] text-body-lg font-medium leading-relaxed">
+                <p className="font-sora text-black text-body-lg font-medium leading-relaxed">
                   {content.advise_question}
                 </p>
-                <ul className="space-y-2 font-sora text-white/90 text-body-lg leading-relaxed">
+                <ul className="space-y-2 font-sora text-black text-body-lg leading-relaxed opacity-80">
                   {[content.advise_bullet1, content.advise_bullet2, content.advise_bullet3, content.advise_bullet4].map((b, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <span className="mt-1 shrink-0" style={{ color: '#FF8A73' }}>▸</span>
