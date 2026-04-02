@@ -303,12 +303,12 @@ GLP-1 medications are valuable tools, backed by science, but they're not a one-s
 
             <h2
               className="text-display-lg leading-tight"
-              style={{ fontFamily: "'Antonio', sans-serif", color: '#000000' }}
+              style={{ fontFamily: "'Antonio', sans-serif", color: '#1A2D2B' }}
             >
               Discover Expert Content, Anytime
             </h2>
 
-            <p className="font-sora text-muted-foreground text-heading-md mx-auto text-center">
+            <p className="font-sora text-lotessaGray-slate text-heading-md mx-auto text-center leading-relaxed">
               Bite-sized insights, real-world tips, and trustworthy health information
             </p>
           </div>
@@ -319,14 +319,13 @@ GLP-1 medications are valuable tools, backed by science, but they're not a one-s
               <div
                 key={article.id}
                 onClick={() => handleArticleClick(article)}
-                className="gsap-card group cursor-pointer rounded-2xl transition-all duration-300 h-[350px] sm:h-[400px] px-4 sm:px-6 pt-6 pb-6 flex flex-col hover:-translate-y-1"
+                className="gsap-card group cursor-pointer rounded-2xl transition-all duration-300 h-[350px] sm:h-[400px] px-4 sm:px-6 pt-6 pb-6 flex flex-col hover:-translate-y-1 shadow-teal-subtle"
                 style={{
-                  background: '#F6F8F7',
-                  border: '2px solid #2FB4A5',
-                  boxShadow: '0 4px 20px rgba(47,180,165,0.08)',
+                  background: '#FFFFFF',
+                  border: '1px solid #A1B2B0',
                 }}
-                onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 8px 32px rgba(47,180,165,0.18)')}
-                onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 4px 20px rgba(47,180,165,0.08)')}
+                onMouseEnter={e => {}}
+                onMouseLeave={e => {}}
               >
                 {/* Coral arrow icon */}
                 <div className="flex justify-end mb-4">

@@ -1,6 +1,7 @@
 import { Heart, Instagram, Linkedin, Facebook, ArrowRight } from "lucide-react";
 import { TrackingButton, AppleIcon } from "@/features/telemetry/components/TrackingButton";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { gsap } from "gsap";
 import LegalModal from "@/components/LegalModal";
 import TermsContent from "@/components/TermsContent";
 import PrivacyContent from "@/components/PrivacyContent";
@@ -29,10 +30,36 @@ const LotessaFooter = () => {
     description: '',
     issue_type: 'Other'
   });
+
+  const iconRefs = {
+    instagram: useRef<HTMLAnchorElement>(null),
+    linkedin: useRef<HTMLAnchorElement>(null),
+    facebook: useRef<HTMLAnchorElement>(null),
+  };
+
+  const handleIconHover = (ref: React.RefObject<HTMLAnchorElement>, active: boolean) => {
+    if (!ref.current) return;
+    
+    gsap.to(ref.current, {
+      scale: active ? 1.15 : 1,
+      duration: 0.4,
+      ease: "power2.out"
+    });
+
+    const svg = ref.current.querySelector('svg');
+    if (svg) {
+      gsap.to(svg, {
+        color: active ? '#2FB4A5' : '#A1B2B0',
+        duration: 0.3,
+        ease: "power2.out"
+      });
+    }
+  };
   
   return (
     <footer className="py-12 mt-16" style={{
-      background: '#EFEEE7'
+      background: '#F6F8F7',
+      borderTop: '1px solid #A1B2B0'
     }}>
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Logo - Separate Row */}
@@ -65,16 +92,43 @@ const LotessaFooter = () => {
                </TrackingButton>
             </div>
 
-            {/* Social Media - Aligned with Terms */}
-            <div className="flex gap-6 mt-8 lg:mt-0 mx-[10px]">
-              <a href="https://www.instagram.com/lotessa.app" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform" aria-label="Instagram">
-                <img src="/lovable-uploads/dd5fb84e-0a6c-4d43-a075-987ba10c3bc9.png" alt="Instagram" className="w-12 h-12" />
+            {/* Social Media - Kinetic SVG Suite */}
+            <div className="flex gap-8 mt-10 lg:mt-0 px-2">
+              <a 
+                href="https://www.instagram.com/lotessa.app" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="transition-all duration-300"
+                aria-label="Instagram"
+                ref={iconRefs.instagram}
+                onMouseEnter={() => handleIconHover(iconRefs.instagram, true)}
+                onMouseLeave={() => handleIconHover(iconRefs.instagram, false)}
+              >
+                <Instagram size={36} color="#A1B2B0" strokeWidth={1.5} />
               </a>
-              <a href="https://www.linkedin.com/company/lotessa-digital-health-ltd/" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform" aria-label="LinkedIn">
-                <img src="/lovable-uploads/ab5cf166-f44f-433b-bcff-4658d708f98e.png" alt="LinkedIn" className="w-12 h-12" />
+              <a 
+                href="https://www.linkedin.com/company/lotessa-digital-health-ltd/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="transition-all duration-300"
+                aria-label="LinkedIn"
+                ref={iconRefs.linkedin}
+                onMouseEnter={() => handleIconHover(iconRefs.linkedin, true)}
+                onMouseLeave={() => handleIconHover(iconRefs.linkedin, false)}
+              >
+                <Linkedin size={36} color="#A1B2B0" strokeWidth={1.5} />
               </a>
-              <a href="https://www.facebook.com/lotessa.app" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform" aria-label="Facebook">
-                <img src="/lovable-uploads/e9b6ce86-0005-45cb-8b4a-eda5b5b26234.png" alt="Facebook" className="w-12 h-12" />
+              <a 
+                href="https://www.facebook.com/lotessa.app" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="transition-all duration-300"
+                aria-label="Facebook"
+                ref={iconRefs.facebook}
+                onMouseEnter={() => handleIconHover(iconRefs.facebook, true)}
+                onMouseLeave={() => handleIconHover(iconRefs.facebook, false)}
+              >
+                <Facebook size={36} color="#A1B2B0" strokeWidth={1.5} />
               </a>
             </div>
           </div>
@@ -253,7 +307,7 @@ const LotessaFooter = () => {
                   
                   try {
                     // Insert the report into the database
-                    const { error } = await supabase
+                    const { error } = await (supabase as any)
                       .from('report_issues')
                       .insert([
                         {

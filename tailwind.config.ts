@@ -82,6 +82,11 @@ export default {
 					neutral: '#F6F8F7',
 					dark: '#000000',
 				},
+				lotessaGray: {
+					background: '#F6F8F7',
+					slate: '#A1B2B0',
+					text: '#1A2D2B',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

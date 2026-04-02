@@ -102,6 +102,11 @@
 
     --radius: 0.75rem;
 
+    /* Lotessa Neutral Harmony */
+    --lotessa-bg: #F6F8F7;
+    --lotessa-slate: #A1B2B0;
+    --lotessa-text: #1A2D2B;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 174 58% 44%;
@@ -305,8 +310,14 @@
     box-shadow: 0 8px 32px rgba(47,180,165,0.12);
   }
 
+  /* Custom shadows & accents */
+  .shadow-teal-subtle {
+    box-shadow: 0 8px 30px rgba(47, 180, 165, 0.1);
+  }
+
   .section-neutral { background-color: #F6F8F7; }
   .section-teal    { background-color: #2FB4A5; }
+  .section-onyx    { background-color: #000000; }
 
   .gradient-bg {
     background: linear-gradient(135deg, #2FB4A5 0%, #26968a 100%);

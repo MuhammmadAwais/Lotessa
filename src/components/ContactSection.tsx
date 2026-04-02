@@ -157,7 +157,7 @@ const ContactSection = () => {
       setIsSubmitting(false);
     }
   };
-  return <section id="contact" className="py-3 lg:py-5" style={{ background: '#EFEEE7' }}>
+  return <section id="contact" className="py-3 lg:py-5" style={{ background: '#F6F8F7' }}>
       <div className="container mx-auto px-3 max-w-7xl">
         <div className="rounded-2xl px-[16px] py-8 lg:px-[24px] lg:py-12">
         {/* Section Header */}
@@ -212,7 +212,7 @@ const ContactSection = () => {
                       <li>Go to your <a href="https://supabase.com/dashboard" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Supabase Dashboard</a></li>
                       <li>Select your project</li>
                       <li>Go to <strong>SQL Editor</strong> in the left sidebar</li>
-                      <li>Copy and paste the SQL from <code className="bg-gray-200 px-2 py-1 rounded">setup-contacts-table.sql</code></li>
+                      <li>Copy and paste the SQL from <code className="bg-lotessaGray-slate/20 px-2 py-1 rounded">setup-contacts-table.sql</code></li>
                       <li>Click <strong>Run</strong> to execute the SQL</li>
                       <li>Refresh this page and try again</li>
                     </ol>
@@ -236,7 +236,7 @@ const ContactSection = () => {
                 <Input
                   id="name"
                   placeholder="Enter your full name"
-                  className="w-full h-12 text-base bg-white focus:ring-2 focus-visible:ring-[#2FB4A5] focus-visible:border-[#2FB4A5]"
+                  className="w-full h-12 text-base bg-white border-lotessaGray-slate focus:ring-2 focus-visible:ring-[#2FB4A5] focus-visible:border-[#2FB4A5]"
                   value={formData.name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
                   required
@@ -251,7 +251,7 @@ const ContactSection = () => {
                   id="email"
                   type="email"
                   placeholder="Enter your email address"
-                  className="w-full h-12 text-base bg-white focus-visible:ring-[#2FB4A5] focus-visible:border-[#2FB4A5]"
+                  className="w-full h-12 text-base bg-white border-lotessaGray-slate focus-visible:ring-[#2FB4A5] focus-visible:border-[#2FB4A5]"
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
                   required
@@ -263,7 +263,7 @@ const ContactSection = () => {
                   Topic
                 </label>
                 <Select value={formData.topic} onValueChange={(value) => handleInputChange('topic', value)}>
-                  <SelectTrigger className="w-full h-12 text-base focus:ring-[#2FB4A5] focus:border-[#2FB4A5]">
+                  <SelectTrigger className="w-full h-12 text-base border-lotessaGray-slate focus:ring-[#2FB4A5] focus:border-[#2FB4A5]">
                     <SelectValue placeholder="Select a topic" />
                   </SelectTrigger>
                   <SelectContent>
@@ -283,7 +283,7 @@ const ContactSection = () => {
                   id="message"
                   rows={6}
                   placeholder="Tell us how we can help you..."
-                  className="w-full resize-none text-base bg-white focus-visible:ring-[#2FB4A5] focus-visible:border-[#2FB4A5]"
+                  className="w-full resize-none text-base bg-white border-lotessaGray-slate focus-visible:ring-[#2FB4A5] focus-visible:border-[#2FB4A5]"
                   value={formData.message}
                   onChange={(e) => handleInputChange('message', e.target.value)}
                   required

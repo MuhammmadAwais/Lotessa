@@ -198,7 +198,7 @@ const TermsConditionsContent = () => {
             (Complete and return this form only if you wish to withdraw from the contract – you can also contact us to discuss a return via our website or by emailing us at support@lotessa.app)
           </p>
           
-          <div className="bg-gray-50 p-4 rounded-lg">
+          <div className="bg-lotessaGray-background p-4 rounded-lg">
             <p className="mb-2"><strong>To:</strong> Lotessa Digital Health Ltd, Bright Building, Richmond House, Bradford, BD7 1DB</p>
             <p className="mb-4"><strong>Email:</strong> support@lotessa.app</p>
             
@@ -206,19 +206,19 @@ const TermsConditionsContent = () => {
               I/We hereby give notice that I/We cancel my/our contract of sale of the following digital products:
             </p>
             
-            <div className="border-b-2 border-gray-300 h-8 mb-4"></div>
+            <div className="border-b-2 border-lotessaGray-slate h-8 mb-4"></div>
             
             <p className="mb-2"><strong>Ordered on/received on:</strong></p>
-            <div className="border-b-2 border-gray-300 h-8 mb-4"></div>
+            <div className="border-b-2 border-lotessaGray-slate h-8 mb-4"></div>
             
             <p className="mb-2"><strong>Name of consumer(s):</strong></p>
-            <div className="border-b-2 border-gray-300 h-8 mb-4"></div>
+            <div className="border-b-2 border-lotessaGray-slate h-8 mb-4"></div>
             
             <p className="mb-2"><strong>Address of consumer(s):</strong></p>
-            <div className="border-b-2 border-gray-300 h-8 mb-4"></div>
+            <div className="border-b-2 border-lotessaGray-slate h-8 mb-4"></div>
             
             <p className="mb-2"><strong>Signature of consumer(s) (only if this form is notified on paper):</strong></p>
-            <div className="border-b-2 border-gray-300 h-8 mb-4"></div>
+            <div className="border-b-2 border-lotessaGray-slate h-8 mb-4"></div>
             
             <p className="mb-2"><strong>Date:</strong></p>
             <div className="border-b-2 border-gray-300 h-8"></div>

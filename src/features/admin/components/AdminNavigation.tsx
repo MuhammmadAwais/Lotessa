@@ -123,7 +123,7 @@ const AdminNavigation = ({
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="border-t border-gray-200 py-4 space-y-2">
+            <div className="border-t border-lotessaGray-slate py-4 space-y-2">
               <nav className="grid grid-cols-2 gap-2">
                 {navItems.map((item) => {
                   const Icon = item.icon;

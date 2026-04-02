@@ -560,7 +560,7 @@ const AdminDashboard = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-lotessaGray-background flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
           <p className="text-muted-foreground">Loading admin dashboard...</p>
@@ -570,7 +570,7 @@ const AdminDashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-lotessaGray-background">
       {/* Navigation */}
       <AdminNavigation
         activeTab={activeTab}
@@ -678,7 +678,7 @@ const AdminDashboard = () => {
                           issue.status === 'open' ? 'bg-red-100 text-red-800' :
                           issue.status === 'in_progress' ? 'bg-yellow-100 text-yellow-800' :
                           issue.status === 'resolved' ? 'bg-green-100 text-green-800' :
-                          'bg-gray-100 text-gray-800'
+                          'bg-lotessaGray-background text-lotessaGray-text'
                         }`}>
                           {issue.status.replace('_', ' ')}
                         </span>
@@ -693,7 +693,7 @@ const AdminDashboard = () => {
                       </div>
                     </div>
                     
-                    <div className="bg-gray-50 rounded p-3">
+                    <div className="bg-lotessaGray-background rounded p-3">
                       <p className="text-sm whitespace-pre-wrap">{issue.description}</p>
                     </div>
                     
@@ -705,7 +705,7 @@ const AdminDashboard = () => {
                     
                     <div className="flex gap-2">
                       <button 
-                        className="px-3 py-1 text-xs border rounded hover:bg-gray-50"
+                        className="px-3 py-1 text-xs border rounded hover:bg-lotessaGray-background"
                         onClick={async () => {
                           const newStatus = issue.status === 'open' ? 'in_progress' : 
                                           issue.status === 'in_progress' ? 'resolved' : 'open';
@@ -726,7 +726,7 @@ const AdminDashboard = () => {
                       </button>
                       
                       <button 
-                        className="px-3 py-1 text-xs border rounded hover:bg-gray-50"
+                        className="px-3 py-1 text-xs border rounded hover:bg-lotessaGray-background"
                         onClick={async () => {
                           const newPriority = issue.priority === 'low' ? 'medium' :
                                             issue.priority === 'medium' ? 'high' :
