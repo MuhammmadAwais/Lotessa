@@ -1,35 +1,10 @@
-import { useEffect, useState } from "react";
-import WaitlistDialog from "./WaitlistDialog";
-import { supabase } from "@/integrations/supabase/client";
+import { useState } from "react";
+import WaitlistDialog from "@/components/WaitlistDialog";
+import { useCommunityContent } from "@/features/landing/hooks/useCommunityContent";
+import { TrackingButton } from "@/features/telemetry/components/TrackingButton";
 const CommunitySection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [heading, setHeading] = useState("Join the Community");
-  const [title, setTitle] = useState("You're Not Alone");
-  const [paragraph, setParagraph] = useState("Join a supportive, judgement-free community where you can ask questions, share progress, and connect with others who understand your journey. Whether you're just starting or deep into your transformation, there's a space for you here.");
-
-  useEffect(() => {
-    const load = async () => {
-      const { data } = await (supabase as any)
-        .from('community_content')
-        .select('*')
-        .order('updated_at', { ascending: false })
-        .limit(1)
-        .maybeSingle();
-      if (data) {
-        setHeading(data.heading || heading);
-        setTitle(data.title || title);
-        setParagraph(data.paragraph || paragraph);
-      } else {
-        await (supabase as any).from('community_content').insert({
-          heading,
-          title,
-          paragraph,
-        });
-      }
-    };
-    load();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { heading, title, paragraph } = useCommunityContent();
 
   return (
     <>
@@ -63,12 +38,13 @@ const CommunitySection = () => {
             </p>
 
             <div className="pt-4">
-              <button 
-                className="inline-block"
-                onClick={() => window.open('https://app.lotessa.app/register', '_blank')}
+              <TrackingButton 
+                id="join_community_community"
+                className="p-0 border-none bg-transparent hover:bg-transparent h-auto inline-block"
+                onClick={() => setDialogOpen(true)}
               >
                 <img src="/lovable-uploads/92fcb71d-e582-4fbf-8e5f-7b92cb752d2a.png" alt="Join the Lotessa Community" className="h-12" />
-              </button>
+              </TrackingButton>
             </div>
           </div>
         </div>

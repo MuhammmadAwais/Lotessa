@@ -1,8 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import LotessaHeader from "@/components/LotessaHeader";
-import LotessaFooter from "@/components/LotessaFooter";
+import LotessaHeader from "@/features/landing/components/LotessaHeader";
+import LotessaFooter from "@/features/landing/components/LotessaFooter";
 
 const articles = [
   {

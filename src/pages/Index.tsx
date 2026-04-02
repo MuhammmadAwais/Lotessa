@@ -1,10 +1,10 @@
-import LotessaHeader from "@/components/LotessaHeader";
-import HeroSection from "@/components/HeroSection";
-import CommunitySection from "@/components/CommunitySection";
-import LibrarySection from "@/components/LibrarySection";
+import LotessaHeader from "@/features/landing/components/LotessaHeader";
+import HeroSection from "@/features/landing/components/HeroSection";
+import CommunitySection from "@/features/landing/components/CommunitySection";
+import LibrarySection from "@/features/landing/components/LibrarySection";
 import PartnerSection from "@/components/PartnerSection";
 import ContactSection from "@/components/ContactSection";
-import LotessaFooter from "@/components/LotessaFooter";
+import LotessaFooter from "@/features/landing/components/LotessaFooter";
 
 const Index = () => {
   return (

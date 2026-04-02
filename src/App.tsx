@@ -6,9 +6,9 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Article from "./pages/Article";
 import NotFound from "./pages/NotFound";
-import AdminLogin from "./components/AdminLogin";
-import AdminDashboard from "./components/AdminDashboard";
-import ProtectedRoute from "./components/ProtectedRoute";
+import AdminLogin from "./features/admin/components/AdminLogin";
+import AdminDashboard from "./features/admin/components/AdminDashboard";
+import ProtectedRoute from "./features/admin/components/ProtectedRoute";
 
 const queryClient = new QueryClient();
 

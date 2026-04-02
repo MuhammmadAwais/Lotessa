@@ -1,14 +1,13 @@
 import { ArrowRight } from "lucide-react";
-import { useEffect, useState } from "react";
-import ArticleDialog from "./ArticleDialog";
+import { useState } from "react";
+import ArticleDialog from "@/components/ArticleDialog";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import { useArticlesContent } from "@/features/landing/hooks/useArticlesContent";
 
 const LibrarySection = () => {
   const [selectedArticle, setSelectedArticle] = useState<any>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [remoteArticles, setRemoteArticles] = useState<any[] | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
 
   const fallbackArticles = [
     {
@@ -230,37 +229,7 @@ GLP-1 medications are valuable tools, backed by science, but they're not a one-s
     }
   ];
 
-  useEffect(() => {
-    const load = async () => {
-      try {
-        setLoading(true);
-        const { data, error } = await (supabase as any)
-          .from('articles')
-          .select('*')
-          .order('published_at', { ascending: false })
-          .order('created_at', { ascending: false });
-        if (!error && data) {
-          setRemoteArticles(data.map((a: any) => ({
-            id: a.id,
-            title: a.title,
-            subtitle: a.subtitle,
-            description: a.description,
-            content: a.content || a.description || '',
-            author: a.author,
-            date: a.published_at || a.created_at,
-            readTime: a.read_time || '',
-          })));
-        } else {
-          setRemoteArticles(null);
-        }
-      } catch {
-        setRemoteArticles(null);
-      } finally {
-        setLoading(false);
-      }
-    };
-    load();
-  }, []);
+  const { articles, loading } = useArticlesContent(fallbackArticles);
 
   const trackArticleClick = async (article: any) => {
     try {
@@ -335,7 +304,7 @@ GLP-1 medications are valuable tools, backed by science, but they're not a one-s
 
           {/* Articles Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {(remoteArticles ?? fallbackArticles).map(article => (
+            {articles.map(article => (
               <div 
                 key={article.id} 
                 onClick={() => handleArticleClick(article)} 

@@ -1,11 +1,11 @@
 import { Heart, Download, Users, Instagram, Linkedin, Facebook } from "lucide-react";
-import { useAnalytics } from "@/hooks/useAnalytics";
+import { TrackingButton } from "@/features/telemetry/components/TrackingButton";
 import { useState } from "react";
-import LegalModal from "./LegalModal";
-import TermsContent from "./TermsContent";
-import PrivacyContent from "./PrivacyContent";
-import TermsConditionsContent from "./TermsConditionsContent";
-import WaitlistDialog from "./WaitlistDialog";
+import LegalModal from "@/components/LegalModal";
+import TermsContent from "@/components/TermsContent";
+import PrivacyContent from "@/components/PrivacyContent";
+import TermsConditionsContent from "@/components/TermsConditionsContent";
+import WaitlistDialog from "@/components/WaitlistDialog";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -17,7 +17,6 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 
 const LotessaFooter = () => {
-  const { trackInteraction } = useAnalytics();
   const [isCookiesOpen, setIsCookiesOpen] = useState(false);
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
   const [isTermsOpen, setIsTermsOpen] = useState(false);
@@ -47,26 +46,25 @@ const LotessaFooter = () => {
           <div className="flex flex-col justify-between px-0 my-[10px]">
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6">
-                             <button 
-                 className="flex items-center justify-center"
+                             <TrackingButton 
+                 id="download_button_footer"
+                 className="p-0 border-none bg-transparent hover:bg-transparent h-auto flex items-center justify-center"
                  onClick={() => {
-                   trackInteraction('click', 'download_button_footer');
-                   window.open('https://app.lotessa.app/register', '_blank');
+                   setWaitlistDialogOpen(true);
                  }}
-                 onMouseEnter={() => trackInteraction('hover', 'download_button_footer')}
                >
                  <img src="/lovable-uploads/Group 52.png" alt="Download the App" className="h-12 w-auto" />
-               </button>
+               </TrackingButton>
               
-                             <button 
-                 className="flex items-center justify-center"
+                             <TrackingButton 
+                 id="join_community_footer"
+                 className="p-0 border-none bg-transparent hover:bg-transparent h-auto flex items-center justify-center"
                  onClick={() => {
-                   trackInteraction('click', 'join_community_footer');
-                   window.open('https://app.lotessa.app/register', '_blank');
+                   setWaitlistDialogOpen(true);
                  }}
                >
                  <img src="/lovable-uploads/a97005af-398c-4b31-af1a-d153e144ef44.png" alt="Join the Lotessa Community" className="h-12 w-auto" />
-               </button>
+               </TrackingButton>
             </div>
 
             {/* Social Media - Aligned with Terms */}

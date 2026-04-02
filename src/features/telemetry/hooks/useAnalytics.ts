@@ -56,7 +56,7 @@ export const useAnalytics = () => {
     initializeAnalytics();
   }, []);
 
-  const trackInteraction = async (eventType: 'hover' | 'click', elementName: 'download_button_header' | 'download_button_footer' | 'download_button_hero') => {
+  const trackInteraction = async (eventType: 'hover' | 'click', elementName: string) => {
     if (!analyticsData) return;
 
     try {

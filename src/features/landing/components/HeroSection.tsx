@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Users } from "lucide-react";
 import phoneMockups from "@/assets/phone-mockups.jpg";
-import { useAnalytics } from "@/hooks/useAnalytics";
-import WaitlistDialog from "./WaitlistDialog";
-import TestFlightIcon from "./ui/testflight-icon";
+import { useHeroContent } from "@/features/landing/hooks/useHeroContent";
+import { TrackingButton } from "@/features/telemetry/components/TrackingButton";
+import WaitlistDialog from "@/components/WaitlistDialog";
+import TestFlightIcon from "@/components/ui/testflight-icon";
 const HeroSection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
-  const { trackInteraction } = useAnalytics();
+  const { title, subtitle, p1, p2 } = useHeroContent();
   return <>
       <section id="download" className="py-3 lg:py-5 bg-white">
       <div className="container mx-auto px-3 max-w-7xl">
@@ -14,49 +15,40 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center lg:min-h-[650px]">
            {/* Left Content */}
            <div className="flex flex-col justify-center min-h-[650px]">
-             <div className="space-y-7">
-               <h2 className="text-4xl lg:text-4xl leading-[1.1] text-left font-bold text-foreground xl:text-4xl">Your Health Companion
-for GLP1 Medication</h2>
+              <div className="space-y-7">
+               <h2 className="text-4xl lg:text-4xl leading-[1.1] text-left font-bold text-foreground xl:text-4xl whitespace-pre-line">{title}</h2>
                
                <h2 className="text-display-md text-foreground font-bold font-sans">
-                 Track. Learn. Connect. All in one place.
+                 {subtitle}
                </h2>
                
                <div className="space-y-7 text-lg lg:text-xl text-muted-foreground leading-relaxed">
                  <p className="text-muted-foreground text-body-lg font-sans font-normal -mt-2">
-                   Navigate the changing GLP-1 landscape with confidence. Track your progress, 
-                   manage side effects, and stay informed about medication access and alternatives.
+                   {p1}
                  </p>
                  
                  <p className="text-muted-foreground text-body-md -my-2">
-                   Whether you're on Ozempic, Mounjaro, Wegovy, or considering alternatives, 
-                   Lotessa helps you maintain continuity in your health journey. Get expert insights, 
-                   track your progress, and connect with a community navigating similar challenges.
+                   {p2}
                  </p>
                </div>
                
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-5 pt-4">
-                  <button 
-                    className="flex items-center justify-center"
-                    onClick={() => {
-                      trackInteraction('click', 'download_button_hero');
-                      window.open('https://app.lotessa.app/register', '_blank');
-                    }}
-                    onMouseEnter={() => trackInteraction('hover', 'download_button_hero')}
+                  <TrackingButton 
+                    id="download_button_hero"
+                    className="p-0 border-none bg-transparent hover:bg-transparent h-auto"
+                    onClick={() => setDialogOpen(true)}
                   >
                     <img src="/lovable-uploads/Group 52.png" alt="Download the App" className="h-11 w-auto" />
-                  </button>
+                  </TrackingButton>
                   
-                  <button 
-                    className="flex items-center justify-center" 
-                    onClick={() => {
-                      trackInteraction('click', 'join_community_hero');
-                      window.open('https://app.lotessa.app/register', '_blank');
-                    }}
+                  <TrackingButton 
+                    id="join_community_hero"
+                    className="p-0 border-none bg-transparent hover:bg-transparent h-auto"
+                    onClick={() => setDialogOpen(true)}
                   >
                     <img src="/lovable-uploads/a97005af-398c-4b31-af1a-d153e144ef44.png" alt="Join the Lotessa Community" className="h-11 w-auto" />
-                  </button>
+                  </TrackingButton>
                 </div>
              </div>
            </div>

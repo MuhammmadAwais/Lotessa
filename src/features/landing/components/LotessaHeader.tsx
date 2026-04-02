@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { useAnalytics } from "@/hooks/useAnalytics";
-import WaitlistDialog from "./WaitlistDialog";
+import { useAnalytics } from "@/features/telemetry/hooks/useAnalytics";
+import WaitlistDialog from "@/components/WaitlistDialog";
 import { Menu, X } from "lucide-react";
 
 const LotessaHeader = () => {
@@ -22,13 +22,13 @@ const LotessaHeader = () => {
     // Special cases for external navigation
     if (href === "#download") {
       trackInteraction('click', 'download_button_header');
-      window.open('https://app.lotessa.app/register', '_blank');
+      setDialogOpen(true);
       return;
     }
     
     if (href === "#community") {
       trackInteraction('click', 'join_community_header');
-      window.open('https://app.lotessa.app/register', '_blank');
+      setDialogOpen(true);
       return;
     }
     
