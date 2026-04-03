@@ -44,7 +44,7 @@ const HeroSection = () => {
                   {/* Main heading — Antonio, white on teal */}
                   <h1
                     ref={headingRef}
-                    className="text-4xl lg:text-5xl xl:text-6xl leading-[1.05] text-left font-antonio font-bold text-white whitespace-pre-line"
+                    className="text-4xl lg:text-5xl xl:text-6xl leading-[1.05] text-left font-antonio font-black text-black whitespace-pre-line"
                     style={{ fontFamily: "'Antonio', sans-serif" }}
                   >
                     {title}
@@ -52,17 +52,17 @@ const HeroSection = () => {
 
                   <h2
                     ref={subRef}
-                    className="text-2xl font-antonio font-bold text-white/90"
+                    className="text-2xl font-antonio font-bold text-black/80"
                     style={{ fontFamily: "'Antonio', sans-serif" }}
                   >
                     {subtitle}
                   </h2>
 
                   <div className="space-y-4">
-                    <p ref={p1Ref} className="font-sora text-white/85 text-body-lg leading-relaxed">
+                    <p ref={p1Ref} className="font-sora text-black/85 text-body-lg leading-relaxed">
                       {p1}
                     </p>
-                    <p ref={p2Ref} className="font-sora text-white/75 text-body-md leading-relaxed">
+                    <p ref={p2Ref} className="font-sora text-black/85 text-body-md leading-relaxed">
                       {p2}
                     </p>
                   </div>
