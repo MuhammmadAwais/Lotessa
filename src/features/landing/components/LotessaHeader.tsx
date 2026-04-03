@@ -64,7 +64,7 @@ const LotessaHeader = () => {
                     trackInteraction('hover', 'download_button_header');
                   }
                 }}
-                className="font-sora font-medium text-sm text-foreground transition-all duration-200 cursor-pointer hover:text-[#2FB4A5] hover:scale-105 relative after:content-[''] after:absolute after:bottom-[-3px] after:left-0 after:w-0 after:h-[2px] after:bg-[#2FB4A5] after:transition-all after:duration-300 hover:after:w-full"
+                className="font-sora font-medium text-sm text-foreground transition-all duration-200 cursor-pointer hover:text-[#FF8A73] hover:scale-105 relative after:content-[''] after:absolute after:bottom-[-3px] after:left-0 after:w-0 after:h-[2px] after:bg-[#FF8A73] after:transition-all after:duration-300 hover:after:w-full"
               >
                 {item.name}
               </a>
