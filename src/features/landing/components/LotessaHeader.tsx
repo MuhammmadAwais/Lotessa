@@ -49,7 +49,11 @@ const LotessaHeader = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <img src="/lovable-uploads/69f7fc17-c67d-4671-ade7-a76320c0adb8.png" alt="Lotessa logo" className="h-8" />
+            <img 
+              src="/lovable-uploads/69f7fc17-c67d-4671-ade7-a76320c0adb8.png" 
+              alt="Lotessa logo" 
+              className="h-8 " 
+            />
           </div>
 
           {/* Desktop Navigation */}
@@ -64,7 +68,7 @@ const LotessaHeader = () => {
                     trackInteraction('hover', 'download_button_header');
                   }
                 }}
-                className="font-sora font-medium text-sm text-foreground transition-all duration-200 cursor-pointer hover:text-[#FF8A73] hover:scale-105 relative after:content-[''] after:absolute after:bottom-[-3px] after:left-0 after:w-0 after:h-[2px] after:bg-[#FF8A73] after:transition-all after:duration-300 hover:after:w-full"
+                className="font-sora font-medium text-sm text-[#000000] transition-all duration-200 cursor-pointer hover:text-[#FF8A73] hover:scale-105 relative after:content-[''] after:absolute after:bottom-[-3px] after:left-0 after:w-0 after:h-[2px] after:bg-[#FF8A73] after:transition-all after:duration-300 hover:after:w-full"
               >
                 {item.name}
               </a>

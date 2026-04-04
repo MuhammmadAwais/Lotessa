@@ -33,7 +33,7 @@ const HeroSection = () => {
 
   return (
     <>
-      <section id="download" className="py-3 lg:py-5" style={{ background: "#2FB4A5" }}>
+      <section id="download" className="py-3 lg:py-5 bg-[#F6F8F7]">
         <div className="container mx-auto px-3 max-w-7xl">
           <div className="rounded-2xl px-[16px] py-10 lg:px-[24px] lg:py-14">
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center lg:min-h-[650px]">
@@ -41,10 +41,10 @@ const HeroSection = () => {
               {/* Left Content */}
               <div className="flex flex-col justify-center min-h-[650px]">
                 <div className="space-y-7">
-                  {/* Main heading — Antonio, white on teal */}
+                  {/* Main heading — Antonio, black on light gray */}
                   <h1
                     ref={headingRef}
-                    className="text-4xl lg:text-5xl xl:text-6xl leading-[1.05] text-left font-antonio font-black text-black whitespace-pre-line"
+                    className="text-4xl lg:text-5xl xl:text-6xl leading-[1.05] text-left font-antonio font-black text-[#000000] whitespace-pre-line"
                     style={{ fontFamily: "'Antonio', sans-serif" }}
                   >
                     {title}
@@ -52,54 +52,57 @@ const HeroSection = () => {
 
                   <h2
                     ref={subRef}
-                    className="text-2xl font-antonio font-bold text-black/80"
+                    className="text-2xl font-antonio font-bold text-[#000000]/80"
                     style={{ fontFamily: "'Antonio', sans-serif" }}
                   >
                     {subtitle}
                   </h2>
 
                   <div className="space-y-4">
-                    <p ref={p1Ref} className="font-sora text-black/85 text-body-lg leading-relaxed">
+                    <p ref={p1Ref} className="font-sora text-[#000000]/85 text-body-lg leading-relaxed">
                       {p1}
                     </p>
-                    <p ref={p2Ref} className="font-sora text-black/85 text-body-md leading-relaxed">
+                    <p ref={p2Ref} className="font-sora text-[#000000]/85 text-body-md leading-relaxed">
                       {p2}
                     </p>
                   </div>
 
-                  {/* CTA Buttons */}
+                  {/* CTA Buttons - Custom styled to maintain layout but match design specs */}
                   <div ref={btnRowRef} className="flex flex-col sm:flex-row gap-4 pt-2">
-                    <TrackingButton
+                    <button
                       id="download_button_hero"
-                      variant="black"
                       onClick={() => setDialogOpen(true)}
-                      icon={<AppleIcon />}
+                      className="flex items-center justify-center gap-3 px-8 bg-[#2FB4A5] text-white rounded-[8px] font-sora font-bold text-sm tracking-wide uppercase transition-all duration-300 hover:bg-[#26968a] hover:scale-105 active:scale-95 shadow-lg"
+                      style={{ minWidth: '220px', height: '56px' }}
                     >
+                      <AppleIcon />
                       Download the App
-                    </TrackingButton>
+                    </button>
 
-                    <TrackingButton
+                    <button
                       id="join_community_hero"
-                      variant="coral"
                       onClick={() => setDialogOpen(true)}
-                      icon={<ArrowRight className="w-5 h-5" />}
+                      className="flex items-center justify-center gap-3 px-8 border-2 border-[#FF8A73] text-[#FF8A73] rounded-[8px] font-sora font-bold text-sm tracking-wide uppercase transition-all duration-300 hover:bg-[#FF8A73] hover:text-white hover:scale-105 active:scale-95"
+                      style={{ minWidth: '220px', height: '56px' }}
                     >
-                      Join the Community
-                    </TrackingButton>
+                      <span>Join the Community</span>
+                      <ArrowRight className="w-5 h-5" />
+                    </button>
                   </div>
                 </div>
               </div>
 
-              {/* Right Content — Phone Mockups */}
+              {/* Right Content — Phone Mockups with Animation and Shadow */}
               <div className="flex justify-center lg:justify-end items-center min-h-[650px]">
                 <div className="relative max-w-2xl w-full flex items-center justify-center">
-                  <div className="absolute inset-0 bg-gradient-radial from-[#26968a] via-[#26968a]/60 to-transparent rounded-2xl -z-10 scale-110" />
-                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-48 h-48 bg-gradient-radial from-[#26968a] via-[#26968a]/60 to-transparent rounded-full z-0" />
-                  <img
-                    src="/lovable-uploads/ede3f8df-6167-46ea-8bcd-249fdd2c788a.png"
-                    alt="Lotessa app interface showing weight tracking charts, medication dosage tracking, and progress visualization on two mobile phones"
-                    className="w-full h-auto max-h-full object-contain relative z-10 scale-105"
-                  />
+                  <div className="absolute inset-0 bg-gradient-radial from-[#2FB4A5]/10 via-[#2FB4A5]/5 to-transparent rounded-2xl -z-10 scale-125" />
+                  <div className="animate-float relative z-10 w-full flex justify-center">
+                    <img
+                      src="/lovable-uploads/ede3f8df-6167-46ea-8bcd-249fdd2c788a.png"
+                      alt="Lotessa app interface on iPhone 15 Pro mockups"
+                      className="w-full h-auto max-h-full object-contain drop-shadow-[0_45px_50px_rgba(0,0,0,0.15)] scale-110"
+                    />
+                  </div>
                 </div>
               </div>
 
