@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 
+import { HeroContent } from "@/types/content";
+
 export const useHeroContent = () => {
   const [title, setTitle] = useState("Your Health Companion\nfor GLP1 Medication");
   const [subtitle, setSubtitle] = useState("Track. Learn. Connect. All in one place.");
@@ -17,7 +19,7 @@ export const useHeroContent = () => {
           .select('*')
           .order('updated_at', { ascending: false })
           .limit(1)
-          .maybeSingle();
+          .maybeSingle() as { data: HeroContent | null };
 
         if (data) {
           setTitle(data.title || title);
@@ -31,7 +33,7 @@ export const useHeroContent = () => {
             subtitle,
             p1,
             p2,
-          }).then();
+          } as HeroContent).then();
         }
       } catch (e) {
         console.error("Failed to load hero content:", e);

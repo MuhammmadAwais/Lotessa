@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 
+import { CommunityContent } from "@/types/content";
+
 export const useCommunityContent = () => {
   const [heading, setHeading] = useState("Join the Community");
   const [title, setTitle] = useState("You're Not Alone");
@@ -16,7 +18,7 @@ export const useCommunityContent = () => {
           .select('*')
           .order('updated_at', { ascending: false })
           .limit(1)
-          .maybeSingle();
+          .maybeSingle() as { data: CommunityContent | null };
 
         if (data) {
           setHeading(data.heading || heading);
@@ -28,7 +30,7 @@ export const useCommunityContent = () => {
             heading,
             title,
             paragraph,
-          }).then();
+          } as CommunityContent).then();
         }
       } catch (e) {
         console.error("Failed to load community content:", e);

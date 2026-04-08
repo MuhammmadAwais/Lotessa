@@ -40,14 +40,18 @@ import {
   TrendingUp,
   Calendar
 } from "lucide-react";
-import AdminNavigation from "./AdminNavigation";
-import { useEffect as ReactUseEffect } from "react";
+import { HeroContent, CommunityContent, PartnerContent } from "@/types/content";
+import { Article } from "@/types/article";
 
 function ArticleEditorList() {
-  const [rows, setRows] = useState<any[]>([]);
+  const [rows, setRows] = useState<Article[]>([]);
   useEffect(() => {
     const load = async () => {
-      const { data } = await (supabase as any).from('articles').select('id,title,subtitle,description,read_time').order('updated_at', { ascending: false }).limit(50);
+      const { data } = await (supabase as any)
+        .from('articles')
+        .select('id,title,subtitle,description,read_time')
+        .order('updated_at', { ascending: false })
+        .limit(50) as { data: Article[] | null };
       setRows(data || []);
     };
     load();
@@ -92,7 +96,7 @@ interface Visitor {
   browser_id: string;
   first_seen: string;
   last_seen: string;
-  ip_address: any;
+  ip_address: unknown;
   user_agent: string | null;
 }
 
@@ -155,9 +159,9 @@ const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState("overview");
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [heroForm, setHeroForm] = useState({ title: '', subtitle: '', p1: '', p2: '' });
-  const [communityForm, setCommunityForm] = useState({ heading: '', title: '', paragraph: '' });
-  const [partnerForm, setPartnerForm] = useState({
+  const [heroForm, setHeroForm] = useState<HeroContent>({ title: '', subtitle: '', p1: '', p2: '' });
+  const [communityForm, setCommunityForm] = useState<CommunityContent>({ heading: '', title: '', paragraph: '' });
+  const [partnerForm, setPartnerForm] = useState<PartnerContent>({
     section_title: '',
     main_title: '',
     main_description: '',
@@ -344,7 +348,7 @@ const AdminDashboard = () => {
         .select('*')
         .order('updated_at', { ascending: false })
         .limit(1)
-        .maybeSingle();
+        .maybeSingle() as { data: HeroContent | null };
       if (hero) setHeroForm({ title: hero.title || '', subtitle: hero.subtitle || '', p1: hero.p1 || '', p2: hero.p2 || '' });
 
       // Load latest community content
@@ -353,7 +357,7 @@ const AdminDashboard = () => {
         .select('*')
         .order('updated_at', { ascending: false })
         .limit(1)
-        .maybeSingle();
+        .maybeSingle() as { data: CommunityContent | null };
       if (community) setCommunityForm({ heading: community.heading || '', title: community.title || '', paragraph: community.paragraph || '' });
 
       // Load latest partner content
@@ -362,7 +366,7 @@ const AdminDashboard = () => {
         .select('*')
         .order('updated_at', { ascending: false })
         .limit(1)
-        .maybeSingle();
+        .maybeSingle() as { data: PartnerContent | null };
       if (partner) {
         setPartnerForm({
           section_title: partner.section_title || '',
@@ -423,7 +427,7 @@ const AdminDashboard = () => {
       
       for (const table of tables) {
         console.log(`🗑️ Deleting from ${table}...`);
-        const { error } = await supabase.from(table as any).delete().neq('id', '00000000-0000-0000-0000-000000000000');
+        const { error } = await (supabase as any).from(table).delete().neq('id', '00000000-0000-0000-0000-000000000000');
         
         if (error) {
           console.error(`❌ Error deleting from ${table}:`, error);
@@ -624,7 +628,7 @@ const AdminDashboard = () => {
                   subtitle: heroForm.subtitle,
                   p1: heroForm.p1,
                   p2: heroForm.p2,
-                });
+                } as HeroContent);
                 if (error) toast({ title: 'Error', description: error.message, variant: 'destructive' });
                 else toast({ title: 'Saved', description: 'Hero content saved' });
               }}>Save</button>
@@ -638,9 +642,16 @@ const AdminDashboard = () => {
           <h2 className="text-xl font-semibold mb-4">Articles</h2>
           <div className="space-y-4">
             <button className="px-3 py-2 border rounded" onClick={async () => {
-              const { data, error } = await (supabase as any).from('articles').insert({ title: 'Untitled', content: '' }).select('*').single();
+              const { error } = await (supabase as any)
+                .from('articles')
+                .insert({ title: 'Untitled', content: '' } as Partial<Article>)
+                .select('*')
+                .single();
               if (error) toast({ title: 'Error', description: error.message, variant: 'destructive' });
-              else toast({ title: 'Created', description: 'New article added' });
+              else {
+                toast({ title: 'Created', description: 'New article added' });
+                fetchAllData();
+              }
             }}>Add Article</button>
             <div className="grid gap-3">
               {/* Simple list of recent articles with inline editing */}
@@ -767,7 +778,7 @@ const AdminDashboard = () => {
             <textarea className="w-full border rounded p-2" rows={4} value={communityForm.paragraph} onChange={(e) => setCommunityForm({ ...communityForm, paragraph: e.target.value })} />
             <div>
               <button className="px-3 py-2 border rounded" onClick={async () => {
-                const { error } = await (supabase as any).from('community_content').insert(communityForm);
+                const { error } = await (supabase as any).from('community_content').insert(communityForm as CommunityContent);
                 if (error) toast({ title: 'Error', description: error.message, variant: 'destructive' });
                 else toast({ title: 'Saved', description: 'Community content saved' });
               }}>Save</button>
@@ -852,7 +863,7 @@ const AdminDashboard = () => {
 
             <div>
               <button className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90" onClick={async () => {
-                const { error } = await (supabase as any).from('partnerwithlotessa').insert(partnerForm);
+                const { error } = await (supabase as any).from('partnerwithlotessa').insert(partnerForm as PartnerContent);
                 if (error) toast({ title: 'Error', description: error.message, variant: 'destructive' });
                 else toast({ title: 'Saved', description: 'Partner content saved' });
               }}>Save Partner Content</button>

@@ -1,73 +1,107 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import WaitlistDialog from "@/components/WaitlistDialog";
 import { useCommunityContent } from "@/features/landing/hooks/useCommunityContent";
 import { TrackingButton } from "@/features/telemetry/components/TrackingButton";
-import { useSectionReveal, useParaReveal } from "@/hooks/useKineticReveal";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const CommunitySection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const { heading, title, paragraph } = useCommunityContent();
-  const sectionRef = useRef<HTMLElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  useSectionReveal(sectionRef, "right");
-  useParaReveal(contentRef);
+
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        type: "spring" as const,
+        stiffness: 100,
+        damping: 20,
+        duration: 0.8,
+        staggerChildren: 0.15
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
 
   return (
     <>
-      <section ref={sectionRef} id="community" className="py-3 lg:py-5" style={{ background: '#F6F8F7' }}>
-      <div className="container mx-auto px-3 max-w-7xl">
-        <div className="rounded-2xl px-[16px] py-6 lg:px-[24px] lg:py-8 bg-white">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h3
-            className="text-display-md text-foreground font-bold mb-4"
-            style={{ fontFamily: "'Antonio', sans-serif", color: '#2FB4A5' }}
+      <section 
+        id="community" 
+        className="py-[clamp(4rem,10vw,8rem)] bg-white overflow-hidden"
+      >
+        <div className="container mx-auto px-4 max-w-7xl">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={sectionVariants}
+            className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center"
           >
-            {heading}
-          </h3>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left - Community Illustration */}
-          <div className="relative order-2 lg:order-1">
-            <div className="max-w-md mx-auto lg:mx-0 relative">
-              <div className="absolute inset-0 bg-gradient-radial from-[#EFEEE7] via-[#EFEEE7]/90 to-[#EFEEE7]/40 rounded-2xl -z-10 scale-110"></div>
-              <img src="/lovable-uploads/27dc1d46-0829-4924-bc8f-fb7909028f7e.png" alt="Community of diverse people connected with dotted lines representing supportive network" className="w-full h-auto relative z-10" />
-            </div>
-          </div>
-
-          {/* Right - Content */}
-          <div className="space-y-6 lg:space-y-8 order-1 lg:order-2">
-            <h2
-              className="text-display-lg text-foreground leading-tight"
-              style={{ fontFamily: "'Antonio', sans-serif", color: '#000000' }}
+            {/* Left - Community Illustration - Image Left for Z-Pattern */}
+            <motion.div 
+              variants={itemVariants}
+              className="relative order-2 lg:order-1"
             >
-              {title}
-            </h2>
-            
-            <p className="font-sora text-muted-foreground text-body-lg leading-relaxed">
-              {paragraph}
-            </p>
+              <div className="max-w-md mx-auto lg:mx-0 relative">
+                <div className="absolute inset-0 bg-gradient-radial from-[#EFEEE7] via-[#EFEEE7]/90 to-transparent rounded-full -z-10 scale-125 blur-2xl opacity-70"></div>
+                <img 
+                  src="/lovable-uploads/27dc1d46-0829-4924-bc8f-fb7909028f7e.png" 
+                  alt="Lotessa community network" 
+                  className="w-full h-auto relative z-10 drop-shadow-2xl" 
+                />
+              </div>
+            </motion.div>
 
-            <div className="pt-4">
-              <TrackingButton 
-                id="join_community_community"
-                variant="coral"
-                onClick={() => setDialogOpen(true)}
-                icon={<ArrowRight className="w-5 h-5" />}
+            {/* Right Content - Shifted to Right for Z-Pattern */}
+            <div className="space-y-8 order-1 lg:order-2 max-w-2xl">
+              <motion.div variants={itemVariants}>
+                <h3
+                  className="text-display-md font-sora font-semibold tracking-tight mb-4"
+                  style={{ color: '#2FB4A5' }}
+                >
+                  {heading}
+                </h3>
+              </motion.div>
+
+              <motion.h2
+                variants={itemVariants}
+                className="text-4xl lg:text-5xl font-sora font-semibold tracking-tighter text-[#000000] leading-tight"
               >
-                Join the Community
-              </TrackingButton>
+                {title}
+              </motion.h2>
+              
+              <motion.p 
+                variants={itemVariants}
+                className="font-sora text-zinc-600 text-body-lg leading-relaxed"
+              >
+                {paragraph}
+              </motion.p>
+
+              <motion.div variants={itemVariants} className="pt-4">
+                <TrackingButton 
+                  id="join_community_community"
+                  variant="coral"
+                  onClick={() => setDialogOpen(true)}
+                  icon={<ArrowRight className="w-5 h-5" />}
+                  className="rounded-xl px-8 h-14 font-sora font-bold uppercase tracking-wide transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg hover:shadow-coral-500/20"
+                >
+                  Join the Community
+                </TrackingButton>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
-        </div>
-      </div>
-    </section>
-    
-    <WaitlistDialog open={dialogOpen} onOpenChange={setDialogOpen} />
+      </section>
+      
+      <WaitlistDialog open={dialogOpen} onOpenChange={setDialogOpen} />
     </>
   );
 };
+
 export default CommunitySection;

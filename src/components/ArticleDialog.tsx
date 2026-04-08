@@ -2,17 +2,7 @@ import { useEffect, useRef } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { X, Share2, Clock, Calendar } from "lucide-react";
 import gsap from "gsap";
-
-interface Article {
-  title: string;
-  subtitle: string;
-  description: string;
-  content: string;
-  author: string;
-  date: string;
-  readTime: string;
-  id: number;
-}
+import { Article } from "@/types/article";
 
 interface ArticleDialogProps {
   open: boolean;
@@ -41,7 +31,9 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
     if (navigator.share) {
       try {
         await navigator.share({ title: article.title, text: article.description, url: window.location.href });
-      } catch {}
+      } catch (error) {
+        console.error("Error sharing article:", error);
+      }
     } else {
       navigator.clipboard.writeText(window.location.href);
     }

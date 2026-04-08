@@ -33,10 +33,11 @@ export async function checkContactsTable(): Promise<DatabaseSetupResult> {
       message: 'Contacts table exists and is accessible.',
       tableExists: true
     };
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : "An unexpected error occurred.";
     return {
       success: false,
-      message: `Unexpected error: ${error.message}`,
+      message: `Unexpected error: ${errorMessage}`,
       tableExists: false
     };
   }
@@ -51,10 +52,11 @@ export async function createContactsTable(): Promise<DatabaseSetupResult> {
       message: 'Please run the SQL from setup-contacts-table.sql in your Supabase dashboard SQL Editor.',
       tableExists: false
     };
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : "An unexpected error occurred.";
     return {
       success: false,
-      message: `Error: ${error.message}`,
+      message: `Error: ${errorMessage}`,
       tableExists: false
     };
   }

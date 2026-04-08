@@ -58,8 +58,7 @@ const LotessaFooter = () => {
   
   return (
     <footer className="py-12 mt-16" style={{
-      background: '#F6F8F7',
-      borderTop: '1px solid #A1B2B0'
+      background: '#F6F8F7'
     }}>
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Logo - Separate Row */}
@@ -306,6 +305,18 @@ const LotessaFooter = () => {
                   }
                   
                   try {
+                    // Define local interface for type safety
+                    interface ReportIssue {
+                      name: string;
+                      email: string;
+                      phone: string | null;
+                      title: string;
+                      description: string;
+                      issue_type: string;
+                      status: string;
+                      priority: string;
+                    }
+
                     // Insert the report into the database
                     const { error } = await (supabase as any)
                       .from('report_issues')
@@ -314,12 +325,12 @@ const LotessaFooter = () => {
                           name: reportForm.name,
                           email: reportForm.email,
                           phone: reportForm.phone || null,
-                          title: reportForm.issue_type, // Use issue_type as title
+                          title: reportForm.issue_type,
                           description: reportForm.description,
                           issue_type: reportForm.issue_type,
                           status: 'open',
                           priority: 'medium'
-                        }
+                        } as ReportIssue
                       ]);
                     
                     if (error) {

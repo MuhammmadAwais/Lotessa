@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { Article } from "@/types/article";
 
-export const useArticlesContent = (fallbackArticles: any[]) => {
-  const [articles, setArticles] = useState<any[] | null>(null);
+export const useArticlesContent = (fallbackArticles: Article[]) => {
+  const [articles, setArticles] = useState<Article[] | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -17,12 +18,12 @@ export const useArticlesContent = (fallbackArticles: any[]) => {
           
         if (!error && data && data.length > 0) {
           setArticles(data.map((a: any) => ({
-            id: a.id,
+            id: Number(a.id),
             title: a.title,
             subtitle: a.subtitle,
             description: a.description,
             content: a.content || a.description || '',
-            author: a.author,
+            author: a.author || "Lotessa Team",
             date: a.published_at || a.created_at,
             readTime: a.read_time || '',
           })));
