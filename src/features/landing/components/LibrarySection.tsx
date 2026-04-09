@@ -152,6 +152,7 @@ const LibrarySection = () => {
       title: "Common Myths About GLP-1 Weight Loss Drugs & The Truths You Actually Need",
       subtitle: "A professional deep-dive into clinical reality",
       description: "So, you've done your homework, talked to your doctor, and maybe even decided to start a GLP-1 medication. Then the opinions start arriving. A colleague tells you it's 'basically cheating.' A family member warns you that you'll 'never be able to enjoy your favourite foods again.' And somewhere online, someone claims they 'lost 20 pounds in a month without changing a thing.' It can be hard to know what's real and what's just a story passed along without facts. Let's sort through some of the most common myths and the truths you actually need to hear. GLP-1 medications don't work like a switch you flip overnight. They help regulate appetite and blood sugar, making it easier to make consistent choices but results happen gradually over months. Slow, steady progress is not only more realistic, it's healthier for long-term clinical success.",
+      content: "So, you've done your homework, talked to your doctor, and maybe even decided to start a GLP-1 medication. Then the opinions start arriving. A colleague tells you it's 'basically cheating.' A family member warns you that you'll 'never be able to enjoy your favourite foods again.' And somewhere online, someone claims they 'lost 20 pounds in a month without changing a thing.' It can be hard to know what's real and what's just a story passed along without facts. Let's sort through some of the most common myths and the truths you actually need to hear. GLP-1 medications don't work like a switch you flip overnight. They help regulate appetite and blood sugar, making it easier to make consistent choices but results happen gradually over months. Slow, steady progress is not only more realistic, it's healthier for long-term clinical success.",
       author: "Lotessa Team",
       date: "March 15, 2024",
       readTime: "9 min read",
@@ -160,6 +161,7 @@ const LibrarySection = () => {
     {
       title: "The Future of GLP-1 Access in the UK",
       description: "The recent Mounjaro price hike has understandably caused worry for many UK users, especially those paying privately. While NHS patients will see no immediate change, the private market is experiencing significant shifts.",
+      content: "The recent Mounjaro price hike has understandably caused worry for many UK users, especially those paying privately. While NHS patients will see no immediate change, the private market is experiencing significant shifts.",
       author: "Dr. Sarah Williams",
       date: "March 15, 2024",
       readTime: "5 min read",
@@ -168,6 +170,7 @@ const LibrarySection = () => {
     {
       title: "Why Tracking Your GLP-1 Matters",
       description: "The recent rise in Mounjaro prices has caused some people to rethink their dosing schedules. In these moments, tracking your progress becomes even more critical.",
+      content: "The recent rise in Mounjaro prices has caused some people to rethink their dosing schedules. In these moments, tracking your progress becomes even more critical.",
       author: "Emma Thompson, RN",
       date: "March 12, 2024",
       readTime: "4 min read",
@@ -176,6 +179,7 @@ const LibrarySection = () => {
     {
       title: "Tracking for Sustained Goals",
       description: "GLP-1 medications can be a powerful kick-start, but long-term success relies on more than injections. Lifestyle changes will cement your progress.",
+      content: "GLP-1 medications can be a powerful kick-start, but long-term success relies on more than injections. Lifestyle changes will cement your progress.",
       author: "Dr. Michael Roberts",
       date: "March 10, 2024",
       readTime: "4 min read",
@@ -184,6 +188,7 @@ const LibrarySection = () => {
     {
       title: "What Are GLP-1 Medications?",
       description: "GLP-1 stands for glucagon-like peptide-1, a natural hormone your body already makes. Its 'day job' is to help regulate appetite.",
+      content: "GLP-1 stands for glucagon-like peptide-1, a natural hormone your body already makes. Its 'day job' is to help regulate appetite.",
       author: "Dr. Jennifer Lee",
       date: "March 8, 2024",
       readTime: "6 min read",
@@ -192,6 +197,7 @@ const LibrarySection = () => {
     {
       title: "How Does GLP-1 Work?",
       description: "Think of GLP-1 as your body's group text. When you eat, your gut sends out a 'group message' to your brain and stomach.",
+      content: "Think of GLP-1 as your body's group text. When you eat, your gut sends out a 'group message' to your brain and stomach.",
       author: "Dr. Robert Chen",
       date: "March 5, 2024",
       readTime: "7 min read",

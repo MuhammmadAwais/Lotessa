@@ -18,7 +18,7 @@ export const useArticlesContent = (fallbackArticles: Article[]) => {
           
         if (!error && data && data.length > 0) {
           setArticles(data.map((a: any) => ({
-            id: Number(a.id),
+            id: isNaN(Number(a.id)) ? a.id : Number(a.id),
             title: a.title,
             subtitle: a.subtitle,
             description: a.description,

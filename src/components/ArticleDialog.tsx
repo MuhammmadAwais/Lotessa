@@ -40,6 +40,7 @@ const ArticleDialog = ({ open, onOpenChange, article }: ArticleDialogProps) => {
   };
 
   const renderContent = (raw: string) => {
+    if (!raw) return null;
     const importantKeywords = [
       "GLP-1", "Lotessa", "Mounjaro", "Wegovy", "Ozempic", 
       "Metabolic", "Weight loss", "NHS", "UK", "Insulin",
