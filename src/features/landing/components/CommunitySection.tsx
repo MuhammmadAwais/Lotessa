@@ -1,12 +1,9 @@
-import { useState } from "react";
-import WaitlistDialog from "@/components/WaitlistDialog";
 import { useCommunityContent } from "@/features/landing/hooks/useCommunityContent";
 import { TrackingButton } from "@/features/telemetry/components/TrackingButton";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const CommunitySection = () => {
-  const [dialogOpen, setDialogOpen] = useState(false);
   const { heading, title, paragraph } = useCommunityContent();
 
   const sectionVariants = {
@@ -87,7 +84,7 @@ const CommunitySection = () => {
                 <TrackingButton 
                   id="join_community_community"
                   variant="coral"
-                  onClick={() => setDialogOpen(true)}
+                  onClick={() => window.open('https://app.lotessa.app/register', '_blank')}
                   icon={<ArrowRight className="w-5 h-5" />}
                   className="rounded-xl px-8 h-14 font-sora font-bold uppercase tracking-wide transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg hover:shadow-coral-500/20"
                 >
@@ -99,7 +96,7 @@ const CommunitySection = () => {
         </div>
       </section>
       
-      <WaitlistDialog open={dialogOpen} onOpenChange={setDialogOpen} />
+      
     </>
   );
 };

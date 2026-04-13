@@ -1,12 +1,9 @@
 import { useState } from "react";
 import { useHeroContent } from "@/features/landing/hooks/useHeroContent";
-import { TrackingButton, AppleIcon } from "@/features/telemetry/components/TrackingButton";
-import WaitlistDialog from "@/components/WaitlistDialog";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
-  const [dialogOpen, setDialogOpen] = useState(false);
   const { title, subtitle, p1, p2 } = useHeroContent();
 
   const sectionVariants = {
@@ -73,7 +70,7 @@ const HeroSection = () => {
                 <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-5 pt-4">
                   <button
                     id="download_button_hero"
-                    onClick={() => setDialogOpen(true)}
+                    onClick={() => window.open('https://app.lotessa.app/register', '_blank')}
                     className="flex items-center justify-center gap-3 px-8 bg-[#2FB4A5] text-white rounded-xl font-sora font-bold text-sm tracking-wide uppercase transition-all duration-300 hover:bg-[#26968a] hover:scale-105 active:scale-95 hover:shadow-[0_10px_25px_-5px_rgba(47,180,165,0.4)]"
                     style={{ minWidth: '240px', height: '60px' }}
                   >
@@ -83,7 +80,7 @@ const HeroSection = () => {
 
                   <button
                     id="join_community_hero"
-                    onClick={() => setDialogOpen(true)}
+                    onClick={() => window.open('https://app.lotessa.app/register', '_blank')}
                     className="flex items-center justify-center gap-3 px-8 border border-zinc-200 bg-white/50 backdrop-blur-sm text-[#FF8A73] rounded-xl font-sora font-bold text-sm tracking-wide uppercase transition-all duration-300 hover:bg-zinc-50 hover:border-zinc-300 hover:scale-105 active:scale-95"
                     style={{ minWidth: '240px', height: '60px' }}
                   >
@@ -114,7 +111,7 @@ const HeroSection = () => {
         </div>
       </section>
 
-      <WaitlistDialog open={dialogOpen} onOpenChange={setDialogOpen} />
+      
     </>
   );
 };

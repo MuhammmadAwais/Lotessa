@@ -6,7 +6,6 @@ import LegalModal from "@/components/LegalModal";
 import TermsContent from "@/components/TermsContent";
 import PrivacyContent from "@/components/PrivacyContent";
 import TermsConditionsContent from "@/components/TermsConditionsContent";
-import WaitlistDialog from "@/components/WaitlistDialog";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -21,7 +20,6 @@ const LotessaFooter = () => {
   const [isCookiesOpen, setIsCookiesOpen] = useState(false);
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
   const [isTermsOpen, setIsTermsOpen] = useState(false);
-  const [waitlistDialogOpen, setWaitlistDialogOpen] = useState(false);
   const [isReportIssueOpen, setIsReportIssueOpen] = useState(false);
   const [reportForm, setReportForm] = useState({
     name: '',
@@ -75,16 +73,15 @@ const LotessaFooter = () => {
                              <TrackingButton 
                  id="download_button_footer"
                  variant="teal"
-                 onClick={() => setWaitlistDialogOpen(true)}
-                 icon={<AppleIcon />}
+                 onClick={() => window.open('https://app.lotessa.app/register', '_blank')}
                >
-                 Download the App
+                 Get Lotessa
                </TrackingButton>
               
                              <TrackingButton 
                  id="join_community_footer"
                  variant="coral"
-                 onClick={() => setWaitlistDialogOpen(true)}
+                 onClick={() => window.open('https://app.lotessa.app/register', '_blank')}
                  icon={<ArrowRight className="w-5 h-5" />}
                >
                  Join the Community
@@ -208,8 +205,6 @@ const LotessaFooter = () => {
         title="Digital Products Terms and Conditions"
         content={<TermsConditionsContent />}
       />
-      
-      <WaitlistDialog open={waitlistDialogOpen} onOpenChange={setWaitlistDialogOpen} />
       
       {/* Report Issue Modal */}
       <Dialog open={isReportIssueOpen} onOpenChange={setIsReportIssueOpen}>

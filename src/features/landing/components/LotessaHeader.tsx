@@ -1,15 +1,13 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useAnalytics } from "@/features/telemetry/hooks/useAnalytics";
-import WaitlistDialog from "@/components/WaitlistDialog";
 import { Menu, X } from "lucide-react";
 
 const LotessaHeader = () => {
-  const [dialogOpen, setDialogOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { trackInteraction } = useAnalytics();
   const navItems = [
-    { name: "Download the App", href: "#download" },
+    { name: "Get Lotessa", href: "#download" },
     { name: "Join the Community", href: "#community" },
     { name: "Lotessa Library", href: "#library" },
     { name: "Partner With Lotessa", href: "#partner" },
@@ -22,13 +20,13 @@ const LotessaHeader = () => {
     // Special cases for external navigation
     if (href === "#download") {
       trackInteraction('click', 'download_button_header');
-      setDialogOpen(true);
+      window.open('https://app.lotessa.app/register', '_blank');
       return;
     }
     
     if (href === "#community") {
       trackInteraction('click', 'join_community_header');
-      setDialogOpen(true);
+      window.open('https://app.lotessa.app/register', '_blank');
       return;
     }
     
@@ -87,7 +85,7 @@ const LotessaHeader = () => {
             <Button 
               variant="default" 
               className="bg-[#2FB4A5] hover:bg-[#26968a] text-white transition-colors font-sora font-semibold"
-              onClick={() => setDialogOpen(true)}
+              onClick={() => window.open('https://app.lotessa.app/register', '_blank')}
             >
               Create Account
             </Button>
@@ -145,7 +143,7 @@ const LotessaHeader = () => {
                   variant="default" 
                   className="w-full bg-[#2FB4A5] hover:bg-[#26968a] font-sora font-semibold"
                   onClick={() => {
-                    setDialogOpen(true);
+                    window.open('https://app.lotessa.app/register', '_blank');
                     setIsMobileMenuOpen(false);
                   }}
                 >
@@ -157,7 +155,7 @@ const LotessaHeader = () => {
         </div>
       )}
       
-      <WaitlistDialog open={dialogOpen} onOpenChange={setDialogOpen} />
+      
     </header>
   );
 };
