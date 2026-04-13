@@ -82,7 +82,7 @@ const PartnerSection = () => {
           <div className="text-center mb-16 space-y-4">
             <motion.h3
               variants={itemVariants}
-              className="text-display-md font-sora font-semibold tracking-tight uppercase text-xs sm:text-sm"
+              className="text-display-md font-sora font-semibold tracking-tight uppercase text-lg sm:text-xl"
               style={{ color: '#2FB4A5' }}
             >
               {content.section_title}

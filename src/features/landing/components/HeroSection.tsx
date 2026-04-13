@@ -77,8 +77,8 @@ const HeroSection = () => {
                     className="flex items-center justify-center gap-3 px-8 bg-[#2FB4A5] text-white rounded-xl font-sora font-bold text-sm tracking-wide uppercase transition-all duration-300 hover:bg-[#26968a] hover:scale-105 active:scale-95 hover:shadow-[0_10px_25px_-5px_rgba(47,180,165,0.4)]"
                     style={{ minWidth: '240px', height: '60px' }}
                   >
-                    <AppleIcon />
-                    Download the App
+                    
+                    Get Lotessa
                   </button>
 
                   <button
